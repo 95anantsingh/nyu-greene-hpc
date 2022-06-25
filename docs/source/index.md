@@ -8,7 +8,7 @@ A more comprehensive but confusing 😛 guide is available [here](https://sites.
 ```
 
 ## Table of Contents
---------
+
 ```{toctree} 
 :hidden:
 
@@ -16,10 +16,8 @@ self
 ```
 
 ```{toctree} 
----
-numbered:
-hidden:
----
+:numbered:
+:hidden:
 
 1_Conda_Setup
 2_Job_Submission
