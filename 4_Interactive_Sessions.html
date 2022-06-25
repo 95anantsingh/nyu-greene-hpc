@@ -7,6 +7,7 @@
   <title>4. Interactive Sessions &mdash; NYU Greene HPC 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -57,7 +58,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">5. Utility Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">5. Utility Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#to-check-resource-usage-on-nyu-greene">5.1. To check resource usage on NYU Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#get-details-of-running-and-pending-jobs">5.2. Get details of running and pending jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#terminate-a-job">5.3. Terminate a job</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="6_VScode_setup.html">6. VScode Setup</a></li>
 </ul>
 
@@ -77,7 +83,6 @@
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
       <li><span class="section-number">4. </span>Interactive Sessions</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/4_Interactive_Sessions.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -185,29 +190,24 @@ $ conda config --append envs_dirs /scratch/&lt;netid&gt;/envs_dirs
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="3_Jupyter_Setup.html" class="btn btn-neutral float-left" title="3. Jupyter Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="5_Utilities.html" class="btn btn-neutral float-right" title="5. Utility Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2022, Anant Singh.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+          <a href="3_Jupyter_Setup.html" class="btn btn-neutral float-left" title="3. Jupyter Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <a href="5_Utilities.html" class="btn btn-neutral float-right" title="5. Utility Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      </div>
+  
+    <hr/>
+  
+    <div role="contentinfo">
+      <p>&#169; Copyright 2022, Anant Singh.</p>
+    </div> 
+  
+  </footer>
         </div>
       </div>
     </section>
   </div>
   <script>
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script> 
 

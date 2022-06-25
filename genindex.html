@@ -6,6 +6,7 @@
   <title>Index &mdash; NYU Greene HPC 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -43,8 +44,23 @@
 <li class="toctree-l1"><a class="reference internal" href="1_Conda_Setup.html">1. Anaconda Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_Job_Submission.html">2. Job Submission</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_Jupyter_Setup.html">3. Jupyter Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_Interactive_Sessions.html">4. Interactive Sessions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">5. Utility Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Interactive_Sessions.html">4. Interactive Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#get-interactive-session">4.1. Get Interactive session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#anaconda-on-greene">4.2. Anaconda on Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#x11-forwarding">4.3. X11 Forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#submitting-jobs">4.4. Submitting Jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#using-slurm">4.4.1. Using SLURM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#interactive-jobs">4.4.2. Interactive Jobs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">5. Utility Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#to-check-resource-usage-on-nyu-greene">5.1. To check resource usage on NYU Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#get-details-of-running-and-pending-jobs">5.2. Get details of running and pending jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#terminate-a-job">5.3. Terminate a job</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="6_VScode_setup.html">6. VScode Setup</a></li>
 </ul>
 
@@ -82,26 +98,21 @@
            </div>
           </div>
           <footer>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2022, Anant Singh.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+  
+    <hr/>
+  
+    <div role="contentinfo">
+      <p>&#169; Copyright 2022, Anant Singh.</p>
+    </div> 
+  
+  </footer>
         </div>
       </div>
     </section>
   </div>
   <script>
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script> 
 

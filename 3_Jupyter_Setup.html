@@ -7,6 +7,7 @@
   <title>3. Jupyter Setup &mdash; NYU Greene HPC 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -46,8 +47,23 @@
 <li class="toctree-l1"><a class="reference internal" href="1_Conda_Setup.html">1. Anaconda Setup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_Job_Submission.html">2. Job Submission</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3. Jupyter Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_Interactive_Sessions.html">4. Interactive Sessions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">5. Utility Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Interactive_Sessions.html">4. Interactive Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#get-interactive-session">4.1. Get Interactive session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#anaconda-on-greene">4.2. Anaconda on Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#x11-forwarding">4.3. X11 Forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#submitting-jobs">4.4. Submitting Jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#using-slurm">4.4.1. Using SLURM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#interactive-jobs">4.4.2. Interactive Jobs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">5. Utility Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#to-check-resource-usage-on-nyu-greene">5.1. To check resource usage on NYU Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#get-details-of-running-and-pending-jobs">5.2. Get details of running and pending jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#terminate-a-job">5.3. Terminate a job</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="6_VScode_setup.html">6. VScode Setup</a></li>
 </ul>
 
@@ -67,7 +83,6 @@
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
       <li><span class="section-number">3. </span>Jupyter Setup</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/3_Jupyter_Setup.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -149,29 +164,24 @@ conda install ipykernel -y
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="2_Job_Submission.html" class="btn btn-neutral float-left" title="2. Job Submission" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="4_Interactive_Sessions.html" class="btn btn-neutral float-right" title="4. Interactive Sessions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2022, Anant Singh.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+          <a href="2_Job_Submission.html" class="btn btn-neutral float-left" title="2. Job Submission" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <a href="4_Interactive_Sessions.html" class="btn btn-neutral float-right" title="4. Interactive Sessions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      </div>
+  
+    <hr/>
+  
+    <div role="contentinfo">
+      <p>&#169; Copyright 2022, Anant Singh.</p>
+    </div> 
+  
+  </footer>
         </div>
       </div>
     </section>
   </div>
   <script>
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script> 
 
