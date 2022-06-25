@@ -65,7 +65,7 @@ html_theme_options = {
     'titles_only': False
 }
 
-html_logo = 'logo3.svg'
+html_logo = 'assets/logo3.svg'
 
 
 # -- Options for EPUB output
