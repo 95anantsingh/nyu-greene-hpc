@@ -32,7 +32,7 @@ templates_path = ['_templates']
 
 html_theme = 'sphinx_rtd_theme'
 
-html_show_sourcelink = True
+html_show_sourcelink = False
 
 # html_theme_options = {
 #     'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
@@ -58,8 +58,8 @@ html_theme_options = {
     'style_external_links': False,
     'style_nav_header_background': '#57068c',
     # Toc options
-    'collapse_navigation': True,
-    'sticky_navigation': True,
+    'collapse_navigation': False,
+    'sticky_navigation': False,
     'navigation_depth': 4,
     'includehidden': True,
     'titles_only': False
@@ -70,3 +70,10 @@ html_logo = 'assets/logo3.svg'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+
+templates_path=['custom/templates']
+
+html_static_path = ['custom/static']
+
+html_favicon = 'assets/favicon.ico'
