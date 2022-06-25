@@ -1,4 +1,4 @@
-# VScode Setup
+# Jupyter Setup
 
 ```bash
 mkdir /scratch/<NetID>/singularity
