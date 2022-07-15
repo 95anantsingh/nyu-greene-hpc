@@ -2,7 +2,16 @@
 
 ## Overview
 
-![](assets/greene.jpg)
+
+```{image} assets/greene.jpg
+:alt: NYU Greene
+:width: 90%
+:align: center
+```
+
+
+<br>
+
 
 NYU High Performance Computing (NYU HPC) provides access to state of the art supercomputer hardware and cloud services to eligible faculty and students across all of NYU.
 
@@ -62,7 +71,14 @@ NYU HPC uses **SLRUM** for cluster workload management. Slurm is an open source,
 ## Architecture
 
 Generic diagram of the cluster architecture and outside connectivity
-![](assets/access.png)
+<!-- ![](assets/access.png) -->
+
+```{image} assets/access.png
+:alt: Architecture
+:width: 90%
+:align: left
+```
+<br>
 
 ## Workflow
 
