@@ -69,7 +69,7 @@ html_theme_options = {
     'titles_only': False
 }
 
-html_logo = 'assets/logo3.svg'
+html_logo = 'assets/html_logo.png'
 
 html_static_path = ['custom/static']
 

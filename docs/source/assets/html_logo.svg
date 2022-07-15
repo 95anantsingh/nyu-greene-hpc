@@ -10,14 +10,14 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg833"
-   width="280"
+   width="300"
    height="70"
-   viewBox="0 0 280.00001 70"
+   viewBox="0 0 300.00001 70"
    sodipodi:docname="logo3.svg"
    inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
    inkscape:export-filename="F:\Github\nyu-greene-hpc\docs\source\assets\html_logo.png"
-   inkscape:export-xdpi="171.42857"
-   inkscape:export-ydpi="171.42857">
+   inkscape:export-xdpi="154.97144"
+   inkscape:export-ydpi="154.97144">
   <metadata
      id="metadata839">
     <rdf:RDF>
@@ -59,9 +59,7 @@
      id="g841">
     <g
        id="g842"
-       transform="translate(46.725361)"
-       inkscape:export-xdpi="163.13"
-       inkscape:export-ydpi="163.13">
+       transform="translate(56.725361)">
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:33.1491px;line-height:0.1;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.67675"
