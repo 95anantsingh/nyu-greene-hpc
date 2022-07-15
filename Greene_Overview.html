@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greene Overview &mdash; NYU Greene HPC 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Anaconda Setup" href="1_Conda_Setup.html" />
+    <link rel="prev" title="Getting Started !" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #57068c" >
+            <a href="index.html">
+            <img src="_static/logo3.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started !</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Greene Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#specifications">Specifications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hardware">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software">Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network">Network</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#typical-workflow">Typical Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#storage-management">Storage Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1_Conda_Setup.html">Anaconda Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Job_Submission.html">Job Submission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Jupyter_Setup.html">Jupyter Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Interactive_Sessions.html">Interactive Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#get-interactive-session">Get Interactive session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#anaconda-on-greene">Anaconda on Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#x11-forwarding">X11 Forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#submitting-jobs">Submitting Jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#using-slurm">Using SLURM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#interactive-jobs">Interactive Jobs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">Utility Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#to-check-resource-usage-on-nyu-greene">To check resource usage on NYU Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#get-details-of-running-and-pending-jobs">Get details of running and pending jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#terminate-a-job">Terminate a job</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="6_VScode_setup.html">VScode Setup</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #57068c" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NYU Greene HPC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Greene Overview</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="greene-overview">
+<h1>Greene Overview<a class="headerlink" href="#greene-overview" title="Permalink to this heading"></a></h1>
+<p>NYU High Performance Computing (NYU HPC) provides access to state of the art supercomputer hardware and cloud services to eligible faculty and students across all of NYU.</p>
+<p>The cluster is accessed through login nodes which are nodes or servers dedicated to provide HPC users access to compute nodes. Compute nodes are more powerful and optimized to run computations as per the jobs submitted by HPC users.</p>
+<p>NYU Greene runs on</p>
+<!-- 
+![](assets/access.png) -->
+<section id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Permalink to this heading"></a></h2>
+<section id="hardware">
+<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>The Total number of available nodes is 672</p>
+<ol class="arabic simple">
+<li><p>6 login nodes</p></li>
+<li><p>670 compute nodes</p>
+<ul>
+<li><p>524 Standard memory (180 GB)</p></li>
+<li><p>40 Medium memory (360 GB)</p></li>
+<li><p>4 Large memory (3,014 GB)</p></li>
+<li><p>73 RTX8000 GPU nodes</p></li>
+<li><p>20 V100 GPU nodes</p></li>
+<li><p>9 A100 GPU nodes</p></li>
+</ul>
+</li>
+<li><p>6 administrative nodes</p></li>
+</ol>
+</li>
+<li><p>Total number of CPU cores is 31,584</p></li>
+<li><p>Total number of GPU cards is 368</p>
+<ol class="arabic simple">
+<li><p>292 RTX8000 (48 GB)</p></li>
+<li><p>76 V100 (32 GB)</p></li>
+</ol>
+</li>
+<li><p>Total primary memory is 163 TB</p></li>
+<li><p>Total secondary memory is 9.5 PB</p></li>
+</ul>
+</section>
+<section id="software">
+<h3>Software<a class="headerlink" href="#software" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Operating system</strong> - RedHat Enterprise Linux 8.4</p></li>
+<li><p><strong>Workload manager</strong> - SLRUM</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">Useful Links</p>
+<ol class="arabic simple">
+<li><p>Linux</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/essential-linuxunix-commands">https://www.geeksforgeeks.org/essential-linuxunix-commands</a></p></li>
+<li><p><a class="reference external" href="https://www.tutorialspoint.com/unix/index.htm">https://www.tutorialspoint.com/unix/index.htm</a></p></li>
+<li><p><a class="reference external" href="http://software-carpentry.org/lessons/">http://software-carpentry.org/lessons/</a></p></li>
+<li><p><a class="reference external" href="https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0">https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0</a>
+<br></p></li>
+</ul>
+</li>
+<li><p>SLRUM</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://slurm.schedmd.com/quickstart.html">https://slurm.schedmd.com/quickstart.html</a></p></li>
+<li><p><a class="reference external" href="https://slurm.schedmd.com/tutorials.html">https://slurm.schedmd.com/tutorials.html</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=U42qlYkzP9k&amp;feature=player_embedded">https://www.youtube.com/watch?v=U42qlYkzP9k&amp;feature=player_embedded</a></p></li>
+</ul>
+</li>
+</ol>
+</div>
+</section>
+<section id="network">
+<h3>Network<a class="headerlink" href="#network" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>Infiniband Network</strong> : for MPI and file system access, by Melanox.</p></li>
+<li><p><strong>Management Network</strong> : Ethernet 25Gbit  used by admins for node provisioning</p></li>
+<li><p><strong>Out-of-band Network</strong> : Ethernet 1Gbit used by admins</p></li>
+<li><p><strong>External Network</strong> : All cluster ‘edge’ nodes, such as login nodes, admin nodes, and Data Transfer Nodes, are connected to the NYU High-Speed Research Network (HSRN).</p></li>
+</ul>
+</section>
+</section>
+<section id="typical-workflow">
+<h2>Typical Workflow<a class="headerlink" href="#typical-workflow" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Log on to HPC login nodes.</p></li>
+<li><p>Submit jobs on login nodes.</p></li>
+<li><p>Your jobs will queue for execution on</p></li>
+<li><p>Once done, examine the output.</p></li>
+</ol>
+</section>
+<section id="storage-management">
+<h2>Storage Management<a class="headerlink" href="#storage-management" title="Permalink to this heading"></a></h2>
+<p>The NYU HPC clusters are served by a General Parallel File System (GPFS) cluster.</p>
+<p>The NYU HPC team supports data storage, transfer, and archival needs on the HPC clusters, as well as collaborative research services like the Research Project Space (RPS).</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Space<br></p></th>
+<th class="head"><p>Environment <br> Variable</p></th>
+<th class="head"><p>Space Purpose<br></p></th>
+<th class="head"><p>Backed Up / <br> Flushed</p></th>
+<th class="head"><p>Quota <br> Disk Space / # of Files</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/home</span></code></p></td>
+<td><p>$HOME</p></td>
+<td><p>Personal user home space that is best for small files</p></td>
+<td><p>YES / NO</p></td>
+<td><p>50 GB / 30 K</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/scratch</span></code></p></td>
+<td><p>$SCRATCH</p></td>
+<td><p>Best for large files</p></td>
+<td><p>NO / Files not accessed<br> for 60 days</p></td>
+<td><p>5 TB / 1 M</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/archive</span></code></p></td>
+<td><p>$ARCHIVE</p></td>
+<td><p>Long-term storage</p></td>
+<td><p>YES / NO</p></td>
+<td><p>2 TB / 20 K</p></td>
+</tr>
+<tr class="row-odd"><td><p>HPC Research <br> Project Space</p></td>
+<td><p>NA</p></td>
+<td><p>Shared disk space for research projects</p></td>
+<td><p>YES / NO</p></td>
+<td><p>Payment based <br>TB-year/inodes-year</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <a href="index.html" class="btn btn-neutral float-left" title="Getting Started !" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <a href="1_Conda_Setup.html" class="btn btn-neutral float-right" title="Anaconda Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      </div>
+  
+    <hr/>
+  
+    <div role="contentinfo">
+      <p>&#169; Copyright 2022, Anant Singh | New York University.</p>
+    </div> 
+  
+  </footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

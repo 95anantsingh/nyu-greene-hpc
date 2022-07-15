@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4. Interactive Sessions &mdash; NYU Greene HPC 0.1 documentation</title>
+  <title>Interactive Sessions &mdash; NYU Greene HPC 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -20,8 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. Utility Commands" href="5_Utilities.html" />
-    <link rel="prev" title="3. Jupyter Setup" href="3_Jupyter_Setup.html" /> 
+    <link rel="next" title="Utility Commands" href="5_Utilities.html" />
+    <link rel="prev" title="Jupyter Setup" href="3_Jupyter_Setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -40,31 +40,40 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Greene_Overview.html">Greene Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#specifications">Specifications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Greene_Overview.html#hardware">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Greene_Overview.html#software">Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Greene_Overview.html#network">Network</a></li>
 </ul>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="1_Conda_Setup.html">1. Anaconda Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_Job_Submission.html">2. Job Submission</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_Jupyter_Setup.html">3. Jupyter Setup</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Interactive Sessions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#get-interactive-session">4.1. Get Interactive session</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#anaconda-on-greene">4.2. Anaconda on Greene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#x11-forwarding">4.3. X11 Forwarding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#submitting-jobs">4.4. Submitting Jobs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#using-slurm">4.4.1. Using SLURM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#interactive-jobs">4.4.2. Interactive Jobs</a></li>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#typical-workflow">Typical Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#storage-management">Storage Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1_Conda_Setup.html">Anaconda Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Job_Submission.html">Job Submission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Jupyter_Setup.html">Jupyter Setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Interactive Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-interactive-session">Get Interactive session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anaconda-on-greene">Anaconda on Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#x11-forwarding">X11 Forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-jobs">Submitting Jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-slurm">Using SLURM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interactive-jobs">Interactive Jobs</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">5. Utility Commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#to-check-resource-usage-on-nyu-greene">5.1. To check resource usage on NYU Greene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#get-details-of-running-and-pending-jobs">5.2. Get details of running and pending jobs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#terminate-a-job">5.3. Terminate a job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">Utility Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#to-check-resource-usage-on-nyu-greene">To check resource usage on NYU Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#get-details-of-running-and-pending-jobs">Get details of running and pending jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#terminate-a-job">Terminate a job</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="6_VScode_setup.html">6. VScode Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_VScode_setup.html">VScode Setup</a></li>
 </ul>
 
         </div>
@@ -81,7 +90,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">4. </span>Interactive Sessions</li>
+      <li>Interactive Sessions</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -91,10 +100,10 @@
            <div itemprop="articleBody">
              
   <section id="interactive-sessions">
-<h1><span class="section-number">4. </span>Interactive Sessions<a class="headerlink" href="#interactive-sessions" title="Permalink to this heading"></a></h1>
+<h1>Interactive Sessions<a class="headerlink" href="#interactive-sessions" title="Permalink to this heading"></a></h1>
 <p>Instead of submitting a job one can request an interactive session on NYU Greene where you can access th shell and run as many jobs as the resources allows you.</p>
 <section id="get-interactive-session">
-<h2><span class="section-number">4.1. </span>Get Interactive session<a class="headerlink" href="#get-interactive-session" title="Permalink to this heading"></a></h2>
+<h2>Get Interactive session<a class="headerlink" href="#get-interactive-session" title="Permalink to this heading"></a></h2>
 <p>Request a session with 4 CPU cores</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun -c <span class="m">4</span>  --pty /bin/bash
 </pre></div>
@@ -112,7 +121,7 @@
 <p>You can follow the below steps to set up your environments on Greene easily.</p>
 </section>
 <section id="anaconda-on-greene">
-<h2><span class="section-number">4.2. </span>Anaconda on Greene<a class="headerlink" href="#anaconda-on-greene" title="Permalink to this heading"></a></h2>
+<h2>Anaconda on Greene<a class="headerlink" href="#anaconda-on-greene" title="Permalink to this heading"></a></h2>
 <ul>
 <li><p>Conda is already available on Greene. To access the default conda environment, just type the following. (To save time in the future, you can also add this line to <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ module load anaconda3/2020.07
@@ -139,7 +148,7 @@ $ conda config --append envs_dirs /scratch/&lt;netid&gt;/envs_dirs
 </section>
 <hr class="docutils" />
 <section id="x11-forwarding">
-<h2><span class="section-number">4.3. </span>X11 Forwarding<a class="headerlink" href="#x11-forwarding" title="Permalink to this heading"></a></h2>
+<h2>X11 Forwarding<a class="headerlink" href="#x11-forwarding" title="Permalink to this heading"></a></h2>
 <p>You might want to render the environment and see the GUI on your local machine. If you have a Mac, the easiest way is to install XQuartz. Make sure to restart the system after installaon.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ brew install --cask xquartz
 </pre></div>
@@ -151,9 +160,9 @@ $ conda config --append envs_dirs /scratch/&lt;netid&gt;/envs_dirs
 </section>
 <hr class="docutils" />
 <section id="submitting-jobs">
-<h2><span class="section-number">4.4. </span>Submitting Jobs<a class="headerlink" href="#submitting-jobs" title="Permalink to this heading"></a></h2>
+<h2>Submitting Jobs<a class="headerlink" href="#submitting-jobs" title="Permalink to this heading"></a></h2>
 <section id="using-slurm">
-<h3><span class="section-number">4.4.1. </span>Using SLURM<a class="headerlink" href="#using-slurm" title="Permalink to this heading"></a></h3>
+<h3>Using SLURM<a class="headerlink" href="#using-slurm" title="Permalink to this heading"></a></h3>
 <p>Greene uses SLURM to submit jobs. You can check the sample script below as a reference to submit your jobs.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#SBATCH --job-name=training</span>
@@ -176,7 +185,7 @@ $ conda config --append envs_dirs /scratch/&lt;netid&gt;/envs_dirs
 <p>The script above will submit a job with a maximum time of 4 hours on a node with 4 CPUs, 16 GB RAM and 1 GPU. The GPU can be either RTX8000 or V100. If you want to select a specific GPU, you can specify that by <code class="docutils literal notranslate"><span class="pre">gpu:rtx8000:1</span></code> and <code class="docutils literal notranslate"><span class="pre">gpu:v100:1</span></code>.</p>
 </section>
 <section id="interactive-jobs">
-<h3><span class="section-number">4.4.2. </span>Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permalink to this heading"></a></h3>
+<h3>Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permalink to this heading"></a></h3>
 <p>The default login node does not have a GPU, and is not recommended to run compute heavy jobs. So if you want to run compute heavy commands in real-time, you can submit an interacve job instead.</p>
 <p>The following command allocates a GPU for 1 hour with 32GB of RAM, and X11 forwarding enabled. (Note that the <code class="docutils literal notranslate"><span class="pre">--x11</span></code> flag requires <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-X</span></code> as menoned in the previous step for X11 forwarding to work)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ srun --x11 --gres=gpu:1 --mem=32000 --time=1:00:00 --pty /bin/bash
@@ -190,14 +199,14 @@ $ conda config --append envs_dirs /scratch/&lt;netid&gt;/envs_dirs
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-          <a href="3_Jupyter_Setup.html" class="btn btn-neutral float-left" title="3. Jupyter Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-          <a href="5_Utilities.html" class="btn btn-neutral float-right" title="5. Utility Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <a href="3_Jupyter_Setup.html" class="btn btn-neutral float-left" title="Jupyter Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <a href="5_Utilities.html" class="btn btn-neutral float-right" title="Utility Commands" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       </div>
   
     <hr/>
   
     <div role="contentinfo">
-      <p>&#169; Copyright 2022, Anant Singh.</p>
+      <p>&#169; Copyright 2022, Anant Singh | New York University.</p>
     </div> 
   
   </footer>

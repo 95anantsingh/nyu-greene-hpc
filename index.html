@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Anaconda Setup" href="1_Conda_Setup.html" /> 
+    <link rel="next" title="Greene Overview" href="Greene_Overview.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,29 +41,38 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Greene_Overview.html">Greene Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#specifications">Specifications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Greene_Overview.html#hardware">Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Greene_Overview.html#software">Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Greene_Overview.html#network">Network</a></li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="1_Conda_Setup.html">1. Anaconda Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_Job_Submission.html">2. Job Submission</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_Jupyter_Setup.html">3. Jupyter Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_Interactive_Sessions.html">4. Interactive Sessions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#get-interactive-session">4.1. Get Interactive session</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#anaconda-on-greene">4.2. Anaconda on Greene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#x11-forwarding">4.3. X11 Forwarding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#submitting-jobs">4.4. Submitting Jobs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#using-slurm">4.4.1. Using SLURM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#interactive-jobs">4.4.2. Interactive Jobs</a></li>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#typical-workflow">Typical Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#storage-management">Storage Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1_Conda_Setup.html">Anaconda Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Job_Submission.html">Job Submission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Jupyter_Setup.html">Jupyter Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Interactive_Sessions.html">Interactive Sessions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#get-interactive-session">Get Interactive session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#anaconda-on-greene">Anaconda on Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#x11-forwarding">X11 Forwarding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#submitting-jobs">Submitting Jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#using-slurm">Using SLURM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#interactive-jobs">Interactive Jobs</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">5. Utility Commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#to-check-resource-usage-on-nyu-greene">5.1. To check resource usage on NYU Greene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#get-details-of-running-and-pending-jobs">5.2. Get details of running and pending jobs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#terminate-a-job">5.3. Terminate a job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">Utility Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#to-check-resource-usage-on-nyu-greene">To check resource usage on NYU Greene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#get-details-of-running-and-pending-jobs">Get details of running and pending jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#terminate-a-job">Terminate a job</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="6_VScode_setup.html">6. VScode Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_VScode_setup.html">VScode Setup</a></li>
 </ul>
 
         </div>
@@ -91,37 +100,44 @@
              
   <section id="getting-started">
 <h1>Getting Started !<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h1>
-<p>This guide tries to give you a basic understanding of working with Greene HPC cluster. I documented this guide while taking High Performance Machine Learning Course by Prof Parijit Dube.</p>
+<p>This guide tries to give you a basic understanding of working with Greene HPC cluster. I documented this guide while taking High Performance Machine Learning Course by <strong>Prof Parijit Dube</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A more comprehensive but confusing 😛 guide is available <a class="reference external" href="https://sites.google.com/nyu.edu/nyu-hpc">here</a>.</p>
 </div>
-<section id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading"></a></h2>
+<section id="hpc-documentation">
+<h2>HPC Documentation<a class="headerlink" href="#hpc-documentation" title="Permalink to this heading"></a></h2>
+<!-- :numbered: -->
 <div class="toctree-wrapper compound">
 </div>
-<div class="toctree-wrapper compound">
-</div>
-<ol class="arabic simple">
+<ul class="simple">
+<li><p><a class="reference internal" href="Greene_Overview.html"><span class="doc std std-doc">Greene Overview</span></a></p></li>
 <li><p><a class="reference internal" href="1_Conda_Setup.html"><span class="doc std std-doc">Anaconda Setup</span></a></p></li>
 <li><p><a class="reference internal" href="2_Job_Submission.html"><span class="doc std std-doc">Job Submission</span></a></p></li>
 <li><p><a class="reference internal" href="3_Jupyter_Setup.html"><span class="doc std std-doc">Jupyter Setup</span></a></p></li>
 <li><p><a class="reference internal" href="4_Interactive_Sessions.html"><span class="doc std std-doc">Interactive Sessions</span></a></p></li>
 <li><p><a class="reference internal" href="5_Utilities.html"><span class="doc std std-doc">Utility Commands</span></a></p></li>
 <li><p><a class="reference internal" href="6_VScode_setup.html"><span class="doc std std-doc">VScode Setup</span></a></p></li>
-</ol>
+</ul>
 </section>
 <section id="reporting-an-issue">
 <h2>Reporting an Issue<a class="headerlink" href="#reporting-an-issue" title="Permalink to this heading"></a></h2>
 <p>If you are facing a new issue you can create one <a class="reference external" href="https://github.com/95anantsingh/nyu-greene-hpc/issues">here</a>.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Before reporting a new issue please check if it has been reported already.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Before reporting a new issue please check if it has been already reported.</p>
 </div>
 </section>
 <section id="want-to-contribute">
 <h2>Want to contribute ?<a class="headerlink" href="#want-to-contribute" title="Permalink to this heading"></a></h2>
 <p>Drop me an email at <a class="reference external" href="mailto::anant&#46;singh&#37;&#52;&#48;nyu&#46;edu">anant<span>&#46;</span>singh<span>&#64;</span>nyu<span>&#46;</span>edu</a>.</p>
+<div class="hint admonition">
+<p class="admonition-title">Acknowledgement</p>
+<p>It is strongly advised to acknowledge the use of the HPC resources by including the following in any publication resulting from work carried out on the HPC:</p>
+<blockquote>
+<div><p><strong>This research was carried out on the High Performance Computing resources at New York University.</strong></p>
+</div></blockquote>
+</div>
 </section>
 </section>
 
@@ -129,13 +145,13 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-          <a href="1_Conda_Setup.html" class="btn btn-neutral float-right" title="1. Anaconda Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <a href="Greene_Overview.html" class="btn btn-neutral float-right" title="Greene Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       </div>
   
     <hr/>
   
     <div role="contentinfo">
-      <p>&#169; Copyright 2022, Anant Singh.</p>
+      <p>&#169; Copyright 2022, Anant Singh | New York University.</p>
     </div> 
   
   </footer>
