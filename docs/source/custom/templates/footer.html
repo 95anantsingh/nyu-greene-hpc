@@ -18,12 +18,12 @@
       <p>
       {%- if show_copyright %}
         {%- if hasdoc('copyright') %}
-          {%- trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+          {%- trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}{% endtrans %}
         {%- else %}
-          {%- trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
+          {%- trans copyright=copyright|e %}&#169; Copyright {{ copyright }} <a href="https://www.github.com/95anantsingh">Anant Singh</a> {% endtrans %}
         {%- endif %}
       {%- endif %}
-      
+  
       {%- if build_id and build_url %}
         <span class="build">
           {#- Translators: Build is a noun, not a verb -#}
