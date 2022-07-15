@@ -19,10 +19,10 @@ Greene_Overview
 Storage
 Accessing_HPC
 Software_Modules
-1_Conda_Setup
-3_Jupyter_Setup
-6_VScode_setup
-2_Job_Submission
+Anaconda
+Jupyter_Notebooks
+Visual_Studio_Code
+Job_Management
 SLURM_Guide
 Best_Practices
 ```
@@ -31,10 +31,10 @@ Best_Practices
 - [Storage](Storage.md)
 - [Accessing HPC](Accessing_HPC.md)
 - [Software Modules](Software_Modules.md)
-- [Anaconda](1_Conda_Setup.md)
-- [Jupyter Notebooks](3_Jupyter_Setup.md)
-- [Visual Studio Code](6_VScode_setup.md)
-- [Job Management](2_Job_Submission.md)
+- [Anaconda](Anaconda.md)
+- [Jupyter Notebooks](Jupyter_Notebooks.md)
+- [Visual Studio Code](Visual_Studio_Code.md)
+- [Job Management](Job_Management.md)
 - [SLURM Guide](SLURM_Guide.md)
 - [Best Practices](Best_Practices.md)
 
