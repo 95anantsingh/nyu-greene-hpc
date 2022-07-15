@@ -1,5 +1,5 @@
-
 # Getting Started !
+
 
 This guide tries to give you a basic understanding of working with Greene HPC cluster. I documented this guide while taking High Performance Machine Learning Course by **Prof Parijit Dube**.
 
