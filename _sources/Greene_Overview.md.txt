@@ -30,10 +30,10 @@ NYU Greene runs on **Linux** (RedHat Enterprise Linux 8.4) and it is advised to 
 - [https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0](https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0)
 ```
 
-NYU HPC uses **SLRUM** for cluster workload management. Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. Slurm requires no kernel modifications for its operation and is relatively self-contained.
+NYU HPC uses **SLURM** for cluster workload management. Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. Slurm requires no kernel modifications for its operation and is relatively self-contained.
 
 
-```{admonition} SLRUM Useful Links
+```{admonition} SLURM Useful Links
 :class: hint
 
 - [https://slurm.schedmd.com/quickstart.html](https://slurm.schedmd.com/quickstart.html)
@@ -70,14 +70,14 @@ NYU HPC uses **SLRUM** for cluster workload management. Slurm is an open source,
 
 ## Architecture
 
-Generic diagram of the cluster architecture and outside connectivity
 <!-- ![](assets/access.png) -->
 
 ```{image} assets/access.png
 :alt: Architecture
 :width: 90%
-:align: left
+:align: center
 ```
+<center><i>Generic diagram of the cluster architecture and outside connectivity</i></center>
 <br>
 
 ## Workflow
