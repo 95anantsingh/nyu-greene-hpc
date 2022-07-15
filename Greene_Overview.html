@@ -126,6 +126,7 @@
 <h1>Greene HPC<a class="headerlink" href="#greene-hpc" title="Permalink to this heading"></a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p><img alt="" src="_images/greene.jpg" /></p>
 <p>NYU High Performance Computing (NYU HPC) provides access to state of the art supercomputer hardware and cloud services to eligible faculty and students across all of NYU.</p>
 <p>The cluster is accessed through login nodes which are nodes or servers dedicated to provide HPC users access to compute nodes. Compute nodes are more powerful and optimized to run computations as per the jobs submitted by HPC users.</p>
 </section>
@@ -185,8 +186,8 @@
 <h2>Network<a class="headerlink" href="#network" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>Infiniband Network</strong> : for MPI and file system access.</p></li>
-<li><p><strong>Management Network</strong> : Ethernet 25Gbit  used by admins for node provisioning</p></li>
-<li><p><strong>Out-of-band Network</strong> : Ethernet 1Gbit used by admins</p></li>
+<li><p><strong>Management Network</strong> : Ethernet 25Gbit  used by admins for node provisioning.</p></li>
+<li><p><strong>Out-of-band Network</strong> : Ethernet 1Gbit used by admins.</p></li>
 <li><p><strong>External Network</strong> : All cluster ‘edge’ nodes, such as login nodes, admin nodes, and Data Transfer Nodes, are connected to the NYU High-Speed Research Network (HSRN).</p></li>
 </ul>
 </section>
@@ -199,14 +200,14 @@
 <h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading"></a></h2>
 <p><strong>One Time Setup</strong></p>
 <ol class="arabic simple">
-<li><p>Log on to HPC login nodes.</p></li>
+<li><p>Log on to HPC login nodes via SSH.</p></li>
 <li><p>Setup Anaconda environment.</p></li>
 <li><p>Setup Visual Studio Code for easy project development. (Optional)</p></li>
 <li><p>Setup Jupyter Notebook (Optional)</p></li>
 </ol>
 <p><strong>General Workflow</strong></p>
 <ol class="arabic simple">
-<li><p>Log on to HPC login nodes.</p></li>
+<li><p>Log on to HPC login nodes via SSH.</p></li>
 <li><p>Submit jobs on login nodes.</p></li>
 <li><p>Your jobs will queue for execution on compute nodes.</p></li>
 <li><p>Once done, examine the output.</p></li>
@@ -217,7 +218,7 @@
 </div>
 <p><strong>Interactive Worklow</strong></p>
 <ol class="arabic simple">
-<li><p>Log on to HPC login nodes.</p></li>
+<li><p>Log on to HPC login nodes via SSH.</p></li>
 <li><p>Request Interactive shell session with required resources.</p></li>
 <li><p>Run jobs interactively on compute nodes.</p></li>
 <li><p>Once done, release resources.</p></li>
@@ -226,6 +227,13 @@
 <p class="admonition-title">Tip</p>
 <p>Avoid interactive sessions when possible, interactive sessions are generally less efficient and less environment friendly. It is advised to use batch jobs instead which are automatically managed with energy saving in mind.</p>
 </div>
+<p><strong>Jupyter Lab Workflow</strong></p>
+<ol class="arabic simple">
+<li><p>Log on to HPC web interface.</p></li>
+<li><p>Request interactive Jupyter Notebook / Lab session.</p></li>
+<li><p>Run notebooks.</p></li>
+<li><p>Once done, shutdown kernels and exit.</p></li>
+</ol>
 </section>
 </section>
 

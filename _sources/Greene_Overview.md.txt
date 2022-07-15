@@ -2,6 +2,8 @@
 
 ## Overview
 
+![](assets/greene.jpg)
+
 NYU High Performance Computing (NYU HPC) provides access to state of the art supercomputer hardware and cloud services to eligible faculty and students across all of NYU.
 
 The cluster is accessed through login nodes which are nodes or servers dedicated to provide HPC users access to compute nodes. Compute nodes are more powerful and optimized to run computations as per the jobs submitted by HPC users. 
@@ -52,8 +54,8 @@ NYU HPC uses **SLRUM** for cluster workload management. Slurm is an open source,
 ## Network
 
 - **Infiniband Network** : for MPI and file system access.
-- **Management Network** : Ethernet 25Gbit  used by admins for node provisioning
-- **Out-of-band Network** : Ethernet 1Gbit used by admins
+- **Management Network** : Ethernet 25Gbit  used by admins for node provisioning.
+- **Out-of-band Network** : Ethernet 1Gbit used by admins.
 - **External Network** : All cluster 'edge' nodes, such as login nodes, admin nodes, and Data Transfer Nodes, are connected to the NYU High-Speed Research Network (HSRN).
 
 
@@ -65,13 +67,13 @@ Generic diagram of the cluster architecture and outside connectivity
 ## Workflow
 
 **One Time Setup**
-1. Log on to HPC login nodes.
+1. Log on to HPC login nodes via SSH.
 1. Setup Anaconda environment.
 1. Setup Visual Studio Code for easy project development. (Optional)
 1. Setup Jupyter Notebook (Optional)
 
 **General Workflow**
-1. Log on to HPC login nodes.
+1. Log on to HPC login nodes via SSH.
 1. Submit jobs on login nodes.
 1. Your jobs will queue for execution on compute nodes.
 1. Once done, examine the output.
@@ -82,7 +84,7 @@ Please refrain from running any compute intensive jobs on the login nodes. This 
 ```
 
 **Interactive Worklow**
-1. Log on to HPC login nodes.
+1. Log on to HPC login nodes via SSH.
 1. Request Interactive shell session with required resources.
 1. Run jobs interactively on compute nodes.
 1. Once done, release resources.
@@ -91,3 +93,9 @@ Please refrain from running any compute intensive jobs on the login nodes. This 
 ```{tip}
 Avoid interactive sessions when possible, interactive sessions are generally less efficient and less environment friendly. It is advised to use batch jobs instead which are automatically managed with energy saving in mind.
 ```
+
+**Jupyter Lab Workflow**
+1. Log on to HPC web interface.
+1. Request interactive Jupyter Notebook / Lab session.
+1. Run notebooks.
+1. Once done, shutdown kernels and exit.
