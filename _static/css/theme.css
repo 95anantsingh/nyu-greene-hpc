@@ -6834,6 +6834,20 @@ footer span.commit code {
     line-height: 1.4
 }
 
+
+element.style {
+}
+.rst-content div[class^=highlight] div[class^=highlight], .rst-content pre.literal-block div[class^=highlight] {
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+.rst-content div[class^=highlight], .rst-content pre.literal-block {
+    border: 1px solid #e1e4e5;
+    overflow-x: auto;
+    margin: 1px 0 24px;
+}
+
 .rst-content div.highlight .gp,
 .rst-content div.highlight span.linenos {
     user-select: none;

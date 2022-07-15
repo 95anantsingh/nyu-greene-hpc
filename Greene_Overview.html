@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Greene Overview &mdash; NYU Greene HPC 0.1 documentation</title>
+  <title>Greene HPC &mdash; NYU Greene HPC 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Anaconda Setup" href="1_Conda_Setup.html" />
+    <link rel="next" title="Storage" href="Storage.html" />
     <link rel="prev" title="Getting Started !" href="index.html" /> 
 </head>
 
@@ -42,38 +42,61 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started !</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Greene Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#specifications">Specifications</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#hardware">Hardware</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#software">Software</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#network">Network</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Greene HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#network">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#typical-workflow">Typical Workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#storage-management">Storage Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Storage.html">Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#file-systems">File Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#storage-quota">Storage Quota</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#data-sharing-and-collaboration">Data Sharing and Collaboration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#data-transfers">Data Transfers</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="1_Conda_Setup.html">Anaconda Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2_Job_Submission.html">Job Submission</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_Jupyter_Setup.html">Jupyter Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_Interactive_Sessions.html">Interactive Sessions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#get-interactive-session">Get Interactive session</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#anaconda-on-greene">Anaconda on Greene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#x11-forwarding">X11 Forwarding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Interactive_Sessions.html#submitting-jobs">Submitting Jobs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#using-slurm">Using SLURM</a></li>
-<li class="toctree-l3"><a class="reference internal" href="4_Interactive_Sessions.html#interactive-jobs">Interactive Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Accessing HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#outside-nyu-network">Outside NYU Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="5_Utilities.html">Utility Commands</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#to-check-resource-usage-on-nyu-greene">To check resource usage on NYU Greene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#get-details-of-running-and-pending-jobs">Get details of running and pending jobs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="5_Utilities.html#terminate-a-job">Terminate a job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Software_Modules.html">Software Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_Conda_Setup.html">Anaconda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_Conda_Setup.html#one-time-setup">One Time Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Conda_Setup.html#cheatsheet">Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Conda_Setup.html#pytorch-on-hpc">Pytorch on HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Conda_Setup.html#tensorflow-on-hpc">Tensorflow on HPC</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="6_VScode_setup.html">VScode Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Jupyter_Setup.html">Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="3_Jupyter_Setup.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_Jupyter_Setup.html#installing-kernels">Installing Kernels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="6_VScode_setup.html">Visual Studio Code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6_VScode_setup.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_VScode_setup.html#workspace-management">Workspace Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="2_Job_Submission.html">Job Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="2_Job_Submission.html#quick-start-guide">Quick Start Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Job_Submission.html#batch-job">Batch Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Job_Submission.html#interactive-job">Interactive Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Job_Submission.html#job-array">Job Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Job_Submission.html#submitting-a-job">Submitting a Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Job_Submission.html#checking-job-status">Checking Job Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Job_Submission.html#cancelling-a-job">Cancelling a Job</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SLRUM_Guide.html">SLRUM Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
 </ul>
 
         </div>
@@ -90,7 +113,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Greene Overview</li>
+      <li>Greene HPC</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -99,17 +122,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="greene-overview">
-<h1>Greene Overview<a class="headerlink" href="#greene-overview" title="Permalink to this heading"></a></h1>
+  <section id="greene-hpc">
+<h1>Greene HPC<a class="headerlink" href="#greene-hpc" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>NYU High Performance Computing (NYU HPC) provides access to state of the art supercomputer hardware and cloud services to eligible faculty and students across all of NYU.</p>
 <p>The cluster is accessed through login nodes which are nodes or servers dedicated to provide HPC users access to compute nodes. Compute nodes are more powerful and optimized to run computations as per the jobs submitted by HPC users.</p>
-<p>NYU Greene runs on</p>
-<!-- 
-![](assets/access.png) -->
-<section id="specifications">
-<h2>Specifications<a class="headerlink" href="#specifications" title="Permalink to this heading"></a></h2>
+</section>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Permalink to this heading"></a></h2>
+<p>NYU Greene runs on <strong>Linux</strong> (RedHat Enterprise Linux 8.4) and it is advised to learn more about Linux if you are not familiar with it.</p>
+<div class="hint admonition">
+<p class="admonition-title">Linux Useful Links</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.geeksforgeeks.org/essential-linuxunix-commands">https://www.geeksforgeeks.org/essential-linuxunix-commands</a></p></li>
+<li><p><a class="reference external" href="https://www.tutorialspoint.com/unix/index.htm">https://www.tutorialspoint.com/unix/index.htm</a></p></li>
+<li><p><a class="reference external" href="http://software-carpentry.org/lessons/">http://software-carpentry.org/lessons/</a></p></li>
+<li><p><a class="reference external" href="https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0">https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0</a></p></li>
+</ul>
+</div>
+<p>NYU HPC uses <strong>SLRUM</strong> for cluster workload management. Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. Slurm requires no kernel modifications for its operation and is relatively self-contained.</p>
+<div class="hint admonition">
+<p class="admonition-title">SLRUM Useful Links</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://slurm.schedmd.com/quickstart.html">https://slurm.schedmd.com/quickstart.html</a></p></li>
+<li><p><a class="reference external" href="https://slurm.schedmd.com/tutorials.html">https://slurm.schedmd.com/tutorials.html</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=U42qlYkzP9k&amp;feature=player_embedded">https://www.youtube.com/watch?v=U42qlYkzP9k&amp;feature=player_embedded</a></p></li>
+</ul>
+</div>
+</section>
 <section id="hardware">
-<h3>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading"></a></h3>
+<h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>The Total number of available nodes is 672</p>
 <ol class="arabic simple">
@@ -138,93 +181,51 @@
 <li><p>Total secondary memory is 9.5 PB</p></li>
 </ul>
 </section>
-<section id="software">
-<h3>Software<a class="headerlink" href="#software" title="Permalink to this heading"></a></h3>
-<ul class="simple">
-<li><p><strong>Operating system</strong> - RedHat Enterprise Linux 8.4</p></li>
-<li><p><strong>Workload manager</strong> - SLRUM</p></li>
-</ul>
-<div class="hint admonition">
-<p class="admonition-title">Useful Links</p>
-<ol class="arabic simple">
-<li><p>Linux</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.geeksforgeeks.org/essential-linuxunix-commands">https://www.geeksforgeeks.org/essential-linuxunix-commands</a></p></li>
-<li><p><a class="reference external" href="https://www.tutorialspoint.com/unix/index.htm">https://www.tutorialspoint.com/unix/index.htm</a></p></li>
-<li><p><a class="reference external" href="http://software-carpentry.org/lessons/">http://software-carpentry.org/lessons/</a></p></li>
-<li><p><a class="reference external" href="https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0">https://www.edx.org/course/introduction-linux-linuxfoundationx-lfs101x-0</a>
-<br></p></li>
-</ul>
-</li>
-<li><p>SLRUM</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://slurm.schedmd.com/quickstart.html">https://slurm.schedmd.com/quickstart.html</a></p></li>
-<li><p><a class="reference external" href="https://slurm.schedmd.com/tutorials.html">https://slurm.schedmd.com/tutorials.html</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=U42qlYkzP9k&amp;feature=player_embedded">https://www.youtube.com/watch?v=U42qlYkzP9k&amp;feature=player_embedded</a></p></li>
-</ul>
-</li>
-</ol>
-</div>
-</section>
 <section id="network">
-<h3>Network<a class="headerlink" href="#network" title="Permalink to this heading"></a></h3>
+<h2>Network<a class="headerlink" href="#network" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p><strong>Infiniband Network</strong> : for MPI and file system access, by Melanox.</p></li>
+<li><p><strong>Infiniband Network</strong> : for MPI and file system access.</p></li>
 <li><p><strong>Management Network</strong> : Ethernet 25Gbit  used by admins for node provisioning</p></li>
 <li><p><strong>Out-of-band Network</strong> : Ethernet 1Gbit used by admins</p></li>
 <li><p><strong>External Network</strong> : All cluster ‘edge’ nodes, such as login nodes, admin nodes, and Data Transfer Nodes, are connected to the NYU High-Speed Research Network (HSRN).</p></li>
 </ul>
 </section>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading"></a></h2>
+<p>Generic diagram of the cluster architecture and outside connectivity
+<img alt="" src="_images/access.png" /></p>
 </section>
-<section id="typical-workflow">
-<h2>Typical Workflow<a class="headerlink" href="#typical-workflow" title="Permalink to this heading"></a></h2>
+<section id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this heading"></a></h2>
+<p><strong>One Time Setup</strong></p>
+<ol class="arabic simple">
+<li><p>Log on to HPC login nodes.</p></li>
+<li><p>Setup Anaconda environment.</p></li>
+<li><p>Setup Visual Studio Code for easy project development. (Optional)</p></li>
+<li><p>Setup Jupyter Notebook (Optional)</p></li>
+</ol>
+<p><strong>General Workflow</strong></p>
 <ol class="arabic simple">
 <li><p>Log on to HPC login nodes.</p></li>
 <li><p>Submit jobs on login nodes.</p></li>
-<li><p>Your jobs will queue for execution on</p></li>
+<li><p>Your jobs will queue for execution on compute nodes.</p></li>
 <li><p>Once done, examine the output.</p></li>
 </ol>
-</section>
-<section id="storage-management">
-<h2>Storage Management<a class="headerlink" href="#storage-management" title="Permalink to this heading"></a></h2>
-<p>The NYU HPC clusters are served by a General Parallel File System (GPFS) cluster.</p>
-<p>The NYU HPC team supports data storage, transfer, and archival needs on the HPC clusters, as well as collaborative research services like the Research Project Space (RPS).</p>
-<table class="colwidths-auto docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head"><p>Space<br></p></th>
-<th class="head"><p>Environment <br> Variable</p></th>
-<th class="head"><p>Space Purpose<br></p></th>
-<th class="head"><p>Backed Up / <br> Flushed</p></th>
-<th class="head"><p>Quota <br> Disk Space / # of Files</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/home</span></code></p></td>
-<td><p>$HOME</p></td>
-<td><p>Personal user home space that is best for small files</p></td>
-<td><p>YES / NO</p></td>
-<td><p>50 GB / 30 K</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/scratch</span></code></p></td>
-<td><p>$SCRATCH</p></td>
-<td><p>Best for large files</p></td>
-<td><p>NO / Files not accessed<br> for 60 days</p></td>
-<td><p>5 TB / 1 M</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/archive</span></code></p></td>
-<td><p>$ARCHIVE</p></td>
-<td><p>Long-term storage</p></td>
-<td><p>YES / NO</p></td>
-<td><p>2 TB / 20 K</p></td>
-</tr>
-<tr class="row-odd"><td><p>HPC Research <br> Project Space</p></td>
-<td><p>NA</p></td>
-<td><p>Shared disk space for research projects</p></td>
-<td><p>YES / NO</p></td>
-<td><p>Payment based <br>TB-year/inodes-year</p></td>
-</tr>
-</tbody>
-</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please refrain from running any compute intensive jobs on the login nodes. This can lead to your account getting suspended.</p>
+</div>
+<p><strong>Interactive Worklow</strong></p>
+<ol class="arabic simple">
+<li><p>Log on to HPC login nodes.</p></li>
+<li><p>Request Interactive shell session with required resources.</p></li>
+<li><p>Run jobs interactively on compute nodes.</p></li>
+<li><p>Once done, release resources.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Avoid interactive sessions when possible, interactive sessions are generally less efficient and less environment friendly. It is advised to use batch jobs instead which are automatically managed with energy saving in mind.</p>
+</div>
 </section>
 </section>
 
@@ -233,7 +234,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
           <a href="index.html" class="btn btn-neutral float-left" title="Getting Started !" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-          <a href="1_Conda_Setup.html" class="btn btn-neutral float-right" title="Anaconda Setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <a href="Storage.html" class="btn btn-neutral float-right" title="Storage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       </div>
   
     <hr/>
