@@ -3,11 +3,13 @@
 # -- Project information
 
 project = 'NYU Greene HPC'
-copyright = '2022, Anant Singh'
+copyright = '2022, Anant Singh | New York University'
 author = 'Anant Singh'
 
 release = '0.1'
 version = '0.1.0'
+
+
 
 # -- General configuration
 
@@ -26,7 +28,9 @@ intersphinx_mapping = {
 }
 intersphinx_disabled_domains = ['std']
 
-templates_path = ['_templates']
+templates_path=['custom/templates']
+
+
 
 # -- Options for HTML output
 
@@ -67,13 +71,11 @@ html_theme_options = {
 
 html_logo = 'assets/logo3.svg'
 
-
-# -- Options for EPUB output
-epub_show_urls = 'footnote'
-
-
-templates_path=['custom/templates']
-
 html_static_path = ['custom/static']
 
 html_favicon = 'assets/favicon.ico'
+
+
+
+# -- Options for EPUB output
+epub_show_urls = 'footnote'
