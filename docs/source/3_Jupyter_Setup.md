@@ -1,4 +1,6 @@
-# Jupyter Setup
+# Jupyter Notebooks
+
+## Setup
 
 ```bash
 mkdir /scratch/<NetID>/singularity
@@ -84,3 +86,6 @@ du -sh  /ext3
 ```bash
 
 ```
+
+
+## Installing Kernels
