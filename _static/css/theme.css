@@ -5523,7 +5523,7 @@ html {
 body {
     font-family: Lato, proxima-nova, Helvetica Neue, Arial, sans-serif;
     font-weight: 400;
-    color: #404040;
+    color: #24292f;
     min-height: 100%;
     background: #edf0f2
 }
@@ -6321,8 +6321,11 @@ html {
     min-height: 100%;
     color: #9b9b9b;
     background: #343131;
-    z-index: 200
+    z-index: 200;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 5px 18px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
+
+
 
 .wy-side-scroll {
     width: 320px;
@@ -6796,11 +6799,13 @@ footer span.commit code {
 .rst-content pre.literal-block div[class^=highlight] {
     padding: 0;
     border: none;
-    margin: 0
+    margin: 0;
+    
 }
 
 .rst-content div[class^=highlight] td.code {
-    width: 100%
+    width: 100%;
+    
 }
 
 .rst-content .linenodiv pre {
@@ -6815,9 +6820,10 @@ footer span.commit code {
 .rst-content div[class^=highlight] pre {
     white-space: pre;
     margin: 0;
-    padding: 12px;
+    padding: 13.6px;
     display: block;
-    overflow: auto
+    overflow: auto;
+    background-color: #f6f8fa !important;
 }
 
 .rst-content div[class^=highlight] pre .hll {
@@ -6830,7 +6836,7 @@ footer span.commit code {
 .rst-content div[class^=highlight] pre,
 .rst-content pre.literal-block {
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, Courier, monospace;
-    font-size: 12px;
+    font-size: 13.6px;
     line-height: 1.4
 }
 
@@ -6861,6 +6867,8 @@ element.style {
     margin-right: 12px;
     border-right: 1px solid #e6e9ea
 }
+
+
 
 .rst-content .code-block-caption {
     font-style: italic;

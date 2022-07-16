@@ -97,6 +97,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="SLURM_Guide.html">SLURM Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upcoming.html">Upcoming…</a></li>
 </ul>
 
         </div>
@@ -124,6 +125,11 @@
              
   <section id="storage">
 <h1>Storage<a class="headerlink" href="#storage" title="Permalink to this heading"></a></h1>
+<p>Users may have different storage requirements and HPC provides 4 storage systems that users can take advantage of.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Backing up is a user’s own responsibility. E.g., if a user deleted something accidentally, it can not be recovered, unfortunately although you could try looking in Trash Bin.</p>
+</div>
 <section id="file-systems">
 <h2>File Systems<a class="headerlink" href="#file-systems" title="Permalink to this heading"></a></h2>
 <p>The NYU HPC clusters are served by a General Parallel File System (GPFS) cluster.</p>
@@ -140,14 +146,14 @@
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/home</span></code></p></td>
 <td><p>$HOME</p></td>
-<td><p>Personal user home space that is best for small files</p></td>
+<td><p>Personal user home space<br> that is best for small files</p></td>
 <td><p>YES / NO</p></td>
 <td><p>50 GB / 30 K</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/scratch</span></code></p></td>
 <td><p>$SCRATCH</p></td>
 <td><p>Best for large files</p></td>
-<td><p>NO / Files not accessed<br> for 60 days</p></td>
+<td><p>NO / Files not<br> accessed for 60 days</p></td>
 <td><p>5 TB / 1 M</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">/archive</span></code></p></td>
@@ -158,15 +164,59 @@
 </tr>
 <tr class="row-odd"><td><p>HPC Research <br> Project Space</p></td>
 <td><p>NA</p></td>
-<td><p>Shared disk space for research projects</p></td>
+<td><p>Shared disk space for<br>research projects</p></td>
 <td><p>YES / NO</p></td>
 <td><p>Payment based <br>TB-year/inodes-year</p></td>
 </tr>
 </tbody>
 </table>
+<!-- 
+| | $HOME |$SCRATCH	|$WORK	|$ARCHIVE|			
+|--|------|--------|---------|-------|
+|Use for storing | source code / executables |data	| anything	|anything|
+|Accessible From |	login / compute|	login / compute|	login|	login|
+|Use to Run Jobs |	No|	Yes|	No|	No|
+|Retention Time (Days) | 	No Limit|	90|	120|	No Limit|
+|Mountable| 	No|	No|	Yes|	No|
+|Default Quota (star)|	20GB, 150K Files|	5TB, 500K Files|	5TB, 500K Files|	5TB, 125K Files| -->
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Running jobs from <code class="docutils literal notranslate"><span class="pre">/home</span></code> is not recommended. <code class="docutils literal notranslate"><span class="pre">/home</span></code> SSDs are not designed for this purpose, it will kill the SSDs quickly.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pay attention to data retention / flush cycles.</p>
+</div>
+<p>In short, you should</p>
+<ul class="simple">
+<li><p>Put all your data to <code class="docutils literal notranslate"><span class="pre">/scratch/&lt;NetID&gt;</span></code> and run your jobs from there.</p></li>
+<li><p>Only a small persistent fraction to <code class="docutils literal notranslate"><span class="pre">/home/&lt;NetID&gt;</span></code> (e.g., source code, executables).</p></li>
+<li><p>For long-term storage, archive them to   <code class="docutils literal notranslate"><span class="pre">/archive/&lt;NetID&gt;</span></code>.</p></li>
+</ul>
+<p>Users should clean up their storage regularily.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can access any file system using environment variable or absolute path, for example both statements are equivalent:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$HOME</span>
+<span class="nb">cd</span> /home/&lt;NetID&gt;
+</pre></div>
+</div>
+</div>
 </section>
 <section id="storage-quota">
 <h2>Storage Quota<a class="headerlink" href="#storage-quota" title="Permalink to this heading"></a></h2>
+<p>Users can check their storage utilization by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>myquota
+</pre></div>
+</div>
+<p>Example output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>                    DISK SPACE                <span class="c1"># FILES (1000&#39;s)</span>
+filesystem       size      quota            number      quota
+            --------------------------   --------------------------
+/home         131KB     20GB   <span class="o">(</span> <span class="m">0</span>%<span class="o">)</span>           <span class="m">0</span>        <span class="m">150</span> <span class="o">(</span> <span class="m">0</span>%<span class="o">)</span>
+/scratch      220GB     5242GB <span class="o">(</span> <span class="m">4</span>%<span class="o">)</span>           <span class="m">4</span>        <span class="m">500</span> <span class="o">(</span> <span class="m">1</span>%<span class="o">)</span>
+</pre></div>
+</div>
 </section>
 <section id="data-sharing-and-collaboration">
 <h2>Data Sharing and Collaboration<a class="headerlink" href="#data-sharing-and-collaboration" title="Permalink to this heading"></a></h2>
