@@ -77,6 +77,7 @@ NYU HPC uses **SLURM** for cluster workload management. Slurm is an open source,
 :width: 90%
 :align: center
 ```
+<br>
 <center><i>Generic diagram of the cluster architecture and outside connectivity</i></center>
 <br>
 

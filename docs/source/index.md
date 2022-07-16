@@ -25,6 +25,7 @@ Visual_Studio_Code
 Job_Management
 SLURM_Guide
 Best_Practices
+Upcoming
 ```
 
 - [Greene HPC](Greene_Overview.md)
@@ -37,6 +38,7 @@ Best_Practices
 - [Job Management](Job_Management.md)
 - [SLURM Guide](SLURM_Guide.md)
 - [Best Practices](Best_Practices.md)
+- [Upcoming...](Upcoming.md)
 
 
 ```{admonition} Acknowledgement
