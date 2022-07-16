@@ -20,8 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Accessing HPC" href="Accessing_HPC.html" />
-    <link rel="prev" title="Greene HPC" href="Greene_Overview.html" /> 
+    <link rel="next" title="Data Sharing" href="Data_Sharing.html" />
+    <link rel="prev" title="Accessing HPC" href="Accessing_HPC.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,13 +51,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#workflow">Workflow</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Storage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#file-systems">File Systems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#storage-quota">Storage Quota</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-sharing-and-collaboration">Data Sharing and Collaboration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#data-transfers">Data Transfers</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Accessing HPC</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#outside-nyu-network">Outside NYU Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
@@ -67,7 +60,34 @@
 <li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Software_Modules.html">Software Modules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#file-systems">File Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quota-utilization">Quota Utilization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Sharing.html">Data Sharing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data_Sharing.html#view-permissions">View Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Sharing.html#modify-permissions">Modify Permissions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Data_Sharing.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#share-a-file">Share a file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#share-a-directory-and-all-its-files">Share a directory and all its files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#share-all-new-files-in-a-directory">Share all new files in a directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#remove-a-specific-permission-entry">Remove a specific permission entry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#remove-all-permissions">Remove all permissions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Transfer.html">Data Transfer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data_Transfer.html#globus">Globus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Software_Modules.html">Software Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Software_Modules.html#examples">Examples</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a></li>
@@ -97,7 +117,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="SLURM_Guide.html">SLURM Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Upcoming.html">Upcoming…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upcoming.html">Upcoming…</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Upcoming.html#have-suggestions">Have suggestions ?</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -181,7 +204,7 @@
 |Default Quota (star)|	20GB, 150K Files|	5TB, 500K Files|	5TB, 500K Files|	5TB, 125K Files| -->
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>Running jobs from <code class="docutils literal notranslate"><span class="pre">/home</span></code> is not recommended. <code class="docutils literal notranslate"><span class="pre">/home</span></code> SSDs are not designed for this purpose, it will kill the SSDs quickly.</p>
+<p>Running jobs from <code class="docutils literal notranslate"><span class="pre">/home</span></code> is not recommended. <code class="docutils literal notranslate"><span class="pre">/home</span></code> SSDs are not desigNet for this purpose, it will kill the SSDs quickly.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -203,8 +226,8 @@
 </div>
 </div>
 </section>
-<section id="storage-quota">
-<h2>Storage Quota<a class="headerlink" href="#storage-quota" title="Permalink to this heading"></a></h2>
+<section id="quota-utilization">
+<h2>Quota Utilization<a class="headerlink" href="#quota-utilization" title="Permalink to this heading"></a></h2>
 <p>Users can check their storage utilization by running:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>myquota
 </pre></div>
@@ -218,20 +241,14 @@ filesystem       size      quota            number      quota
 </pre></div>
 </div>
 </section>
-<section id="data-sharing-and-collaboration">
-<h2>Data Sharing and Collaboration<a class="headerlink" href="#data-sharing-and-collaboration" title="Permalink to this heading"></a></h2>
-</section>
-<section id="data-transfers">
-<h2>Data Transfers<a class="headerlink" href="#data-transfers" title="Permalink to this heading"></a></h2>
-</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-          <a href="Greene_Overview.html" class="btn btn-neutral float-left" title="Greene HPC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-          <a href="Accessing_HPC.html" class="btn btn-neutral float-right" title="Accessing HPC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <a href="Accessing_HPC.html" class="btn btn-neutral float-left" title="Accessing HPC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <a href="Data_Sharing.html" class="btn btn-neutral float-right" title="Data Sharing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       </div>
   
     <hr/>

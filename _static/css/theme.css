@@ -88,6 +88,9 @@ mark {
     font-weight: 700
 }
 
+
+
+
 .rst-content code,
 .rst-content tt,
 code,
@@ -5340,6 +5343,10 @@ input[type=radio][disabled] {
     width: 100%
 }
 
+.rst-content .document{
+    min-height: 66vh
+}
+
 .rst-content table.docutils,
 .rst-content table.field-list,
 .wy-table {
@@ -5630,7 +5637,7 @@ h3 {
 }
 
 h4 {
-    font-size: 115%
+    font-size: 102%
 }
 
 h5 {
@@ -6621,6 +6628,8 @@ footer span.commit code {
     color: #fcfcfc
 }
 
+
+
 .rst-versions .rst-current-version .fa-book,
 .rst-versions .rst-current-version .icon-book {
     float: left
@@ -6725,7 +6734,7 @@ footer span.commit code {
 .rst-content h4,
 .rst-content h5,
 .rst-content h6 {
-    margin-bottom: 24px
+    margin-bottom: 10px
 }
 
 .rst-content img {

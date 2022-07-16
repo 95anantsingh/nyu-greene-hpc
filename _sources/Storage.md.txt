@@ -30,7 +30,7 @@ The NYU HPC team supports data storage, transfer, and archival needs on the HPC 
 |Default Quota (star)|	20GB, 150K Files|	5TB, 500K Files|	5TB, 500K Files|	5TB, 125K Files| -->
 
 ```{caution}
-Running jobs from `/home` is not recommended. `/home` SSDs are not designed for this purpose, it will kill the SSDs quickly.
+Running jobs from `/home` is not recommended. `/home` SSDs are not desigNet for this purpose, it will kill the SSDs quickly.
 ```
 
 ```{warning}
@@ -57,7 +57,7 @@ cd /home/<NetID>
 
 
 
-## Storage Quota
+## Quota Utilization
 
 Users can check their storage utilization by running:
 
@@ -75,9 +75,3 @@ filesystem       size      quota            number      quota
 /home         131KB     20GB   ( 0%)           0        150 ( 0%)
 /scratch      220GB     5242GB ( 4%)           4        500 ( 1%)
 ```
-
-## Data Sharing and Collaboration
-
-## Data Transfers
-
-

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Sharing &mdash; NYU Greene HPC 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Transfer" href="Data_Transfer.html" />
+    <link rel="prev" title="Storage" href="Storage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #57068c" >
+            <a href="index.html">
+            <img src="_static/html_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Greene_Overview.html">Greene HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#network">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#workflow">Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Accessing HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#outside-nyu-network">Outside NYU Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Storage.html">Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#file-systems">File Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#quota-utilization">Quota Utilization</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Sharing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#view-permissions">View Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modify-permissions">Modify Permissions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#share-a-file">Share a file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#share-a-directory-and-all-its-files">Share a directory and all its files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#share-all-new-files-in-a-directory">Share all new files in a directory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-a-specific-permission-entry">Remove a specific permission entry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-all-permissions">Remove all permissions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Transfer.html">Data Transfer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data_Transfer.html#globus">Globus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Software_Modules.html">Software Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Software_Modules.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#pytorch-on-hpc">Pytorch on HPC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#tensorflow-on-hpc">Tensorflow on HPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#installing-kernels">Installing Kernels</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Visual_Studio_Code.html">Visual Studio Code</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#workspace-management">Workspace Management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Job_Management.html">Job Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#quick-start-guide">Quick Start Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#batch-job">Batch Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#interactive-job">Interactive Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#job-array">Job Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#submitting-a-job">Submitting a Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#checking-job-status">Checking Job Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#cancelling-a-job">Cancelling a Job</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="SLURM_Guide.html">SLURM Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Upcoming.html">Upcoming…</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Upcoming.html#have-suggestions">Have suggestions ?</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #57068c" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NYU Greene HPC</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Data Sharing</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="data-sharing">
+<h1>Data Sharing<a class="headerlink" href="#data-sharing" title="Permalink to this heading"></a></h1>
+<p>Users should use File Access Control Lists (FACL) to share their data and collaborate with other users. FACL mechanism allows a fine-graiNet control access to any files by any users or groups of users. FACL allows to grant access without modifying file ownership and without changing POSIX permissions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Users are discouraged from setting ‘777’ permissions with chmod, because this can lead to data loss (by a malicious user or unintentionally, by accident).</p>
+</div>
+<p>ACL mechanism, just like regular Linux access controls (POSIX), allows three different levels of access control:</p>
+<ul class="simple">
+<li><p>Read (r)</p></li>
+<li><p>Write (w)</p></li>
+<li><p>eXecute (x)</p></li>
+</ul>
+<p>This level of access can be granted to</p>
+<ul class="simple">
+<li><p>user (owner of the file)</p></li>
+<li><p>group (owner group)</p></li>
+<li><p>other (everyone else)</p></li>
+</ul>
+<section id="view-permissions">
+<h2>View Permissions<a class="headerlink" href="#view-permissions" title="Permalink to this heading"></a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">getfacl</span></code> to retrieve access permissions for a file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getfacl myfile.txt
+
+<span class="c1"># file: myfile.txt</span>
+<span class="c1"># owner: ab123</span>
+<span class="c1"># group: users</span>
+</pre></div>
+</div>
+<p>Expected output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user::rw-
+group::---
+other::---
+</pre></div>
+</div>
+<p>The example above illustrates that in most cases ACL looks just like the chmod-based permissions: owner of the file has read and write permission, members of the group and everyone else have no permissions at all.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can see with ‘ls -l’ if a file has extended permissions set with setfacl: the ‘+’ in the last column of the permissions field indicates that this file has detailed access permissions via ACLs:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -la
+</pre></div>
+</div>
+<p>Example Output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>total <span class="m">304</span>
+drwxr-x---+   <span class="m">18</span> ab123 users  <span class="m">4096</span> Apr  <span class="m">3</span> <span class="m">14</span>:32 .
+drwxr-xr-x  <span class="m">1361</span> root  root      <span class="m">0</span> Apr  <span class="m">3</span> <span class="m">09</span>:35 ..
+-rw-------     <span class="m">1</span> ab123 users  <span class="m">4502</span> Mar <span class="m">28</span> <span class="m">22</span>:27 my_private_file
+-rw-r-xr--+    <span class="m">1</span> ab123 users    <span class="m">29</span> Feb <span class="m">11</span> <span class="m">23</span>:18 dummy.txt
+</pre></div>
+</div>
+</div>
+</section>
+<section id="modify-permissions">
+<h2>Modify Permissions<a class="headerlink" href="#modify-permissions" title="Permalink to this heading"></a></h2>
+<p>Permisions can be modified by <code class="docutils literal notranslate"><span class="pre">setfacl</span></code> commmand.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># General syntax:</span>
+setfacl -<span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>action/specification<span class="o">]</span> &lt;file/dir&gt;
+</pre></div>
+</div>
+<p>Options:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-m</span></code> - modify</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-x</span></code> - remove</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-R</span></code> - recursive (apply ACL to all content inside a directory)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> - default (set given settings as default - useful for a directory - all the new content inside in the future will have given ACL)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-b</span></code> - Remove all extended ACL permissions.</p></li>
+</ul>
+<p>Specifications:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">u:NetID:permissions</span></code> for sharing with a user.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g:GroupName:permissions</span></code> for sharing with a group.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">o:NetID:permissions</span></code> for sharing with everyone.</p></li>
+</ul>
+<p>Permissions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">---</span></code>, <code class="docutils literal notranslate"><span class="pre">r</span></code> for read, <code class="docutils literal notranslate"><span class="pre">w</span></code> for write, <code class="docutils literal notranslate"><span class="pre">x</span></code> for execute, for example to give only read write permissions use <code class="docutils literal notranslate"><span class="pre">rw-</span></code>.</p></li>
+</ul>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h3>
+<br>
+<section id="share-a-file">
+<h4>Share a file<a class="headerlink" href="#share-a-file" title="Permalink to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># setfacl -m &quot;u:NetID:permissions&quot; &lt;file&gt;</span>
+setfacl -m <span class="s2">&quot;u:jh12524:rwx&quot;</span> abc.txt
+</pre></div>
+</div>
+</section>
+<section id="share-a-directory-and-all-its-files">
+<h4>Share a directory and all its files<a class="headerlink" href="#share-a-directory-and-all-its-files" title="Permalink to this heading"></a></h4>
+<p>For example folder is at <code class="docutils literal notranslate"><span class="pre">/scratch/ab1234/abc/def</span></code> then:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># setfacl -m &quot;u:NetID:permissions&quot; &lt;dir&gt;</span>
+setfacl -m <span class="s2">&quot;u:jh12524:r-x&quot;</span> /scratch/ab1234
+setfacl -m <span class="s2">&quot;u:jh12524:r-x&quot;</span> /scratch/ab1234/abc
+setfacl -Rm <span class="s2">&quot;u:jh12524:rwx&quot;</span> /scratch/ab1234/abc/def
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Give Access to Parent Directories in the Path. When you would like to set ACL to say /a/b/c/example.out,  you also need to set appropriate ACLs to all the parent directories in the path. If you want to give read/write/execute permissions for the file /a/b/c/example.out, you would also need to give at least r-x permissions to the directories: /a,  /a/b, and /a/b/c.</p>
+</div>
+</section>
+<section id="share-all-new-files-in-a-directory">
+<h4>Share all new files in a directory<a class="headerlink" href="#share-all-new-files-in-a-directory" title="Permalink to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># setfacl -d &quot;u:NetID:permissions&quot; &lt;dir&gt;</span>
+setfacl -d <span class="s2">&quot;u:jh12524:rwx&quot;</span> abc
+</pre></div>
+</div>
+</section>
+<section id="remove-a-specific-permission-entry">
+<h4>Remove a specific permission entry<a class="headerlink" href="#remove-a-specific-permission-entry" title="Permalink to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setfacl -x <span class="s2">&quot;entry&quot;</span> &lt;file/dir&gt;
+</pre></div>
+</div>
+</section>
+<section id="remove-all-permissions">
+<h4>Remove all permissions<a class="headerlink" href="#remove-all-permissions" title="Permalink to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># setfacl -b &lt;file/dir&gt;</span>
+setfacl -b abc.txt
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <a href="Storage.html" class="btn btn-neutral float-left" title="Storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <a href="Data_Transfer.html" class="btn btn-neutral float-right" title="Data Transfer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      </div>
+  
+    <hr/>
+  
+    <div role="contentinfo">
+      <p>&#169; Copyright 2022 | New York University |  <a href="https://www.github.com/95anantsingh">Anant Singh</a> </p>
+    </div> 
+  
+  </footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

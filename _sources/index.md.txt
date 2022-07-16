@@ -16,8 +16,10 @@ A more comprehensive but confusing 😛 guide is available [here](https://sites.
 
 self
 Greene_Overview
-Storage
 Accessing_HPC
+Storage
+Data_Sharing
+Data_Transfer
 Software_Modules
 Anaconda
 Jupyter_Notebooks
@@ -29,8 +31,10 @@ Upcoming
 ```
 
 - [Greene HPC](Greene_Overview.md)
-- [Storage](Storage.md)
 - [Accessing HPC](Accessing_HPC.md)
+- [Storage](Storage.md)
+- [Data Sharing](Data_Sharing.md)
+- [Data Transfer](Data_Transfer.md)
 - [Software Modules](Software_Modules.md)
 - [Anaconda](Anaconda.md)
 - [Jupyter Notebooks](Jupyter_Notebooks.md)
@@ -58,4 +62,4 @@ Before reporting a new issue please check if it has been already reported.
 
 ## Want to contribute ?
 
-Drop me an email at [anant.singh@nyu.edu](mailto::anant.singh@nyu.edu).
+Drop me an email at <a href="mailto:anant.singh@nyu.edu?subject=HPC Docs!&body=Hello Anant,">anant.singh@nyu.edu</a>.
