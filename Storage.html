@@ -53,16 +53,24 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Access</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#outside-nyu-network">Outside NYU Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#within-nyu-network">Within NYU Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#access-the-shell">Access the shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#interactive-applications">Interactive Applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#file-systems">File Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quota-utilization">Quota Utilization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-transfer">Data Transfer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Sharing.html">Data Sharing</a><ul>
@@ -80,16 +88,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Data_Transfer.html">Data Transfer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Data_Transfer.html#globus">Globus</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="Software_Modules.html">Software Modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Software_Modules.html#examples">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">Activate conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a></li>
 </ul>
 </li>
@@ -124,7 +129,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#workspace-management">Workspace Management</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="SLURM_Guide.html">SLURM Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Upcoming.html">Upcoming…</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Upcoming.html#have-suggestions">Have suggestions ?</a></li>
@@ -248,6 +252,22 @@ filesystem       size      quota            number      quota
 /home         131KB     20GB   <span class="o">(</span> <span class="m">0</span>%<span class="o">)</span>           <span class="m">0</span>        <span class="m">150</span> <span class="o">(</span> <span class="m">0</span>%<span class="o">)</span>
 /scratch      220GB     5242GB <span class="o">(</span> <span class="m">4</span>%<span class="o">)</span>           <span class="m">4</span>        <span class="m">500</span> <span class="o">(</span> <span class="m">1</span>%<span class="o">)</span>
 </pre></div>
+</div>
+</section>
+<section id="data-transfer">
+<h2>Data Transfer<a class="headerlink" href="#data-transfer" title="Permalink to this heading"></a></h2>
+<p>The recommended way to transfer data to/from HPC systems is via OpenOnDemand HPC web interface.</p>
+<ul class="simple">
+<li><p>Connect to VPN (If not on NYU network).</p></li>
+<li><p>Logon to OOD website <a class="reference external" href="https://ood.hpc.nyu.edu">https://ood.hpc.nyu.edu</a>.</p></li>
+<li><p>Go to Files tab on top.</p></li>
+<li><p>From there you can transfer files as you wish.</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/ood-files.png"><img alt="OOD Files" class="align-left" src="_images/ood-files.png" style="width: 90%;" /></a>
+<br>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you use <strong>VS Code</strong>, then you can directly use <strong>Explorer</strong> tab of VS Code to transfer files by just copy pasting to/from Explorer tab.</p>
 </div>
 </section>
 </section>

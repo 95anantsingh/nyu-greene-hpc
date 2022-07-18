@@ -88,25 +88,25 @@ sbatch --nodes=2 abc.sbatch
 
 Available options:
 
-| Option | Description |
-|--------|-------------|
-| `-J`, `--job-name=<str>` | Give the job a name. The default is the filename of the job script. Within the job, $SBATCH_JOB_NAME <br> expands to the job name |
-| `-o`, `--output <path>`   | Send stdout to path/for/stdout. The default filename is slurm-${SLURM_JOB_ID}.out, e.g. slurm-12345.out,<br> in the  directory from which the job was submitted |
-| `-e <path>` | Send stderr to specified path |
-| `--mail-user=<email>` | Send email to specified email id when certain events occur |
-| `--mail-type=<type>`  | Valid type values are NONE, BEGIN, END, FAIL, REQUEUE, ALL... |
-| `--export=[VARS]`                | Pass variables to the job, either with a specific value (the VAR= form) or from the submittingenvironment <br>  (without "=") |
-| `-t, --time=<time>`       | Set a limit on the total run time. Acceptable formats include  "minutes", "minutes:seconds", <br> "hours:minutes:seconds",  "days-hours", "days-hours:minutes" and "days-hours:minutes:seconds" |
-| `--mem=<int><unit>` | Maximum memory per node the job will need, unit can be MB, GB, ex- 3GB|
-| `--mem-per-cpu=<int><unit>` | Memory required per allocated CPU, unit can be MB, GB |
-| `-N`, `--nodes=<int>` | Number of nodes are required. Default is 1 node |
-| `-n`, `--ntasks=<int>` | Specify the number of tasks to run, e.g. -n4. Default is one CPU core per task. Don't just submitthe job,<br>  but also wait for it to start and connect stdout, stderr and stdin to the current terminal, default is one task <br> per node |
-| `--ntasks-per-node=<int>` | Request that ntasks be invoked on each node|
-| `-c`, `--cpus-per-task=<int>` | Require ncpus number of CPU cores per task. Without this option, allocate one core per task |
-| `--pty` | Execute the first task in pseudo terminal mode, e.g. --pty /bin/bash, to start a bash command shell |
-| `--x11` | Enable X forwarding, so programs using a GUI can be used during the session (provided you have X <br>forwarding to your workstation set up) |
-| `--begin=<time>` | Delay starting this job until after the specified date and time, e.g. --begin=9:42:00, to start the job at  <br>9:42:00 am |
-| `-a`, `--array=[indexes]` | Submit an array of jobs with array ids as specified. Array ids can be specified as a numerical range, a <br>comma-separated list of numbers, or as some combination of the two. Each job instance will have an<br> environment variable SLURM_ARRAY_JOB_ID and SLURM_ARRAY_TASK_ID. |
+| Option                        | Description                                                                                                   |
+|-------------------------------|---------------------------------------------------------------------------------------------------------------|
+| `-J`, `--job-name=<str>`      | Give the job a name. The default is the filename of the job script. Within the job, $SBATCH_JOB_NAME <br> expands to the job name                                                                                                                         |
+| `-o`, `--output <path>`       | Send stdout to path/for/stdout. The default filename is slurm-${SLURM_JOB_ID}.out, e.g. slurm-12345.out, <br> in the  directory from which the job was mitted                                                                                                 |
+| `-e <path>`                   | Send stderr to specified path                                                                                 |
+| `--mail-user=<email>`         | Send email to specified email id when certain events occur                                                    |
+| `--mail-type=<type>`          | Valid type values are NONE, BEGIN, END, FAIL, REQUEUE, ALL...                                                 |
+| `--export=[VARS]`             | Pass variables to the job, either with a specific value (the VAR= form) or from the submittingenvironment <br>  (without "=")                                                                                                                                   |
+| `-t`, `--time=<time>`         | Set a limit on the total run time. Acceptable formats include  "minutes", "minutes:seconds", <br> "hours:minutes:seconds",  "days-hours", "days-hours:minutes" and "days-hours:minutes:seconds"                                                   |
+| `--mem=<int><unit>`           | Maximum memory per node the job will need, unit can be MB, GB, ex- 3GB                                        |
+| `--mem-per-cpu=<int><unit>`   | Memory required per allocated CPU, unit can be MB, GB                                                         |
+| `-N`, `--nodes=<int>`         | Number of nodes are required. Default is 1 node                                                               |
+| `-n`, `--ntasks=<int>`        | Specify the number of tasks to run, e.g. -n4. Default is one CPU core per task. Don't just submitthe job,<br>  but also wait for it to start and connect stdout, stderr and stdin to the current terminal, default is one task <br> per node                   |
+| `--ntasks-per-node=<int>`     | Request that ntasks be invoked on each node                                                                   |
+| `-c`, `--cpus-per-task=<int>` | Require ncpus number of CPU cores per task. Without this option, allocate one core per task                   |
+| `--pty`                       | Execute the first task in pseudo terminal mode, e.g. --pty /bin/bash, to start a bash command shell           |
+| `--x11`                       | Enable X forwarding, so programs using a GUI can be used during the session (provided you have X <br>forwarding to your workstation set up)                                                                                                                     |
+| `--begin=<time>`              | Delay starting this job until after the specified date and time, e.g. --begin=9:42:00, to start the job at  <br>9:42:00 am                                                                                                                                  |
+| `-a`, `--array=[indexes]`     | Submit an array of jobs with array ids as specified. Array ids can be specified as a numerical range, a  <br>comma-separated list of numbers, or as some combination of the two. Each job instance will have an<br> environment variable SLURM_ARRAY_JOB_ID and SLURM_ARRAY_TASK_ID.                                                                                                     |
 
 
 ```{tip}
@@ -202,7 +202,7 @@ If you want to select a specific GPU, you can specify that by `gpu:rtx8000:1` fo
 ```{warning}
 A job having a GPU resource is terminated if GPU usage is very low for 2 hours continuously.
 ```
-<br>
+
 
 ## Interactive Sessions
 Instead of submitting a job, you could get an interactive session from your terminal on compute nodes, where you can run your program on the shell directly.
@@ -227,7 +227,7 @@ srun: job 775175 has been allocated resources
 ```
 Then you can run your applications on the terminal directly.
 
-```{warinig}
+```{warning}
 In a real scenario, the system might be exhausted with no available resources to you. You need to wait in this circumstance.
 ```
 
@@ -239,7 +239,6 @@ srun -c 10 --mem=32GB --gres=gpu:1 -t 1:00:00 --pty /bin/bash
 
 To leave an interactive batch session, type `exit` at the command prompt.
 
-<br>
 
 ## Checking Job Status
 
@@ -273,7 +272,6 @@ The following commands give you extremely verbose information on a job.
 ```bash
 sacct -j <jobid> -l
 ```
-<br>
 
 ## Cancelling a Job
 

@@ -53,16 +53,24 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Access</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#outside-nyu-network">Outside NYU Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#within-nyu-network">Within NYU Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#access-the-shell">Access the shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#interactive-applications">Interactive Applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Storage.html">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#file-systems">File Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#quota-utilization">Quota Utilization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#data-transfer">Data Transfer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Sharing.html">Data Sharing</a><ul>
@@ -80,16 +88,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Data_Transfer.html">Data Transfer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Data_Transfer.html#globus">Globus</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="Software_Modules.html">Software Modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Software_Modules.html#examples">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">Activate conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a></li>
 </ul>
 </li>
@@ -124,7 +129,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#workspace-management">Workspace Management</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="SLURM_Guide.html">SLURM Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Upcoming.html">Upcoming…</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Upcoming.html#have-suggestions">Have suggestions ?</a></li>
@@ -250,7 +254,7 @@ A complete batch job workflow:</p>
 <td><p>Give the job a name. The default is the filename of the job script. Within the job, $SBATCH_JOB_NAME <br> expands to the job name</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-o</span></code>, <code class="docutils literal notranslate"><span class="pre">--output</span> <span class="pre">&lt;path&gt;</span></code></p></td>
-<td><p>Send stdout to path/for/stdout. The default filename is slurm-${SLURM_JOB_ID}.out, e.g. slurm-12345.out,<br> in the  directory from which the job was submitted</p></td>
+<td><p>Send stdout to path/for/stdout. The default filename is slurm-${SLURM_JOB_ID}.out, e.g. slurm-12345.out, <br> in the  directory from which the job was mitted</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">&lt;path&gt;</span></code></p></td>
 <td><p>Send stderr to specified path</p></td>
@@ -264,7 +268,7 @@ A complete batch job workflow:</p>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--export=[VARS]</span></code></p></td>
 <td><p>Pass variables to the job, either with a specific value (the VAR= form) or from the submittingenvironment <br>  (without “=”)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-t,</span> <span class="pre">--time=&lt;time&gt;</span></code></p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-t</span></code>, <code class="docutils literal notranslate"><span class="pre">--time=&lt;time&gt;</span></code></p></td>
 <td><p>Set a limit on the total run time. Acceptable formats include  “minutes”, “minutes:seconds”, <br> “hours:minutes:seconds”,  “days-hours”, “days-hours:minutes” and “days-hours:minutes:seconds”</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">--mem=&lt;int&gt;&lt;unit&gt;</span></code></p></td>
@@ -295,7 +299,7 @@ A complete batch job workflow:</p>
 <td><p>Delay starting this job until after the specified date and time, e.g. –begin=9:42:00, to start the job at  <br>9:42:00 am</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">-a</span></code>, <code class="docutils literal notranslate"><span class="pre">--array=[indexes]</span></code></p></td>
-<td><p>Submit an array of jobs with array ids as specified. Array ids can be specified as a numerical range, a <br>comma-separated list of numbers, or as some combination of the two. Each job instance will have an<br> environment variable SLURM_ARRAY_JOB_ID and SLURM_ARRAY_TASK_ID.</p></td>
+<td><p>Submit an array of jobs with array ids as specified. Array ids can be specified as a numerical range, a  <br>comma-separated list of numbers, or as some combination of the two. Each job instance will have an<br> environment variable SLURM_ARRAY_JOB_ID and SLURM_ARRAY_TASK_ID.</p></td>
 </tr>
 </tbody>
 </table>
@@ -387,7 +391,6 @@ python resnet.py
 <p class="admonition-title">Warning</p>
 <p>A job having a GPU resource is terminated if GPU usage is very low for 2 hours continuously.</p>
 </div>
-<br>
 </section>
 </section>
 <section id="interactive-sessions">
@@ -410,13 +413,16 @@ srun: job <span class="m">775175</span> has been allocated resources
 </pre></div>
 </div>
 <p>Then you can run your applications on the terminal directly.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In a real scenario, the system might be exhausted with no available resources to you. You need to wait in this circumstance.</p>
+</div>
 <p>With interactive session you can have the same arguments passed to <code class="docutils literal notranslate"><span class="pre">srun</span></code> as you pass into the job script with <code class="docutils literal notranslate"><span class="pre">sbatch</span></code>.<br>
 Request a GPU session with 32 GB RAM and 10 CPU cores for 1 hour:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>srun -c <span class="m">10</span> --mem<span class="o">=</span>32GB --gres<span class="o">=</span>gpu:1 -t <span class="m">1</span>:00:00 --pty /bin/bash
 </pre></div>
 </div>
 <p>To leave an interactive batch session, type <code class="docutils literal notranslate"><span class="pre">exit</span></code> at the command prompt.</p>
-<br>
 </section>
 <section id="checking-job-status">
 <h2>Checking Job Status<a class="headerlink" href="#checking-job-status" title="Permalink to this heading"></a></h2>
@@ -447,7 +453,6 @@ Request a GPU session with 32 GB RAM and 10 CPU cores for 1 hour:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sacct -j &lt;jobid&gt; -l
 </pre></div>
 </div>
-<br>
 </section>
 </section>
 <section id="cancelling-a-job">

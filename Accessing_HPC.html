@@ -53,16 +53,24 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Access</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#outside-nyu-network">Outside NYU Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ssh">SSH</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#saving-ssh-keys">Saving SSH Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#within-nyu-network">Within NYU Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ssh">SSH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#saving-ssh-keys">Saving SSH Keys</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#web-interface">Web Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web-interface">Web Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#access-the-shell">Access the shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interactive-applications">Interactive Applications</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Storage.html">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#file-systems">File Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#quota-utilization">Quota Utilization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#data-transfer">Data Transfer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Sharing.html">Data Sharing</a><ul>
@@ -80,16 +88,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Data_Transfer.html">Data Transfer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Data_Transfer.html#globus">Globus</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="Software_Modules.html">Software Modules</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Software_Modules.html#examples">Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">Activate conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a></li>
 </ul>
 </li>
@@ -124,7 +129,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#workspace-management">Workspace Management</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="SLURM_Guide.html">SLURM Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Upcoming.html">Upcoming…</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Upcoming.html#have-suggestions">Have suggestions ?</a></li>
@@ -157,20 +161,84 @@
              
   <section id="access">
 <h1>Access<a class="headerlink" href="#access" title="Permalink to this heading"></a></h1>
-<p>With Linux or Mac in NYU AD/NY network, simply ssh in your local terminal:</p>
-<p>Generic diagram of the cluster architecture and outside connectivity:
-<img alt="" src="_images/access.png" /></p>
+<p>There are several ways to interact with the Greene HPC cluster. Similar to other Linux clusters, the most common method of connection is via a Command Line Interface (CLI).</p>
+<a class="reference internal image-reference" href="_images/access.png"><img alt="Architecture" class="align-center" src="_images/access.png" style="width: 90%;" /></a>
+<br>
+<center><i>Generic diagram of the cluster architecture and outside connectivity</i></center>
 <section id="outside-nyu-network">
 <h2>Outside NYU Network<a class="headerlink" href="#outside-nyu-network" title="Permalink to this heading"></a></h2>
+<p>If you are connecting from a remote location that is not on the NYU network (your home for example), you have to use VPN to connect to NYU network.</p>
+<p>Set up your computer to use the NYU VPN, a detailed guide can be found <a class="reference external" href="https://www.nyu.edu/life/information-technology/infrastructure/network-services/vpn.html">here</a>.</p>
+<p>Once you’ve created a VPN connection, you can proceed as if you were connected to the NYU net.</p>
 </section>
+<section id="within-nyu-network">
+<h2>Within NYU Network<a class="headerlink" href="#within-nyu-network" title="Permalink to this heading"></a></h2>
+<p>If you are connected to NYU network directly or through a VPN then you have following options to access HPC cluster:</p>
 <section id="ssh">
-<h2>SSH<a class="headerlink" href="#ssh" title="Permalink to this heading"></a></h2>
+<h3>SSH<a class="headerlink" href="#ssh" title="Permalink to this heading"></a></h3>
+<p>You can simply <code class="docutils literal notranslate"><span class="pre">ssh</span></code> in your local terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh &lt;NetID&gt;@greene.hpc.nyu.edu
+</pre></div>
+</div>
+<p>Enter the same password which you use to login into your NYU account and you are good to go.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Whenever you login, you land up on one of the login nodes and you should not run compute heavy jobs on login nodes directly, to avoid HPC account termination.</p>
+</div>
 <section id="saving-ssh-keys">
-<h3>Saving SSH Keys<a class="headerlink" href="#saving-ssh-keys" title="Permalink to this heading"></a></h3>
+<h4>Saving SSH Keys<a class="headerlink" href="#saving-ssh-keys" title="Permalink to this heading"></a></h4>
+<p>Instead of typing password every time you need to log in, you can also save ssh keys on your HPC account.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Only save keys from the computer you trust.</p>
+</div>
+<ul>
+<li><p>Generate ssh keys on your local machine.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen -f my_ssh_key.txt
+</pre></div>
+</div>
+<p>Follow the prompt, just hit Enter to go with default settings.</p>
+</li>
+<li><p>Copy the key to HPC server.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id -i my_ssh_key.txt &lt;NetID&gt;@greene.hpc.nyu.edu
+</pre></div>
+</div>
+</li>
+<li><p>Done, now you won’t need to type your password again from your current machine.</p></li>
+</ul>
 </section>
 </section>
 <section id="web-interface">
-<h2>Web Interface<a class="headerlink" href="#web-interface" title="Permalink to this heading"></a></h2>
+<h3>Web Interface<a class="headerlink" href="#web-interface" title="Permalink to this heading"></a></h3>
+<p>Open OnDemand (OOD) is an open source project funded by the National Science Foundation (NSF). Open OnDemand is designed to create easier access to users to interface with HPC systems.</p>
+<p>Features Include:</p>
+<ul class="simple">
+<li><p>Easy file management - upload and download files, view HTML and pictures without downloading</p></li>
+<li><p>Command-line shell access without any SSH client locally installed</p></li>
+<li><p>Job management and monitoring</p></li>
+<li><p>Full Linux desktop experience without X11</p></li>
+<li><p>Interactive Apps such as JupyterHub and RStudio without the need for port forwarding</p></li>
+</ul>
+<p>Open OnDemand (OOD) is accessible to all users with a valid NYU HPC account while on-campus network or through a VPN.</p>
+<p>To access OOD visit: <a class="reference external" href="https://ood.hpc.nyu.edu">https://ood.hpc.nyu.edu</a> (VPN Required)</p>
+<section id="access-the-shell">
+<h4>Access the shell<a class="headerlink" href="#access-the-shell" title="Permalink to this heading"></a></h4>
+<p>Under the clusters menu you can select the Greene Shell Access option to access the Linux shell. No local SSH client is required.</p>
+<a class="reference internal image-reference" href="_images/ood-shell-acess.gif"><img alt="Shell Access" class="align-left" src="_images/ood-shell-acess.gif" style="width: 80%;" /></a>
+<br>
+<br>
+<br>
+<div class="danger admonition">
+<p class="admonition-title">Common Error</p>
+<p>A common issue that can occur is receiving an error that the Open OnDemand page cannot be reached. Sometimes this can indicate that the service is down, but often this is an issue with the the local browser cache. You can test this by opening a private browser window and seeing if OOD will load. If it does, try deleting the cache for <em>https://ood.hpc.nyu.edu</em> in your browser history to resolve this issue.</p>
+</div>
+</section>
+<section id="interactive-applications">
+<h4>Interactive Applications<a class="headerlink" href="#interactive-applications" title="Permalink to this heading"></a></h4>
+<p>GUI based applications are accessible without the need for port or X11 forwarding. Select the Interactive Apps menu, select the desired application, and submit the job based on required resources and options.</p>
+<a class="reference internal image-reference" href="_images/ood-interactive-apps.png"><img alt="Interactive apps" class="align-left" src="_images/ood-interactive-apps.png" style="width: 80%;" /></a>
+<br></section>
+</section>
 </section>
 </section>
 
