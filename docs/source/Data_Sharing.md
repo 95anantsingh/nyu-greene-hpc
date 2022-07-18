@@ -10,7 +10,7 @@ ACL mechanism, just like regular Linux access controls (POSIX), allows three dif
 
 - Read (r)
 - Write (w)
-- eXecute (x)
+- Execute (x)
 
 This level of access can be granted to 
 

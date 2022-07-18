@@ -1,5 +1,4 @@
-# Accessing HPC
-
+# Access
 With Linux or Mac in NYU AD/NY network, simply ssh in your local terminal:
 
 Generic diagram of the cluster architecture and outside connectivity:

@@ -5,6 +5,7 @@ More documentation will soon be added that include:
 - Mounting Google Drive on HPC 
 - SCP data transfer guide.
 - Bursting guide.
+- Ideal Project Setup.
 
 
 ## Have suggestions ?
