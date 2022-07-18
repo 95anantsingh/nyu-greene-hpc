@@ -11,7 +11,7 @@ When you login your shell environment is empty of all software modules and envir
 | `module unload <name>`	| unload a module |
 | `module list`	        | check which modules are currently loaded in your environment |
 | `module purge`	        | remove all loaded modules from your environment |
-| `module show <name>`	| see exactly what effect loading the module will have with |
+| `module show <name>`	| see exactly what effect loading the module will have with your environment|
 | `module whatis <name>`	| Find out more about a software package |
 | `module help <name>`	| A module file may include more detailed help for the software package |
 

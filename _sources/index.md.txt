@@ -22,24 +22,24 @@ Data_Sharing
 Data_Transfer
 Software_Modules
 Anaconda
+Job_Management
 Jupyter_Notebooks
 Visual_Studio_Code
-Job_Management
 SLURM_Guide
 Best_Practices
 Upcoming
 ```
 
 - [Greene HPC](Greene_Overview.md)
-- [Accessing HPC](Accessing_HPC.md)
+- [Access](Accessing_HPC.md)
 - [Storage](Storage.md)
 - [Data Sharing](Data_Sharing.md)
 - [Data Transfer](Data_Transfer.md)
 - [Software Modules](Software_Modules.md)
-- [Anaconda](Anaconda.md)
+- [Anaconda Guide](Anaconda.md)
+- [Job Management](Job_Management.md)
 - [Jupyter Notebooks](Jupyter_Notebooks.md)
 - [Visual Studio Code](Visual_Studio_Code.md)
-- [Job Management](Job_Management.md)
 - [SLURM Guide](SLURM_Guide.md)
 - [Best Practices](Best_Practices.md)
 - [Upcoming...](Upcoming.md)

@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Job Management" href="Job_Management.html" />
+    <link rel="next" title="SLURM Guide" href="SLURM_Guide.html" />
     <link rel="prev" title="Jupyter Notebooks" href="Jupyter_Notebooks.html" /> 
 </head>
 
@@ -51,7 +51,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#workflow">Workflow</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Accessing HPC</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Access</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#outside-nyu-network">Outside NYU Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
@@ -88,11 +88,30 @@
 <li class="toctree-l2"><a class="reference internal" href="Software_Modules.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#pytorch-on-hpc">Pytorch on HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#tensorflow-on-hpc">Tensorflow on HPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Job_Management.html">Job Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#batch-jobs">Batch Jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#batch-job-script">Batch Job Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Job_Management.html#syntax">Syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Job_Management.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#submitting-a-batch-job">Submitting a batch Job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#reading-outputs">Reading Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#interactive-sessions">Interactive Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#checking-job-status">Checking Job Status</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#before-and-during-job-execution">Before and During Job Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#after-job-completion">After Job Completion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#cancelling-a-job">Cancelling a Job</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter Notebooks</a><ul>
@@ -103,16 +122,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Visual Studio Code</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#workspace-management">Workspace Management</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Job_Management.html">Job Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#quick-start-guide">Quick Start Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#batch-job">Batch Job</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#interactive-job">Interactive Job</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#job-array">Job Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#submitting-a-job">Submitting a Job</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#checking-job-status">Checking Job Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#cancelling-a-job">Cancelling a Job</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="SLURM_Guide.html">SLURM Guide</a></li>
@@ -161,7 +170,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
           <a href="Jupyter_Notebooks.html" class="btn btn-neutral float-left" title="Jupyter Notebooks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-          <a href="Job_Management.html" class="btn btn-neutral float-right" title="Job Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <a href="SLURM_Guide.html" class="btn btn-neutral float-right" title="SLURM Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       </div>
   
     <hr/>

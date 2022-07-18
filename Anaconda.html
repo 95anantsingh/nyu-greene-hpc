@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anaconda &mdash; NYU Greene HPC 0.1 documentation</title>
+  <title>Anaconda Guide &mdash; NYU Greene HPC 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Jupyter Notebooks" href="Jupyter_Notebooks.html" />
+    <link rel="next" title="Job Management" href="Job_Management.html" />
     <link rel="prev" title="Software Modules" href="Software_Modules.html" /> 
 </head>
 
@@ -51,7 +51,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#workflow">Workflow</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Accessing HPC</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Access</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#outside-nyu-network">Outside NYU Network</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
@@ -88,11 +88,30 @@
 <li class="toctree-l2"><a class="reference internal" href="Software_Modules.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Anaconda</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Anaconda Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#one-time-setup">One Time Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cheatsheet">Cheatsheet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pytorch-on-hpc">Pytorch on HPC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tensorflow-on-hpc">Tensorflow on HPC</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Job_Management.html">Job Management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#batch-jobs">Batch Jobs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#batch-job-script">Batch Job Script</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Job_Management.html#syntax">Syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Job_Management.html#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#submitting-a-batch-job">Submitting a batch Job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#reading-outputs">Reading Outputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#interactive-sessions">Interactive Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#checking-job-status">Checking Job Status</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#before-and-during-job-execution">Before and During Job Execution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#after-job-completion">After Job Completion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#cancelling-a-job">Cancelling a Job</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter Notebooks</a><ul>
@@ -103,16 +122,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Visual_Studio_Code.html">Visual Studio Code</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#setup">Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#workspace-management">Workspace Management</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Job_Management.html">Job Management</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#quick-start-guide">Quick Start Guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#batch-job">Batch Job</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#interactive-job">Interactive Job</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#job-array">Job Array</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#submitting-a-job">Submitting a Job</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#checking-job-status">Checking Job Status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#cancelling-a-job">Cancelling a Job</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="SLURM_Guide.html">SLURM Guide</a></li>
@@ -137,7 +146,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Anaconda</li>
+      <li>Anaconda Guide</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -146,43 +155,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="anaconda">
-<h1>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading"></a></h1>
+  <section id="anaconda-guide">
+<h1>Anaconda Guide<a class="headerlink" href="#anaconda-guide" title="Permalink to this heading"></a></h1>
 <section id="one-time-setup">
 <h2>One Time Setup<a class="headerlink" href="#one-time-setup" title="Permalink to this heading"></a></h2>
-<ul>
-<li><p>Conda is already available on Greene. To access the default conda environment, just type the following. (To save time in the future, you can also add this line to <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>)</p>
+<p>Conda is already available on Greene. To access the default conda environment, just type the following. (To save time in the future, you can also add this line to <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load anaconda3/2020.07
 </pre></div>
 </div>
-</li>
-<li><p>There’s a caveat though, when you try to create a new virtual environment, it does that in the <code class="docutils literal notranslate"><span class="pre">/home</span></code> directory by default, and that takes up a lot of space. As a workaround, direct conda to store packages data in <code class="docutils literal notranslate"><span class="pre">/scratch</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --append pkgs_dirs /scratch/&lt;netid&gt;/pkgs_dirs
-conda config --append envs_dirs /scratch/&lt;netid&gt;/envs_dirs
+<p>There’s a caveat though, when you try to create a new virtual environment, it does that in the <code class="docutils literal notranslate"><span class="pre">/home</span></code> directory by default, and that takes up a lot of space out of your quota. As a workaround, direct conda to store packages data in <code class="docutils literal notranslate"><span class="pre">/scratch</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --append pkgs_dirs /scratch/&lt;netid&gt;/conda/pkgs_dirs
+conda config --append envs_dirs /scratch/&lt;netid&gt;/conda/envs_dirs
 </pre></div>
 </div>
-</li>
-<li><p>Sometimes, conda might throw a <code class="docutils literal notranslate"><span class="pre">CommandNotFoundError:</span> <span class="pre">Your</span> <span class="pre">shell</span> <span class="pre">has</span> <span class="pre">not</span> <span class="pre">been</span> <span class="pre">properly</span> <span class="pre">configured</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">'conda</span> <span class="pre">activate'</span></code>.</p>
-<p>To resolve, you might want to run</p>
+<p>Sometimes, conda might throw a <code class="docutils literal notranslate"><span class="pre">CommandNotFoundError:</span> <span class="pre">Your</span> <span class="pre">shell</span> <span class="pre">has</span> <span class="pre">not</span> <span class="pre">been</span> <span class="pre">properly</span> <span class="pre">configured</span> <span class="pre">to</span> <span class="pre">use</span> <span class="pre">'conda</span> <span class="pre">activate'</span></code>.</p>
+<p>To resolve this, you might want to run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda init bash
 </pre></div>
 </div>
-</li>
-<li><p>You can now proceed to create a new virtual environment</p>
+<p>You can now proceed to create a new virtual environment</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n &lt;env_name&gt; <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
 </pre></div>
 </div>
-</li>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The number of files quota usually gets filled up very quickly, if you use conda/pip environment as they generate a large number of residual files. They don’t remove them automatically and hence stay in your $HOME affecting your files quota.</p>
+<p>We recommend you to clean your conda/pip cache files (if any). This cleaning up of cache files is very easy and needs only a single command to be run.</p>
+<p>Following commands and links can come handy:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">clean</span> <span class="pre">-a</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">cache</span> <span class="pre">purge</span></code></p></li>
 </ul>
+</div>
 </section>
 <section id="cheatsheet">
 <h2>Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permalink to this heading"></a></h2>
-</section>
-<section id="pytorch-on-hpc">
-<h2>Pytorch on HPC<a class="headerlink" href="#pytorch-on-hpc" title="Permalink to this heading"></a></h2>
-</section>
-<section id="tensorflow-on-hpc">
-<h2>Tensorflow on HPC<a class="headerlink" href="#tensorflow-on-hpc" title="Permalink to this heading"></a></h2>
 </section>
 </section>
 
@@ -191,7 +198,7 @@ conda config --append envs_dirs /scratch/&lt;netid&gt;/envs_dirs
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
           <a href="Software_Modules.html" class="btn btn-neutral float-left" title="Software Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-          <a href="Jupyter_Notebooks.html" class="btn btn-neutral float-right" title="Jupyter Notebooks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <a href="Job_Management.html" class="btn btn-neutral float-right" title="Job Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       </div>
   
     <hr/>
