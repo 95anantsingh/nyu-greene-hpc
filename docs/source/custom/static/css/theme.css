@@ -5617,6 +5617,10 @@ legend {
     font-family: Roboto Slab, ff-tisa-web-pro, Georgia, Arial, sans-serif
 }
 
+h2{
+    margin-top: 35px;
+}
+
 p {
     line-height: 24px;
     font-size: 16px;
