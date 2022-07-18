@@ -75,3 +75,30 @@ filesystem       size      quota            number      quota
 /home         131KB     20GB   ( 0%)           0        150 ( 0%)
 /scratch      220GB     5242GB ( 4%)           4        500 ( 1%)
 ```
+
+## Data Transfer
+
+The recommended way to transfer data to/from HPC systems is via OpenOnDemand HPC web interface.
+
+- Connect to VPN (If not on NYU network).
+- Logon to OOD website [https://ood.hpc.nyu.edu](https://ood.hpc.nyu.edu).
+- Go to Files tab on top.
+- From there you can transfer files as you wish.
+
+```{image} assets/ood-files.png
+:alt: OOD Files
+:width: 90%
+:align: left
+```
+
+<br>
+
+```{tip}
+If you use **VS Code**, then you can directly use **Explorer** tab of VS Code to transfer files by just copy pasting to/from Explorer tab.
+```
+
+
+
+
+
+

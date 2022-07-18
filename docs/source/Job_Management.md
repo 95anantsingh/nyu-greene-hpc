@@ -227,7 +227,7 @@ srun: job 775175 has been allocated resources
 ```
 Then you can run your applications on the terminal directly.
 
-```{warinig}
+```{warning}
 In a real scenario, the system might be exhausted with no available resources to you. You need to wait in this circumstance.
 ```
 

@@ -19,13 +19,11 @@ Greene_Overview
 Accessing_HPC
 Storage
 Data_Sharing
-Data_Transfer
 Software_Modules
 Anaconda
 Job_Management
 Jupyter_Notebooks
 Visual_Studio_Code
-SLURM_Guide
 Best_Practices
 Upcoming
 ```
@@ -34,13 +32,11 @@ Upcoming
 - [Access](Accessing_HPC.md)
 - [Storage](Storage.md)
 - [Data Sharing](Data_Sharing.md)
-- [Data Transfer](Data_Transfer.md)
 - [Software Modules](Software_Modules.md)
 - [Anaconda Guide](Anaconda.md)
 - [Job Management](Job_Management.md)
 - [Jupyter Notebooks](Jupyter_Notebooks.md)
 - [Visual Studio Code](Visual_Studio_Code.md)
-- [SLURM Guide](SLURM_Guide.md)
 - [Best Practices](Best_Practices.md)
 - [Upcoming...](Upcoming.md)
 

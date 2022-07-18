@@ -78,7 +78,7 @@ Under the clusters menu you can select the Greene Shell Access option to access 
 
 ```{image} assets/ood-shell-acess.gif
 :alt: Shell Access
-:width: 75%
+:width: 80%
 :align: left
 ```
 
@@ -91,3 +91,15 @@ Under the clusters menu you can select the Greene Shell Access option to access 
 
 A common issue that can occur is receiving an error that the Open OnDemand page cannot be reached. Sometimes this can indicate that the service is down, but often this is an issue with the the local browser cache. You can test this by opening a private browser window and seeing if OOD will load. If it does, try deleting the cache for *https://ood.hpc.nyu.edu* in your browser history to resolve this issue.
 ```
+
+#### Interactive Applications
+
+GUI based applications are accessible without the need for port or X11 forwarding. Select the Interactive Apps menu, select the desired application, and submit the job based on required resources and options. 
+
+```{image} assets/ood-interactive-apps.png
+:alt: Interactive apps
+:width: 80%
+:align: left
+```
+
+<br>
