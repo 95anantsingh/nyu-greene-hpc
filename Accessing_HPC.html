@@ -59,6 +59,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#web-interface">Web Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#connection-to-ood">Connection to OOD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#access-the-shell">Access the shell</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#interactive-applications">Interactive Applications</a></li>
 </ul>
@@ -95,7 +96,13 @@
 <li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">Activate conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#quick-start">Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#package-management">Package Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#environment-management">Environment Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#maintenance">Maintenance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Job_Management.html">Job Management</a><ul>
@@ -210,7 +217,7 @@
 </section>
 <section id="web-interface">
 <h3>Web Interface<a class="headerlink" href="#web-interface" title="Permalink to this heading"></a></h3>
-<p>Open OnDemand (OOD) is an open source project funded by the National Science Foundation (NSF). Open OnDemand is designed to create easier access to users to interface with HPC systems.</p>
+<p>The HPC Web interface also known as OOD (built upon Open OnDemand ) is an interactive interface to remote computing resources which helps computational researchers and students efficiently utilize remote computing resources. The OOD Web Interface is one stop solution for all your HPC needs from accessing your files to submitting and viewing your jobs to running an interactive app.</p>
 <p>Features Include:</p>
 <ul class="simple">
 <li><p>Easy file management - upload and download files, view HTML and pictures without downloading</p></li>
@@ -219,14 +226,16 @@
 <li><p>Full Linux desktop experience without X11</p></li>
 <li><p>Interactive Apps such as JupyterHub and RStudio without the need for port forwarding</p></li>
 </ul>
-<p>Open OnDemand (OOD) is accessible to all users with a valid NYU HPC account while on-campus network or through a VPN.</p>
-<p>To access OOD visit: <a class="reference external" href="https://ood.hpc.nyu.edu">https://ood.hpc.nyu.edu</a> (VPN Required)</p>
+<section id="connection-to-ood">
+<h4>Connection to OOD<a class="headerlink" href="#connection-to-ood" title="Permalink to this heading"></a></h4>
+<p>To access interactive OOD interface visit: <a class="reference external" href="https://ood.hpc.nyu.edu">https://ood.hpc.nyu.edu</a> (VPN Required), enter your NetID and password and click <strong>Log in with your NYU account</strong>.</p>
+<a class="reference internal image-reference" href="_images/ood-login.png"><img alt="OOD Login" class="align-center" src="_images/ood-login.png" style="width: 90%;" /></a>
+<br>
+</section>
 <section id="access-the-shell">
 <h4>Access the shell<a class="headerlink" href="#access-the-shell" title="Permalink to this heading"></a></h4>
 <p>Under the clusters menu you can select the Greene Shell Access option to access the Linux shell. No local SSH client is required.</p>
 <a class="reference internal image-reference" href="_images/ood-shell-acess.gif"><img alt="Shell Access" class="align-left" src="_images/ood-shell-acess.gif" style="width: 80%;" /></a>
-<br>
-<br>
 <br>
 <div class="danger admonition">
 <p class="admonition-title">Common Error</p>

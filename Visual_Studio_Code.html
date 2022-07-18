@@ -59,6 +59,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#connection-to-ood">Connection to OOD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#access-the-shell">Access the shell</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#interactive-applications">Interactive Applications</a></li>
 </ul>
@@ -95,7 +96,13 @@
 <li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">Activate conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#quick-start">Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#package-management">Package Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#environment-management">Environment Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#maintenance">Maintenance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Job_Management.html">Job Management</a><ul>
@@ -166,6 +173,57 @@
 </section>
 <section id="workspace-management">
 <h2>Workspace Management<a class="headerlink" href="#workspace-management" title="Permalink to this heading"></a></h2>
+<p>VS Code is a free editor from Microsoft, which is open source and support many useful extensions.</p>
+<p>It may be a good alternative to terminal based editors (like vim, nano and Emacs) for some of our users.</p>
+<p>Benefits</p>
+<p>Work with files on cluster, almost as if they would be on your own laptop</p>
+<p>Great syntax highlighting, linting, etc. for many languages (using extensions). Tools for debuging</p>
+<p>Extensions simplifying work with git (recommended: Git Graphs)</p>
+<p>Graphs produced on server, can be viewed directly withing VS Code</p>
+<p>When you are done editing - you can run sbatch job from terminal panel of VS Code</p>
+<p>You can set up port forwarding</p>
+<p>And more</p>
+<p>IMPORTANT: don’t run computations in VS Code!
+Use VS Code only to edit scripts, use linting, etc.</p>
+<p>Only run calculations using srun/sbatch</p>
+<p>Download and install
+Download and install it on your local machine: download</p>
+<p>Setting up remote connection to HPC cluster
+Make sure you activated NYU VPN</p>
+<p>VS Code Lock files shall NOT be saved in /home. Ways to achieve that</p>
+<p>In extensions tab of VS Code find extension “Remote - SSH”</p>
+<p>press settings icon -&gt; Extension settings</p>
+<p>Do one of the following:</p>
+<p>Don’t use lock files (uncheck “Remote.SSH: Use Flock”)</p>
+<p>Store lock file in /tmp (check Remote.SSH: Lockfiles In Tmp)</p>
+<p>Inside VS Code</p>
+<p>F1</p>
+<p>remote-ssh: Connect to Host</p>
+<p>New host (or - Configure SSH host)</p>
+<p>ssh <user>&#64;greene.hpc.nyu.edu</p>
+<p>specify the path to the file, where the configuration of this connection will be saved</p>
+<p>More details here: https://code.visualstudio.com/docs/remote/ssh</p>
+<p>Login using ssh key</p>
+<p>You can also specify ssh key.</p>
+<p>Generate ssh key pair on terminal in Linux/Mac or cmd in Windows using keygen.</p>
+<p>Note the path to ssh key files</p>
+<p>Add content of public key (the one with .pub) to $HOME/.ssh/authorized_keys on cluster</p>
+<p>Add path to ssh key on your machine to VS Code config file (you chose path to this file above, when setting up remote connection)</p>
+<p>Host greene.hpc.nyu.edu
+HostName greene.hpc.nyu.edu
+User <netid>
+ForwardAgent yes
+IdentityFile <path to ssh key>
+More settings
+VS Code has many more settings and options. Explore!</p>
+<p>Additional notes
+High CPU load on login node from VS Code</p>
+<p>You may notice (please check with ‘top’) that your VS Code connection causes ‘node’ process running from your user to use a lot of CPU resources. One of the reason leading to that - large number of files within your home directory. Try to remove conda and pip environments from the home directory and check if this will resolve the issue.</p>
+<p>Python</p>
+<p>Recommended extensions: Python, Anaconda Extension Pack</p>
+<p>When those are installed you can switch python env or conda env by clicking on the left bottom line specifying python.</p>
+<p>Support for python scripts and Jupyter Notebooks</p>
+<p>Syntax highlighting: extension MagicPython</p>
 </section>
 </section>
 

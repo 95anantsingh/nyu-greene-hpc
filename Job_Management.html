@@ -59,6 +59,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#connection-to-ood">Connection to OOD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#access-the-shell">Access the shell</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#interactive-applications">Interactive Applications</a></li>
 </ul>
@@ -95,7 +96,13 @@
 <li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">Activate conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#quick-start">Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#package-management">Package Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#environment-management">Environment Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#maintenance">Maintenance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Job Management</a><ul>
@@ -303,8 +310,8 @@ A complete batch job workflow:</p>
 </tr>
 </tbody>
 </table>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>A more comprehensive list of options can be found <a class="reference external" href="https://slurm.schedmd.com/sbatch.html">here</a>.</p>
 </div>
 </section>
@@ -461,7 +468,7 @@ Request a GPU session with 32 GB RAM and 10 CPU cores for 1 hour:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scancel &lt;jobid&gt;
 </pre></div>
 </div>
-<div class="note admonition">
+<div class="caution admonition">
 <p class="admonition-title">Use with caution !</p>
 <p>To cancel all jobs from your account. Run this on the HPC terminal.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scancel -u &lt;NetID&gt;

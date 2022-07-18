@@ -109,7 +109,7 @@ Available options:
 | `-a`, `--array=[indexes]`     | Submit an array of jobs with array ids as specified. Array ids can be specified as a numerical range, a  <br>comma-separated list of numbers, or as some combination of the two. Each job instance will have an<br> environment variable SLURM_ARRAY_JOB_ID and SLURM_ARRAY_TASK_ID.                                                                                                     |
 
 
-```{tip}
+```{note}
 A more comprehensive list of options can be found [here](https://slurm.schedmd.com/sbatch.html).
 ```
 
@@ -282,7 +282,7 @@ scancel <jobid>
 ```
 
 ````{admonition} Use with caution !
-:class: note
+:class: caution
 
 To cancel all jobs from your account. Run this on the HPC terminal.
 ```bash
