@@ -58,7 +58,8 @@ Only save keys from the computer you trust.
 
 ### Web Interface
 
-Open OnDemand (OOD) is an open source project funded by the National Science Foundation (NSF). Open OnDemand is designed to create easier access to users to interface with HPC systems.
+The HPC Web interface also known as OOD (built upon Open OnDemand ) is an interactive interface to remote computing resources which helps computational researchers and students efficiently utilize remote computing resources. The OOD Web Interface is one stop solution for all your HPC needs from accessing your files to submitting and viewing your jobs to running an interactive app.
+
 
 Features Include:
 
@@ -68,9 +69,16 @@ Features Include:
 - Full Linux desktop experience without X11
 - Interactive Apps such as JupyterHub and RStudio without the need for port forwarding
 
-Open OnDemand (OOD) is accessible to all users with a valid NYU HPC account while on-campus network or through a VPN.
+#### Connection to OOD
 
-To access OOD visit: [https://ood.hpc.nyu.edu](https://ood.hpc.nyu.edu) (VPN Required)
+To access interactive OOD interface visit: [https://ood.hpc.nyu.edu](https://ood.hpc.nyu.edu) (VPN Required), enter your NetID and password and click **Log in with your NYU account**.
+
+```{image} assets/ood-login.png
+:alt: OOD Login
+:width: 90%
+:align: center
+```
+<br>
 
 #### Access the shell
 
@@ -82,8 +90,6 @@ Under the clusters menu you can select the Greene Shell Access option to access 
 :align: left
 ```
 
-<br>
-<br>
 <br>
 
 ```{admonition} Common Error

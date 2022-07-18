@@ -74,6 +74,8 @@ Following commands and links can come handy:
 
 Most used conda commands are listed below for quick reference.
 
+### Quick Start
+
 | Command                                         | Description                                       |
 |-------------------------------------------------|---------------------------------------------------|
 | `conda info`                                    | verify conda install and check version            |
@@ -81,13 +83,23 @@ Most used conda commands are listed below for quick reference.
 | ` conda create -n ENV-NAME python=3.10`         | create environment with Python version            |
 | `conda activate ENV-NAME`                       | activate environent                               |
 | `conda activate base`                           | reactivate base environment                       |
-| `conda info --envs`                             | list all environments and locations               |
+
+### Package Management
+
+| Command                                         | Description                                       |
+|-------------------------------------------------|---------------------------------------------------|
 | `conda install PKG1 PKG2...`                    | install packages                                  |
 | `conda install -c CHANNEL-NAME PKG1`            | install packages from specified channel           |
 | `conda install PKG=3.1.4`                       | install specific version of package               |
 | `conda uninstall PKG-NAME`                      | uninstall package                                 |
 | `conda list`                                    | list installed packages                           |
 | `conda update --all`                            | update all packages of current environment        |
+
+### Environment Management
+
+| Command                                         | Description                                       |
+|-------------------------------------------------|---------------------------------------------------|
+| `conda info --envs`                             | list all environments and locations               |
 | `conda create --clone ENV-NAME -n NEW-ENV`      | clone environment                                 | 
 | `conda list --revisions`                        | list revisions made to environment                |
 | `conda install --revision NUMBER`               | restore environment to a revision                 |
@@ -95,10 +107,15 @@ Most used conda commands are listed below for quick reference.
 | `conda env export --from-history > FILE.yml`    | export cross-platform compatible environment      |
 | `conda env export ENV-NAME > FILE.yml`          | export platform and package specific environment  |
 | `conda env create -n ENV-NAME --file FILE.yml`  | import environment from a .yml file               |
+
+### Maintenance
+
+| Command                                         | Description                                       |
+|-------------------------------------------------|---------------------------------------------------|
 | `conda clean --all`                             | remove all unused files                           |
 | `conda config --show`                           | examine conda configuration                       |
 
 
-```{tip}
+```{note}
 A more comprehensive documentation is available [here](https://docs.conda.io/projects/conda/en/latest/user-guide/index.html).
 ```
