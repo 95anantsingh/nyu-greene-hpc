@@ -1,42 +1,55 @@
 # Visual Studio Code
 
+VS Code is a free editor from Microsoft, which is open source and support many useful extensions. 
+It may be a good alternative to terminal based editors (like vim, nano and Emacs) for you.
+
+
+
+```{image} assets/architecture-ssh.png
+:alt: VSCode
+:width: 80%
+:align: center
+```
+
+<br>
+
+**Benefits:**
+
+- Work with files on cluster, almost as if they would be on your own laptop
+- Great syntax highlighting, linting, etc. for many languages (using extensions)
+- Extensive tools for debuging
+- Extensions simplifying work with git
+- Code, Images, Graphs produced on server, can be viewed directly withing VS Code
+- When you are done editing - you can run sbatch job from terminal panel of VS Code
+- You can set up port forwarding to extend the functionality
+
+```{admonition} Warning
+:class: error
+
+Don't run computations in VS Code! <br>
+Use VS Code only to edit scripts, use linting, etc.<br>
+Only run programs using srun/sbatch
+```
+
+
 ## Setup
 
-## Workspace Management
+### Download and Install
+1. On your local machine install [Visual Studio Code](https://code.visualstudio.com/).
+1. Install the [Remote Development extension pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
+
+### Connecting to HPC cluster
+1. Make sure you activated NYU VPN
+1. Verify you can connect to the HPC SSH host by running the following command from a terminal.
+    ```bash
+    ssh <NetID>@greene.hpc.nyu.edu
+    ```
+1. In VS Code, select Remote-SSH: Connect to Host... from the Command Palette (`F1`, `Ctrl+Shift+P`) and use the same user@hostname as in previous step.
+  <img src="https://code.visualstudio.com/assets/docs/remote/ssh/ssh-user@box.png"></img>
 
 
-VS Code is a free editor from Microsoft, which is open source and support many useful extensions. 
 
-It may be a good alternative to terminal based editors (like vim, nano and Emacs) for some of our users.
-
-Benefits
-
-Work with files on cluster, almost as if they would be on your own laptop
-
-Great syntax highlighting, linting, etc. for many languages (using extensions). Tools for debuging
-
-Extensions simplifying work with git (recommended: Git Graphs)
-
-Graphs produced on server, can be viewed directly withing VS Code
-
-When you are done editing - you can run sbatch job from terminal panel of VS Code
-
-You can set up port forwarding
-
-And more
-
-IMPORTANT: don't run computations in VS Code!
-Use VS Code only to edit scripts, use linting, etc.
-
-Only run calculations using srun/sbatch
-
-Download and install
-Download and install it on your local machine: download
-
-Setting up remote connection to HPC cluster
-Make sure you activated NYU VPN
-
-VS Code Lock files shall NOT be saved in /home. Ways to achieve that
+- VS Code Lock files shall NOT be saved in /home. 
 
 In extensions tab of VS Code find extension "Remote - SSH"
 
@@ -96,3 +109,10 @@ When those are installed you can switch python env or conda env by clicking on t
 Support for python scripts and Jupyter Notebooks
 
 Syntax highlighting: extension MagicPython
+
+## Workspace Management
+
+
+## Recommended Extensions
+
+ (recommended: Git Graphs)
