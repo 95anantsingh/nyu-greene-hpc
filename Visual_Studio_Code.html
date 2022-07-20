@@ -132,8 +132,13 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Visual Studio Code</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#download-and-install">Download and Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-to-hpc-cluster">Connecting to HPC cluster</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#workspace-management">Workspace Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recommended-extensions">Recommended Extensions</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
@@ -168,29 +173,50 @@
              
   <section id="visual-studio-code">
 <h1>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this heading"></a></h1>
+<p>VS Code is a free editor from Microsoft, which is open source and support many useful extensions.
+It may be a good alternative to terminal based editors (like vim, nano and Emacs) for you.</p>
+<a class="reference internal image-reference" href="_images/architecture-ssh.png"><img alt="VSCode" class="align-center" src="_images/architecture-ssh.png" style="width: 80%;" /></a>
+<br>
+<p><strong>Benefits:</strong></p>
+<ul class="simple">
+<li><p>Work with files on cluster, almost as if they would be on your own laptop</p></li>
+<li><p>Great syntax highlighting, linting, etc. for many languages (using extensions)</p></li>
+<li><p>Extensive tools for debuging</p></li>
+<li><p>Extensions simplifying work with git</p></li>
+<li><p>Code, Images, Graphs produced on server, can be viewed directly withing VS Code</p></li>
+<li><p>When you are done editing - you can run sbatch job from terminal panel of VS Code</p></li>
+<li><p>You can set up port forwarding to extend the functionality</p></li>
+</ul>
+<div class="error admonition">
+<p class="admonition-title">Warning</p>
+<p>Don’t run computations in VS Code! <br>
+Use VS Code only to edit scripts, use linting, etc.<br>
+Only run programs using srun/sbatch</p>
+</div>
 <section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<section id="download-and-install">
+<h3>Download and Install<a class="headerlink" href="#download-and-install" title="Permalink to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>On your local machine install <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>.</p></li>
+<li><p>Install the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development extension pack</a>.</p></li>
+</ol>
 </section>
-<section id="workspace-management">
-<h2>Workspace Management<a class="headerlink" href="#workspace-management" title="Permalink to this heading"></a></h2>
-<p>VS Code is a free editor from Microsoft, which is open source and support many useful extensions.</p>
-<p>It may be a good alternative to terminal based editors (like vim, nano and Emacs) for some of our users.</p>
-<p>Benefits</p>
-<p>Work with files on cluster, almost as if they would be on your own laptop</p>
-<p>Great syntax highlighting, linting, etc. for many languages (using extensions). Tools for debuging</p>
-<p>Extensions simplifying work with git (recommended: Git Graphs)</p>
-<p>Graphs produced on server, can be viewed directly withing VS Code</p>
-<p>When you are done editing - you can run sbatch job from terminal panel of VS Code</p>
-<p>You can set up port forwarding</p>
-<p>And more</p>
-<p>IMPORTANT: don’t run computations in VS Code!
-Use VS Code only to edit scripts, use linting, etc.</p>
-<p>Only run calculations using srun/sbatch</p>
-<p>Download and install
-Download and install it on your local machine: download</p>
-<p>Setting up remote connection to HPC cluster
-Make sure you activated NYU VPN</p>
-<p>VS Code Lock files shall NOT be saved in /home. Ways to achieve that</p>
+<section id="connecting-to-hpc-cluster">
+<h3>Connecting to HPC cluster<a class="headerlink" href="#connecting-to-hpc-cluster" title="Permalink to this heading"></a></h3>
+<ol class="arabic">
+<li><p>Make sure you activated NYU VPN</p></li>
+<li><p>Verify you can connect to the HPC SSH host by running the following command from a terminal.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh &lt;NetID&gt;@greene.hpc.nyu.edu
+</pre></div>
+</div>
+</li>
+<li><p>In VS Code, select Remote-SSH: Connect to Host… from the Command Palette (<code class="docutils literal notranslate"><span class="pre">F1</span></code>, <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+P</span></code>) and use the same user&#64;hostname as in previous step.
+<img src="https://code.visualstudio.com/assets/docs/remote/ssh/ssh-user@box.png"></img></p></li>
+</ol>
+<ul class="simple">
+<li><p>VS Code Lock files shall NOT be saved in /home.</p></li>
+</ul>
 <p>In extensions tab of VS Code find extension “Remote - SSH”</p>
 <p>press settings icon -&gt; Extension settings</p>
 <p>Do one of the following:</p>
@@ -224,6 +250,14 @@ High CPU load on login node from VS Code</p>
 <p>When those are installed you can switch python env or conda env by clicking on the left bottom line specifying python.</p>
 <p>Support for python scripts and Jupyter Notebooks</p>
 <p>Syntax highlighting: extension MagicPython</p>
+</section>
+</section>
+<section id="workspace-management">
+<h2>Workspace Management<a class="headerlink" href="#workspace-management" title="Permalink to this heading"></a></h2>
+</section>
+<section id="recommended-extensions">
+<h2>Recommended Extensions<a class="headerlink" href="#recommended-extensions" title="Permalink to this heading"></a></h2>
+<p>(recommended: Git Graphs)</p>
 </section>
 </section>
 
