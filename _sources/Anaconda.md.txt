@@ -1,4 +1,4 @@
-# Anaconda Guide
+# Anaconda
 
 ## One Time Setup
 

@@ -12,10 +12,12 @@
 
 <br>
 
+The Greene cluster is named after Greene Street in SoHo, a neighborhood in Lower Manhattan near NYU. The cluster has also "green" characteristics, such as most of the cluster nodes are water cooled and it is deployed in a power efficient data center. NYU High Performance Computing (NYU HPC) provides access to state of the art supercomputer hardware and cloud services to eligible faculty and students across all of NYU.
 
-NYU High Performance Computing (NYU HPC) provides access to state of the art supercomputer hardware and cloud services to eligible faculty and students across all of NYU.
+**Ranked #271** on the June 2020 edition of the Top 500 list (based on an extrapolated performance of 1.731 PF).
 
-The cluster is accessed through login nodes which are nodes or servers dedicated to provide HPC users access to compute nodes. Compute nodes are more powerful and optimized to run computations as per the jobs submitted by HPC users. 
+The cluster is accessed through login nodes which are nodes or servers dedicated to provide HPC users access to compute nodes. Compute nodes are more powerful and optimized to run computations as per the jobs submitted by HPC users.
+
 
 ## Software
 
@@ -96,7 +98,9 @@ NYU HPC uses **SLURM** for cluster workload management. Slurm is an open source,
 1. Once done, examine the output.
 
 
-```{warning}
+```{admonition} Warning
+:class: error
+
 Please refrain from running any compute intensive jobs on the login nodes. This can lead to your account getting suspended.
 ```
 

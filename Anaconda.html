@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anaconda Guide &mdash; NYU Greene HPC 0.1 documentation</title>
+  <title>Anaconda &mdash; NYU Greene HPC 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -42,26 +42,26 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started !</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Greene_Overview.html">Greene HPC</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#software">Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#hardware">Hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#network">Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#architecture">Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#workflow">Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Greene_HPC.html">Greene HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#network">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#workflow">Workflow</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Access</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#outside-nyu-network">Outside NYU Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#within-nyu-network">Within NYU Network</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Access.html">Access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Access.html#outside-nyu-network">Outside NYU Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Access.html#within-nyu-network">Within NYU Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Access.html#ssh">SSH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#saving-ssh-keys">Saving SSH Keys</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#connection-to-ood">Connection to OOD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#access-the-shell">Access the shell</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#interactive-applications">Interactive Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Access.html#web-interface">Web Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#connection-to-ood">Connection to OOD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#access-the-shell">Access the shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#interactive-applications">Interactive Applications</a></li>
 </ul>
 </li>
 </ul>
@@ -70,6 +70,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Storage.html">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#file-systems">File Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#hpc-storage-status">HPC Storage Status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#quota-utilization">Quota Utilization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#data-transfer">Data Transfer</a></li>
 </ul>
@@ -93,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Software_Modules.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Anaconda Guide</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Anaconda</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#one-time-setup">One Time Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#activate-conda">Activate conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cheatsheet">Cheatsheet</a><ul>
@@ -124,11 +125,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Job_Management.html#cancelling-a-job">Cancelling a Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#hpc-resource-status">HPC Resource Status</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter Notebooks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#installing-kernels">Installing Kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#one-time-setup">One time Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#add-jupyter-kernel">Add Jupyter Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#launch-jupyter-notebook">Launch Jupyter Notebook</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Visual_Studio_Code.html">Visual Studio Code</a><ul>
@@ -141,7 +144,16 @@
 <li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#recommended-extensions">Recommended Extensions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Best_Practices.html#what-resources-to-ask-for-and-how-much">What resources to ask for (and how much)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Best_Practices.html#resource-usage-statistics">Resource Usage Statistics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Best_Practices.html#completed-job">Completed Job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Best_Practices.html#running-job">Running job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Best_Practices.html#why-my-jobs-are-queued">Why my jobs are queued?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Upcoming.html">Upcoming…</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Upcoming.html#have-suggestions">Have suggestions ?</a></li>
 </ul>
@@ -162,7 +174,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Anaconda Guide</li>
+      <li>Anaconda</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -171,8 +183,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="anaconda-guide">
-<h1>Anaconda Guide<a class="headerlink" href="#anaconda-guide" title="Permalink to this heading"></a></h1>
+  <section id="anaconda">
+<h1>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this heading"></a></h1>
 <section id="one-time-setup">
 <h2>One Time Setup<a class="headerlink" href="#one-time-setup" title="Permalink to this heading"></a></h2>
 <p>Conda is already available on Greene. To access the default conda environment, just type the following.</p>
@@ -362,7 +374,7 @@ conda config --append envs_dirs /scratch/&lt;netid&gt;/conda/envs_dirs
     <hr/>
   
     <div role="contentinfo">
-      <p>&#169; Copyright 2022 | New York University |  <a href="https://www.github.com/95anantsingh">Anant Singh</a> </p>
+      <p>&#169; Copyright 2022, <a href="https://www.github.com/95anantsingh">Anant Singh</a> | New York University |</p>
     </div> 
   
   </footer>

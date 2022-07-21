@@ -42,26 +42,26 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started !</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Greene_Overview.html">Greene HPC</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#software">Software</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#hardware">Hardware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#network">Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#architecture">Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Greene_Overview.html#workflow">Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Greene_HPC.html">Greene HPC</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#network">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#workflow">Workflow</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Access</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#outside-nyu-network">Outside NYU Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#within-nyu-network">Within NYU Network</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Access.html">Access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Access.html#outside-nyu-network">Outside NYU Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Access.html#within-nyu-network">Within NYU Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Access.html#ssh">SSH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#saving-ssh-keys">Saving SSH Keys</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#connection-to-ood">Connection to OOD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#access-the-shell">Access the shell</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#interactive-applications">Interactive Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Access.html#web-interface">Web Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#connection-to-ood">Connection to OOD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#access-the-shell">Access the shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#interactive-applications">Interactive Applications</a></li>
 </ul>
 </li>
 </ul>
@@ -70,6 +70,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Storage.html">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#file-systems">File Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#hpc-storage-status">HPC Storage Status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#quota-utilization">Quota Utilization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#data-transfer">Data Transfer</a></li>
 </ul>
@@ -93,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Software_Modules.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">Activate conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a><ul>
@@ -124,11 +125,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Job_Management.html#cancelling-a-job">Cancelling a Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#hpc-resource-status">HPC Resource Status</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Jupyter Notebooks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-kernels">Installing Kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#one-time-setup">One time Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-jupyter-kernel">Add Jupyter Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launch-jupyter-notebook">Launch Jupyter Notebook</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Visual_Studio_Code.html">Visual Studio Code</a><ul>
@@ -141,7 +144,16 @@
 <li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#recommended-extensions">Recommended Extensions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Best_Practices.html#what-resources-to-ask-for-and-how-much">What resources to ask for (and how much)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Best_Practices.html#resource-usage-statistics">Resource Usage Statistics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Best_Practices.html#completed-job">Completed Job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Best_Practices.html#running-job">Running job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Best_Practices.html#why-my-jobs-are-queued">Why my jobs are queued?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Upcoming.html">Upcoming…</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Upcoming.html#have-suggestions">Have suggestions ?</a></li>
 </ul>
@@ -173,27 +185,54 @@
              
   <section id="jupyter-notebooks">
 <h1>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this heading"></a></h1>
-<section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<p>Open OnDemand is a tool that allows users to launch Graphical User Interfaces (GUIs) based applications are accessible without modifying your HPC environment. OOD allows users to launch Jupyter Lab sessions from <a class="reference external" href="https://ood.hpc.nyu.edu">https://ood.hpc.nyu.edu</a>.</p>
+<section id="one-time-setup">
+<h2>One time Setup<a class="headerlink" href="#one-time-setup" title="Permalink to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Logon into HPC via a terminal.</p></li>
+<li><p>Create a directory for the environment</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /scratch/&lt;NetID&gt;/singularity
 <span class="nb">cd</span> /scratch/&lt;NetID&gt;/singularity
 </pre></div>
 </div>
+</li>
+<li><p>Prepare Overlay, for 400K files andupto 10GB of storage space.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -rp /scratch/work/public/overlay-fs-ext3/overlay-10GB-400K.ext3.gz .
 gunzip overlay-10GB-400K.ext3.gz
 mv gunzip overlay-10GB-400K.ext3 partition.ext3
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity <span class="nb">exec</span> --overlay /scratch/as14229/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif /bin/bash
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can browse available overlay images to see available options:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls /scratch/work/public/overlay-fs-ext3
 </pre></div>
 </div>
+</div>
+</li>
+<li><p>Launch Singularity environment for installation</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity <span class="nb">exec</span> --overlay /scratch/&lt;NetID&gt;/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif /bin/bash
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can browse available OS images to see available options:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls /scratch/work/public/singularity/
+</pre></div>
+</div>
+</div>
+</li>
+<li><p>Install Miniconda to overlay file</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh -b -p /ext3/miniconda3
 </pre></div>
 </div>
+<p>Remove downloded package</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm Miniconda3-latest-Linux-x86_64.sh
 </pre></div>
 </div>
+</li>
+<li><p>Create an invoking wrapper script</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch /ext3/env.sh
 <span class="nb">echo</span> <span class="s1">&#39;#!/bin/bash&#39;</span> &gt;&gt; /ext3/env.sh
 <span class="nb">echo</span> <span class="s1">&#39;source /ext3/miniconda3/etc/profile.d/conda.sh&#39;</span> &gt;&gt; /ext3/env.sh
@@ -201,50 +240,137 @@ sh Miniconda3-latest-Linux-x86_64.sh -b -p /ext3/miniconda3
 <span class="nb">echo</span> <span class="s1">&#39;export PYTHONPATH=/ext3/miniconda3/bin:$PATH&#39;</span>   &gt;&gt; /ext3/env.sh
 </pre></div>
 </div>
+<p>Source Anaconda</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> /ext3/env.sh
 </pre></div>
 </div>
+</li>
+<li><p>Confirm Installation<br>
+Check conda location</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which conda
+</pre></div>
+</div>
+<p>Expected Output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/ext3/miniconda3/bin/conda
+</pre></div>
+</div>
+<p>Check python location</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which python
+</pre></div>
+</div>
+<p>Expected Output:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/ext3/miniconda3/bin/python
+</pre></div>
+</div>
+</li>
+<li><p>Update, clean base conda environment and install necessary packages</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update -n base conda -y
 conda clean --all -y
 conda install pip -y
 conda install ipykernel -y
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which conda
-<span class="c1"># output: /ext3/miniconda3/bin/conda</span>
+</li>
+<li><p>Exit Singularity image</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exit</span>
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which python
-<span class="c1"># output: /ext3/miniconda3/bin/python</span>
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find /ext3 <span class="p">|</span> wc -l
-<span class="c1"># output: should be something like 45445</span>
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>du -sh  /ext3        
-<span class="c1"># output should be something like 4.9G    /ext3</span>
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+</li>
+</ol>
 </section>
-<section id="installing-kernels">
-<h2>Installing Kernels<a class="headerlink" href="#installing-kernels" title="Permalink to this heading"></a></h2>
+<section id="add-jupyter-kernel">
+<h2>Add Jupyter Kernel<a class="headerlink" href="#add-jupyter-kernel" title="Permalink to this heading"></a></h2>
+<p>You need to add one kernel per environment that you want to use with Jupyter Notebook.</p>
+<ol class="arabic">
+<li><p>Create a conda environment outside of Singularity (Skip this step if you have already an environment other than base)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module purge
+module load anaconda3/2020.07
+<span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>conda shell.bash hook<span class="k">)</span><span class="s2">&quot;</span>
+conda create -n &lt;env_name&gt; <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
+</pre></div>
+</div>
+</li>
+<li><p>Install required packages to your environment</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate &lt;env_name&gt;
+conda install ipykernel ipywidgets -y
+</pre></div>
+</div>
+</li>
+<li><p>Configure iPython kernels</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/.local/share/jupyter/kernels
+<span class="nb">cd</span> ~/.local/share/jupyter/kernels
+cp -R /share/apps/mypy/src/kernel_template ./&lt;env_name&gt;
+<span class="nb">cd</span> ./my_env
+</pre></div>
+</div>
+</li>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">kernel.json</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo nano kernel.json
+</pre></div>
+</div>
+<p>Edit the file so that it should look like:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;argv&quot;</span><span class="p">:[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;/home/&lt;Your NetID&gt;/.local/share/jupyter/kernels/&lt;env_name&gt;/python&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;{connection_file}&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;env_name&gt;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Save the file by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+X</span></code>, then hit <code class="docutils literal notranslate"><span class="pre">Y</span></code> and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to confirm.</p>
+</li>
+<li><p>Edit <code class="docutils literal notranslate"><span class="pre">python</span></code> file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo nano python
+</pre></div>
+</div>
+<p>Add the following at the bottom of the file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity <span class="nb">exec</span> <span class="nv">$nv</span> <span class="se">\</span>
+--overlay /scratch/&lt;NetID&gt;/singularity/partition.ext3:ro <span class="se">\</span>
+/scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif <span class="se">\</span>
+/bin/bash -c <span class="s2">&quot;source /ext3/env.sh; conda activate &lt;env_name&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Save the file by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+X</span></code>, then hit <code class="docutils literal notranslate"><span class="pre">Y</span></code> and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to confirm.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Update the <code class="docutils literal notranslate"><span class="pre">&lt;NetID&gt;</span></code> to your own NetID and <code class="docutils literal notranslate"><span class="pre">&lt;env_name&gt;</span></code> to the environment you are doing the setup without the “&lt;&gt;” symbols.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If you used a different overlay or sif file, change those lines in the command above to the files you used.</p>
+</div>
+</li>
+</ol>
 </section>
+<section id="launch-jupyter-notebook">
+<h2>Launch Jupyter Notebook<a class="headerlink" href="#launch-jupyter-notebook" title="Permalink to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Logon to <a class="reference external" href="https://ood.hpc.nyu.edu">https://ood.hpc.nyu.edu</a> (VPN Required)</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/ood-login.png"><img alt="OOD Login" class="align-center" src="_images/ood-login.png" style="width: 80%;" /></a>
+<br>
+<ol class="arabic simple" start="2">
+<li><p>Launch Jupyter Notebook under <strong>Interactive Apps</strong></p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/ood-jupyter.png"><img alt="OOD Jupyter" class="align-center" src="_images/ood-jupyter.png" style="width: 90%;" /></a>
+<br>
+<ol class="arabic simple" start="3">
+<li><p>Request resources. Select Jupyter Lab option for launching Jupyter Lab Session (Recommended).</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/ood-jnb-session.png"><img alt="OOD Jupyter Session" class="align-center" src="_images/ood-jnb-session.png" style="width: 80%;" /></a>
+<br>
+<ol class="arabic simple" start="4">
+<li><p>Select Kernel
+<br>
+Once configured and launched, kernels can be selected in the “New” dropdown or within the notebook under the kernel menu. Please note that your notebook view may look slightly different depending on available directories and environments, as well as if you choose the lab or traditional notebook view.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/ood-kernel.png"><img alt="OOD Jupyter Kernel" class="align-center" src="_images/ood-kernel.png" style="width: 90%;" /></a>
+<br>
+<br></section>
 </section>
 
 
@@ -258,7 +384,7 @@ conda install ipykernel -y
     <hr/>
   
     <div role="contentinfo">
-      <p>&#169; Copyright 2022 | New York University |  <a href="https://www.github.com/95anantsingh">Anant Singh</a> </p>
+      <p>&#169; Copyright 2022, <a href="https://www.github.com/95anantsingh">Anant Singh</a> | New York University |</p>
     </div> 
   
   </footer>

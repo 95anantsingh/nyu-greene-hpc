@@ -2,7 +2,9 @@
 
 Users should use File Access Control Lists (FACL) to share their data and collaborate with other users. FACL mechanism allows a fine-graiNet control access to any files by any users or groups of users. FACL allows to grant access without modifying file ownership and without changing POSIX permissions.
 
-```{warning}
+```{admonition} Warning
+:class: error
+
 Users are discouraged from setting '777' permissions with chmod, because this can lead to data loss (by a malicious user or unintentionally, by accident).
 ```
 

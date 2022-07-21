@@ -10,13 +10,16 @@ A more comprehensive but confusing 😛 guide is available [here](https://sites.
 
 ## HPC Documentation
 
-<!-- :numbered: -->
+
+<!-- 
+:numbered: 
+-->
 ```{toctree} 
 :hidden:
 
 self
-Greene_Overview
-Accessing_HPC
+Greene_HPC
+Access
 Storage
 Data_Sharing
 Software_Modules
@@ -28,8 +31,8 @@ Best_Practices
 Upcoming
 ```
 
-- [Greene HPC](Greene_Overview.md)
-- [Access](Accessing_HPC.md)
+- [Greene HPC](Greene_HPC.md)
+- [Access](Access.md)
 - [Storage](Storage.md)
 - [Data Sharing](Data_Sharing.md)
 - [Software Modules](Software_Modules.md)

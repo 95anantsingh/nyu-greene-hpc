@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Access" href="Accessing_HPC.html" />
+    <link rel="next" title="Access" href="Access.html" />
     <link rel="prev" title="Getting Started !" href="index.html" /> 
 </head>
 
@@ -51,17 +51,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#workflow">Workflow</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Accessing_HPC.html">Access</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#outside-nyu-network">Outside NYU Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Accessing_HPC.html#within-nyu-network">Within NYU Network</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#ssh">SSH</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#saving-ssh-keys">Saving SSH Keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Access.html">Access</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Access.html#outside-nyu-network">Outside NYU Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Access.html#within-nyu-network">Within NYU Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Access.html#ssh">SSH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#saving-ssh-keys">Saving SSH Keys</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="Accessing_HPC.html#web-interface">Web Interface</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#connection-to-ood">Connection to OOD</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#access-the-shell">Access the shell</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Accessing_HPC.html#interactive-applications">Interactive Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Access.html#web-interface">Web Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#connection-to-ood">Connection to OOD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#access-the-shell">Access the shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Access.html#interactive-applications">Interactive Applications</a></li>
 </ul>
 </li>
 </ul>
@@ -70,6 +70,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Storage.html">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#file-systems">File Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Storage.html#hpc-storage-status">HPC Storage Status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#quota-utilization">Quota Utilization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Storage.html#data-transfer">Data Transfer</a></li>
 </ul>
@@ -93,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Software_Modules.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="Anaconda.html">Anaconda</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">One Time Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">Activate conda</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">Cheatsheet</a><ul>
@@ -124,11 +125,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Job_Management.html#cancelling-a-job">Cancelling a Job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#hpc-resource-status">HPC Resource Status</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Jupyter_Notebooks.html">Jupyter Notebooks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#installing-kernels">Installing Kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#one-time-setup">One time Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#add-jupyter-kernel">Add Jupyter Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Jupyter_Notebooks.html#launch-jupyter-notebook">Launch Jupyter Notebook</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Visual_Studio_Code.html">Visual Studio Code</a><ul>
@@ -141,7 +144,16 @@
 <li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#recommended-extensions">Recommended Extensions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Best_Practices.html">Best Practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Best_Practices.html#what-resources-to-ask-for-and-how-much">What resources to ask for (and how much)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Best_Practices.html#resource-usage-statistics">Resource Usage Statistics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Best_Practices.html#completed-job">Completed Job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Best_Practices.html#running-job">Running job</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Best_Practices.html#why-my-jobs-are-queued">Why my jobs are queued?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Upcoming.html">Upcoming…</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Upcoming.html#have-suggestions">Have suggestions ?</a></li>
 </ul>
@@ -177,7 +189,8 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <a class="reference internal image-reference" href="_images/greene.jpg"><img alt="NYU Greene" class="align-center" src="_images/greene.jpg" style="width: 90%;" /></a>
 <br>
-<p>NYU High Performance Computing (NYU HPC) provides access to state of the art supercomputer hardware and cloud services to eligible faculty and students across all of NYU.</p>
+<p>The Greene cluster is named after Greene Street in SoHo, a neighborhood in Lower Manhattan near NYU. The cluster has also “green” characteristics, such as most of the cluster nodes are water cooled and it is deployed in a power efficient data center. NYU High Performance Computing (NYU HPC) provides access to state of the art supercomputer hardware and cloud services to eligible faculty and students across all of NYU.</p>
+<p><strong>Ranked #271</strong> on the June 2020 edition of the Top 500 list (based on an extrapolated performance of 1.731 PF).</p>
 <p>The cluster is accessed through login nodes which are nodes or servers dedicated to provide HPC users access to compute nodes. Compute nodes are more powerful and optimized to run computations as per the jobs submitted by HPC users.</p>
 </section>
 <section id="software">
@@ -265,7 +278,7 @@
 <li><p>Your jobs will queue for execution on compute nodes.</p></li>
 <li><p>Once done, examine the output.</p></li>
 </ol>
-<div class="admonition warning">
+<div class="error admonition">
 <p class="admonition-title">Warning</p>
 <p>Please refrain from running any compute intensive jobs on the login nodes. This can lead to your account getting suspended.</p>
 </div>
@@ -295,13 +308,13 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
           <a href="index.html" class="btn btn-neutral float-left" title="Getting Started !" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-          <a href="Accessing_HPC.html" class="btn btn-neutral float-right" title="Access" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <a href="Access.html" class="btn btn-neutral float-right" title="Access" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       </div>
   
     <hr/>
   
     <div role="contentinfo">
-      <p>&#169; Copyright 2022 | New York University |  <a href="https://www.github.com/95anantsingh">Anant Singh</a> </p>
+      <p>&#169; Copyright 2022, <a href="https://www.github.com/95anantsingh">Anant Singh</a> | New York University |</p>
     </div> 
   
   </footer>
