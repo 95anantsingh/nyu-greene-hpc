@@ -49,7 +49,12 @@ Only run programs using srun/sbatch
 Go to **File > Preferences > Settings** , Search for `remote.SSH.useFlock` and *Enable* **Remote.SSH: Use Flock** setting.
 1. In VS Code, select Remote-SSH: Connect to Host... from the Command Palette (`F1`, `Ctrl+Shift+P`) and use the same `<NetID>@greene.hpc.nyu.edu` as in previous step to login.
 
-<center><img src="_images/ssh-host.png" style="max-width:65%;" alt></img></center>
+```{image} assets/ssh-host.png
+:alt: VSCode
+:width: 60%
+:align: center
+```
+
 <br>
 
 5. Select **Linux** as the type of server if prompted.

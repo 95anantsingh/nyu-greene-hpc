@@ -35,14 +35,6 @@ NYU Greene runs on **Linux** (RedHat Enterprise Linux 8.4) and it is advised to 
 NYU HPC uses **SLURM** for cluster workload management. Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters. Slurm requires no kernel modifications for its operation and is relatively self-contained.
 
 
-```{admonition} SLURM Useful Links
-:class: hint
-
-- [https://slurm.schedmd.com/quickstart.html](https://slurm.schedmd.com/quickstart.html)
-- [https://slurm.schedmd.com/tutorials.html](https://slurm.schedmd.com/tutorials.html)
-- [https://www.youtube.com/watch?v=U42qlYkzP9k&feature=player_embedded](https://www.youtube.com/watch?v=U42qlYkzP9k&feature=player_embedded)
-```
-
 ## Hardware
 - The Total number of available nodes is 672
     1. 6 login nodes
@@ -61,6 +53,10 @@ NYU HPC uses **SLURM** for cluster workload management. Slurm is an open source,
     1. 76 V100 (32 GB)
 - Total primary memory is 163 TB
 - Total secondary memory is 9.5 PB
+
+```{tip}
+You can check current {ref}`storage-status` and {ref}`resource-status` through respective dashboards.
+```
 
 ## Network
 

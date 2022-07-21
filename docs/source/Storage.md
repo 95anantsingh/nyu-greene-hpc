@@ -30,7 +30,7 @@ The NYU HPC team supports data storage, transfer, and archival needs on the HPC 
 |Default Quota (star)|	20GB, 150K Files|	5TB, 500K Files|	5TB, 500K Files|	5TB, 125K Files| -->
 
 ```{caution}
-Running jobs from `/home` is not recommended. `/home` SSDs are not desigNet for this purpose, it will kill the SSDs quickly.
+Running jobs from `/home` is not recommended. `/home` SSDs are not designed for this purpose, it will kill the SSDs quickly.
 ```
 
 ```{admonition} Warning
@@ -48,26 +48,13 @@ In short, you should
 Users should clean up their storage regularily.
 
 ````{tip}
-You can access any file system using environment variable or absolute path, for example both statements are equivalent:
+You can access any file system using environment variable or its absolute path, for example both statements are equivalent:
 
 ```{code-block} bash
 cd $HOME
 cd /home/<NetID>
 ```
 ````
-
-## HPC Storage Status
-
-On the Dashboard you can find current utilization and allocation data for the following file system mounts
-- GPFS file system: /home, /scratch, /archive
-- VAST file system: /vast
-- HDFS file system of Hadoop cluster Peel
-
-Dashboard: [Storage NYU HPC](https://graphs-out.hpc.nyu.edu/d/0_16dHc7z/storage-nyu-hpc-public?orgId=1&theme=light&refresh=5m&from=now-14h&to=now-5m&kiosk=tv)
-
-```{note}
-You need to be on NYU Network or connect to NYU VPN, refer {ref}`access`.
-```
 
 
 ## Quota Utilization
@@ -108,4 +95,19 @@ The recommended way to transfer data to/from HPC systems is via OpenOnDemand HPC
 
 ```{tip}
 If you use **VS Code**, then you can directly use **Explorer** tab of VS Code to transfer files by just copy pasting to/from Explorer tab.
+```
+
+
+(storage-status)=
+## HPC Storage Status
+
+On the Dashboard you can find current utilization and allocation data for the following file system mounts
+- GPFS file system: /home, /scratch, /archive
+- VAST file system: /vast
+- HDFS file system of Hadoop cluster Peel
+
+Dashboard: [Storage NYU HPC](https://graphs-out.hpc.nyu.edu/d/0_16dHc7z/storage-nyu-hpc-public?orgId=1&theme=light&refresh=5m&from=now-14h&to=now-5m&kiosk=tv)
+
+```{note}
+You need to be on NYU Network or connected to {ref}`nyu-vpn`.
 ```
