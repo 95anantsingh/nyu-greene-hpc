@@ -254,7 +254,7 @@ srun -c 10 --mem=32GB --gres=gpu:1 -t 1:00:00 --pty /bin/bash
 
 To leave an interactive batch session, type `exit` at the command prompt.
 
-
+(job-status)=
 ## Checking Job Status
 
 ### Running or Pending Job
@@ -272,6 +272,11 @@ JOBID PARTITION     NAME     USER ST       TIME NODES NODELIST(REASON)
 ```
 
 It means the job with Job ID `31408`, has running status (ST: `R`) and its runtime is 2 minutes on `compute-21-4` cluster node.
+
+You can also get information about job status by running:
+```bash
+sstat --format=TresUsageInMax%80,TresUsageInMaxNode%80 -j <JobID> --allsteps
+```
 
 For more verbose information, use scontrol show job.
 ```bash
@@ -305,13 +310,120 @@ scancel -u <NetID>
 ```
 ````
 
+(job-resource-stat)=
+## Job Resource Usage Statistics
+
+### Completed Job
+A useful command that allows you to better understand how resources were utilized by completed jobs is `seff`:
+
+```bash
+seff <job-ID>
+```
+Example Output:
+```console
+Job ID: 8932105
+Cluster: greene
+User/Group: NetID/GROUPID
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 02:22:45
+CPU Efficiency: 99.99% of 02:22:46 core-walltime
+Job Wall-clock time: 02:22:46
+Memory Utilized: 2.18 GB
+Memory Efficiency: 21.80% of 10.00 GB
+```
+
+This example shows statistics on a completed job, that was ran with a request of 1 cpu core and 10Gb of RAM. While CPU utilization was 100%, RAM utilization was very poor -- only 2.2GB out of requested 10GB was used. This job's batch script should definitely be adjusted to something like #SBATCH --mem=2250MB
+
+### Running job
+
+From login node, run:
+```bash
+top -u <NetID>
+```
+
+Take a look how fully you use CPUs and how much RAM your jobs are using.<br>
+To exit hit `Ctrl+C`
+<br>
+For a GPU job also run:
+```bash
+nvidia-smi
+```
+
+Take a look how much GPU processing power your job is using.<br>
+To exit hit `Ctrl+C`
+
+### Visualize Job Statistics
+You can use the below dashboard to visualize the efficiency and utilization of your jobs:
+- [Job Statistics Dashboard](https://shiny.hpc.nyu.edu/user_feedback/)
+
+```{note}
+You will have to login using your NYU email.
+```
+
+(resource-limitations)=
+## Resource Limitations
+
+Within SLURM there are multiple resource limits defined on different levels and applied to different objects. Some of the important limits are listed below: 
+
+```{note}
+Note, that these limits are frequently updated by the HPC team, based on the cluster usage patterns. Due to this, the numbers above are not exact and should only be used as general guidelines. 
+```
+
+### Job Limitations
+
+| Resource / Object per User | Limit |
+|----------------------------|-------|
+| Concurrent Jobs | 2000 |
+| Job Lifetime | 7 days / 168 hours (extendible) |
+
+
+### CPU, GPU, RAM Limitations
+
+These limitations are account specific and you need to run the command below to check yours:
+```bash
+sacctmgr list qos format=name,maxwall,maxtresperuser%40,flags%40 where name=interact,cpu48,cpu168,gpu48,gpu168,gpuamd,cds,cpuplus,gpuplus
+```
+Example Output:
+```console
+
+      Name     MaxWall                                MaxTRESPU                                    Flags
+---------- ----------- ---------------------------------------- ----------------------------------------
+     cpu48  2-00:00:00                       cpu=3000,mem=6000G
+    cpu168  7-00:00:00                       cpu=1000,mem=2000G
+     gpu48  2-00:00:00                              gres/gpu=24
+    gpu168  7-00:00:00                               gres/gpu=4
+````
+
+From this you can see that in the "short queue" (under 48 hours, or 2 days) each user is allowed to utilize up to 3000 cores. For jobs that are running in the "long queue" (under 168 hours, or 7 days) you can use up to 1000 cores. Basic idea behind this -- users can run more short jobs, and fewer long jobs. The same logic applies to GPU resources. 
+
+### CPU with GPU Limitations
+
+**For Tesla V100:**
+| # GPUs | Max CPUs | Max Memory |
+|--------|----------|------------|
+|      1 |       20 |        200 |
+|      2 |       24 |        300 |
+|      3 |       44 |        350 |
+|      4 |       48 |        369 |
+
+**For Quadro RTX8000:**
+| # GPUs | Max CPUs | Max Memory |
+|--------|----------|------------|
+|      1 |       20 |        200 |
+|      2 |       24 |        300 |
+|      3 |       44 |        350 |
+|      4 |       48 |        369 |
+
+From this table you can for example see, that a job asking for 8 V100 GPUs will not be queued. Another example is that requests for 2 V100s and 48 cores will also not be granted. 
+
 (resource-status)=
 ## HPC Resource Status
 
-You can check current HPC compute resource status using the below dashboards:
+You can check current compute resource status of whole HPC using the below dashboards:
 
 - [Greene Cluster Load by Partition](https://graphs-out.hpc.nyu.edu/d/vA6e2Kgnk/greene-cluster-load-by-partitions-nyu-hpc-public?orgId=1&theme=light&refresh=30m&from=now-14h&to=now-5m&kiosk=tv)
-- [Greene Resource Allocation & Utilization, Queue Status](https://graphs-out.hpc.nyu.edu/d/CEVdMFR7z/greene-cluster-nyu-hpc-public?orgId=1&theme=light&refresh=5m&from=now-14h&to=now-5m&kiosk=tv)
+- [Greene Resource Allocation, Utilization and Queue Status](https://graphs-out.hpc.nyu.edu/d/CEVdMFR7z/greene-cluster-nyu-hpc-public?orgId=1&theme=light&refresh=5m&from=now-14h&to=now-5m&kiosk=tv)
 
 ```{note}
 You need to be on NYU Network or connected to {ref}`nyu-vpn`.

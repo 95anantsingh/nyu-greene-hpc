@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>10. Best Practices &mdash; NYU Greene HPC 0.1 documentation</title>
+  <title>10. FAQs &mdash; NYU Greene HPC 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -123,7 +123,19 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Job_Management.html#cancelling-a-job">7.4. Cancelling a Job</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#hpc-resource-status">7.5. HPC Resource Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#job-resource-usage-statistics">7.5. Job Resource Usage Statistics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#id1">7.5.1. Completed Job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#running-job">7.5.2. Running job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#visualize-job-statistics">7.5.3. Visualize Job Statistics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#resource-limitations">7.6. Resource Limitations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#job-limitations">7.6.1. Job Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#cpu-gpu-ram-limitations">7.6.2. CPU, GPU, RAM Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Job_Management.html#cpu-with-gpu-limitations">7.6.3. CPU with GPU Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Job_Management.html#hpc-resource-status">7.7. HPC Resource Status</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Jupyter_Notebooks.html">8. Jupyter Notebooks</a><ul>
@@ -142,14 +154,13 @@
 <li class="toctree-l2"><a class="reference internal" href="Visual_Studio_Code.html#recommended-extensions">9.3. Recommended Extensions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">10. Best Practices</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. FAQs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#what-resources-to-ask-for-and-how-much">10.1. What resources to ask for (and how much)?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#checking-resource-usage-statistics">10.2. Checking Resource Usage Statistics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#completed-job">10.2.1. Completed Job</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-job">10.2.2. Running job</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#why-my-jobs-are-queued">10.3. Why my jobs are queued?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-my-jobs-are-queued">10.2. Why my jobs are queued?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-find-more-information-on-my-jobs">10.3. How to find more information on my jobs?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-busy-is-the-cluster">10.4. How busy is the cluster?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#should-i-do-web-scraping-data-mining-from-websites-on-hpc">10.5. Should I do Web scraping, Data mining from websites on HPC?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-check-if-i-am-wasting-ram-and-cpu">10.6. How to check if I am wasting RAM and CPU?</a></li>
 </ul>
 </li>
 </ul>
@@ -174,7 +185,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">10. </span>Best Practices</li>
+      <li><span class="section-number">10. </span>FAQs</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -183,9 +194,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="best-practices">
-<h1><span class="section-number">10. </span>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this heading"></a></h1>
-<p>Scheduling jobs in an efficient and fair manner can be a challenging task in a multi-user environment. Here are some recommendations.</p>
+  <section id="faqs">
+<h1><span class="section-number">10. </span>FAQs<a class="headerlink" href="#faqs" title="Permalink to this heading"></a></h1>
+<p>Scheduling jobs in an efficient and fair manner can be a challenging task in a multi-user environment. Here are some frequently asked questions and recommendations.</p>
 <section id="what-resources-to-ask-for-and-how-much">
 <h2><span class="section-number">10.1. </span>What resources to ask for (and how much)?<a class="headerlink" href="#what-resources-to-ask-for-and-how-much" title="Permalink to this heading"></a></h2>
 <p>When asking for compute resources in the batch script, never ask for more than you need. There are two important reasons listed below. Imagine you need only 2 CPUs but request 10.</p>
@@ -212,141 +223,33 @@ Login nodes designed use: <br>
 - Running low-compute operations like copying files, installing packages, etc</p>
 </div>
 </section>
-<section id="checking-resource-usage-statistics">
-<h2><span class="section-number">10.2. </span>Checking Resource Usage Statistics<a class="headerlink" href="#checking-resource-usage-statistics" title="Permalink to this heading"></a></h2>
-<section id="completed-job">
-<h3><span class="section-number">10.2.1. </span>Completed Job<a class="headerlink" href="#completed-job" title="Permalink to this heading"></a></h3>
-<p>A useful command that allows you to better understand how resources were utilized by completed jobs is <code class="docutils literal notranslate"><span class="pre">seff</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>seff &lt;job-ID&gt;
-</pre></div>
-</div>
-<p>Example Output:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Job ID: 8932105</span>
-<span class="go">Cluster: greene</span>
-<span class="go">User/Group: NetID/GROUPID</span>
-<span class="go">State: COMPLETED (exit code 0)</span>
-<span class="go">Cores: 1</span>
-<span class="go">CPU Utilized: 02:22:45</span>
-<span class="go">CPU Efficiency: 99.99% of 02:22:46 core-walltime</span>
-<span class="go">Job Wall-clock time: 02:22:46</span>
-<span class="go">Memory Utilized: 2.18 GB</span>
-<span class="go">Memory Efficiency: 21.80% of 10.00 GB</span>
-</pre></div>
-</div>
-<p>This example shows statistics on a completed job, that was ran with a request of 1 cpu core and 10Gb of RAM. While CPU utilization was 100%, RAM utilization was very poor – only 2.2GB out of requested 10GB was used. This job’s batch script should definitely be adjusted to something like #SBATCH –mem=2250MB</p>
-</section>
-<section id="running-job">
-<h3><span class="section-number">10.2.2. </span>Running job<a class="headerlink" href="#running-job" title="Permalink to this heading"></a></h3>
-<p>From login node, run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>top -u &lt;NetID&gt;
-</pre></div>
-</div>
-<p>Take a look how fully you use CPUs and how much RAM your jobs are using.<br>
-To exit hit <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>
-<br>
-For a GPU job also run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nvidia-smi
-</pre></div>
-</div>
-<p>Take a look how much GPU processing power your job is using.<br>
-To exit hit <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code></p>
-</section>
-</section>
 <section id="why-my-jobs-are-queued">
-<h2><span class="section-number">10.3. </span>Why my jobs are queued?<a class="headerlink" href="#why-my-jobs-are-queued" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.2. </span>Why my jobs are queued?<a class="headerlink" href="#why-my-jobs-are-queued" title="Permalink to this heading"></a></h2>
 <p>To understand why your job is waiting in the queue you can run</p>
-<p>squeue  -j <JobID> -o “%.18i %.9P %.8j %.8u %.8T %.10M %.9l %.6D %R”
-Last column of the output would indicate a reason. You can find out more about squeue output format from man squeue.</p>
-<p>The column “NODELIST(REASON)” in the end is job status due to the reason(s), which can be :</p>
-<p>Priority: higher priority jobs exist</p>
-<p>Resources: waiting for resources to become available</p>
-<p>BeginTime: start time not reached yet</p>
-<p>Dependency: wait for a depended job to finish</p>
-<p>QOSMaxCpuPerUserLimit: number of CPU cores limit is reached</p>
-<p>JobArrayTaskLimit: limit of tasks in the JobArray is reached</p>
-<p>For a more complete list of possible values of REASON, please refer to man squeue under the section JOB REASON CODES.</p>
-<p>SLURM Limits
-Within SLURM there are multiple limits defined on different levels and applied to different objects. Some of the important limits are listed here.</p>
-<p>There is a limit of 2000 jobs per user.</p>
-<p>Job lifetime is limited to 7 days (168 hours), but you can request an extension by emailing HPC team (hpc&#64;nyu.edu).</p>
-<p>One important limitation regulates how many CPU cores are available per user in different partitions. You can get this by running:</p>
-<p>####sacctmgr list qos format=name,maxwall,maxtresperuser%40,flags%40 where name=interact,cpu48,cpu168,gpu48,gpu168,gpuamd,cds,cpuplus,gpuplus</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>  Name     MaxWall                                MaxTRESPU                                    Flags
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue  -j &lt;JobID&gt; -o <span class="s2">&quot;%.18i %.9P %.8j %.8u %.8T %.10M %.9l %.6D %R&quot;</span>
 </pre></div>
 </div>
-<hr class="docutils" />
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> cpu48  2-00:00:00                       cpu=3000,mem=6000G
-cpu168  7-00:00:00                       cpu=1000,mem=2000G
- gpu48  2-00:00:00                              gres/gpu=24
-gpu168  7-00:00:00                               gres/gpu=4
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You might also wanna look at <a class="reference internal" href="Job_Management.html#resource-limitations"><span class="std std-ref">Resource Limitations</span></a>.</p>
 </div>
-<p>interact    04:00:00                        cpu=48,gres/gpu=4
-gpuplus                                          gres/gpu=72
-cds                                          gres/gpu=32
-cpuplus                                             cpu=9000
-gpuamd                                         gres/gpu=160
-From this you can see that in the “short queue” (under 48 hours, or 2 days) each user is allowed to utilize up to 3000 cores. For jobs that are running in the “long queue” (under 168 hours, or 7 days) you can use up to 1000 cores. Basic idea behind this – users can run more short jobs, and fewer long jobs. The same logic applies to GPU resources.</p>
-<p>Note, that these limits are frequently updated by the HPC team, based on the cluster usage patterns. Due to this, the numbers below are not exact and should only be used as general guidelines.</p>
-<p>Another important limits to be aware of are the limits on how many CPU cores can be used together with GPU(s). Here are some of these limits:</p>
-<p>| # gpus | max_cpus | max_memory |
-gpu type = “V100”<br />
-|——–+———-+————|
-|      1 |       20 |        200 |
-|      2 |       24 |        300 |
-|      3 |       44 |        350 |
-|      4 |       48 |        369 |
-gpu type = “rtx8000”<br />
-|——–+———-+————|
-|      1 |       20 |        200 |
-|      2 |       24 |        300 |
-|      3 |       44 |        350 |
-|      4 |       48 |        369 |</p>
-<p>From this table you can for example see, that a job asking for 8 V100 GPUs will not be queued. Another example is that requests for 2 V100s and 48 cores will also not be granted.</p>
-<p>How to find more information on my jobs?
-Some other useful SLURM commands that can help to get information about running and pending jobs are</p>
-<!-- 
-# detailed information for a job:
-scontrol show jobid -dd <jobid>
-
-# show status of a currently running job
-# (see 'man sstat' for other available JOB STATUS FIELDS)
-sstat --format=TresUsageInMax%80,TresUsageInMaxNode%80 -j <JobID> --allsteps
-
-# get stats for completed jobs 
-
-# (see 'man sacct' for other JOB ACCOUNTING FIELDS)
-sacct -j <jobid> --format=JobID,JobName,MaxRSS,Elapsed
-
-
-# the same information for all jobs of a user:
-sacct -u <username> --format=JobID,JobName,MaxRSS,Elapsed 
-
-
-How busy is the cluster?
-Please refer to the Systems Status page to see the number of jobs in the queue and other metrics. Often your jobs are queued for a simple reason -- cluster is very busy and there aren't enough resources available.
-
-Best way to submit large number of similar jobs
-The correct way to submit such jobs is to use the array job functionality of SLURM. This reduces load on the scheduler system.
-
-Don't make your own loops to do this kind of work.
-
-You can find a detailed description on how to submit such jobs here.
-
-Web scraping, Data mining from websites
-If you need to do web scraping, don't do that on Greene. It is not allowed due to security concerns and waste of CPU resources (most of the time a job would spend on downloading files, instead of using CPU). Please contact us, and we will advise on a better workflow for your project.
-
-Error handling
-We recommend using #!/bin/bash -e instead of plain #!/bin/bash, so that the failure of any command within the script will cause your job to stop immediately rather than attempting to continue on with an unexpected environment or erroneous intermediate data. It also ensures that your failed jobs show a status of FAILED in sacct output.
-
-When a batch job is finished it produces an exit code (among other useful data). To view the error code of the job you can use: 
-
-sacct -b -j <JobID>
-When reaching out to the HPC team asking for help with failing jobs, it is useful to find an exit code from the job at question. 
-
-
-
-SSH issues (potential)
+</section>
+<section id="how-to-find-more-information-on-my-jobs">
+<h2><span class="section-number">10.3. </span>How to find more information on my jobs?<a class="headerlink" href="#how-to-find-more-information-on-my-jobs" title="Permalink to this heading"></a></h2>
+<p>There are several commands to know more about pending, running and completed jobs. You should refer to <a class="reference internal" href="Job_Management.html#job-status"><span class="std std-ref">Checking Job Status</span></a> and <a class="reference internal" href="Job_Management.html#job-resource-stat"><span class="std std-ref">Job Resource Usage Statistics</span></a>.</p>
+</section>
+<section id="how-busy-is-the-cluster">
+<h2><span class="section-number">10.4. </span>How busy is the cluster?<a class="headerlink" href="#how-busy-is-the-cluster" title="Permalink to this heading"></a></h2>
+<p>Often your jobs are queued for a simple reason – cluster is very busy and there aren’t enough resources available. Please refer to the <a class="reference internal" href="Job_Management.html#resource-status"><span class="std std-ref">HPC Resource Status</span></a> to see the number of jobs in the queue and other metrics.</p>
+</section>
+<section id="should-i-do-web-scraping-data-mining-from-websites-on-hpc">
+<h2><span class="section-number">10.5. </span>Should I do Web scraping, Data mining from websites on HPC?<a class="headerlink" href="#should-i-do-web-scraping-data-mining-from-websites-on-hpc" title="Permalink to this heading"></a></h2>
+<p>If you need to do web scraping, don’t do that on Greene. It is not allowed due to security concerns and waste of CPU resources (most of the time a job would spend on downloading files, instead of using CPU). Please contact HPC Team, and they will advise on a better workflow for your project.</p>
+</section>
+<section id="how-to-check-if-i-am-wasting-ram-and-cpu">
+<h2><span class="section-number">10.6. </span>How to check if I am wasting RAM and CPU?<a class="headerlink" href="#how-to-check-if-i-am-wasting-ram-and-cpu" title="Permalink to this heading"></a></h2>
+<p>You can check the resource utilization and efficiency by refering to <a class="reference internal" href="Job_Management.html#job-resource-stat"><span class="std std-ref">Job Resource Usage Statistics</span></a> section.</p>
+<!-- SSH issues (potential)
 Some people may experience connection warnings while connection to Greene, and connections being terminated too soon. 
 
 This can be addressed by entering the following into ~/ssh/config 
