@@ -199,7 +199,9 @@ python resnet.py
 If you want to select a specific GPU, you can specify that by `gpu:rtx8000:1` for Quadro RTX8000 and `gpu:v100:1` for Tesla V100.
 ```
 
-```{warning}
+```{admonition} Warning
+:class: error
+
 A job having a GPU resource is terminated if GPU usage is very low for 2 hours continuously.
 ```
 
@@ -207,7 +209,9 @@ A job having a GPU resource is terminated if GPU usage is very low for 2 hours c
 ## Interactive Sessions
 Instead of submitting a job, you could get an interactive session from your terminal on compute nodes, where you can run your program on the shell directly.
 
-```{warning}
+```{admonition} Warning
+:class: error
+
 Only short interactive jobs should be used (e.g., experimenting with new hyper-parameters in your source code taking a short runtime on each execution).
 ```
 
@@ -227,7 +231,9 @@ srun: job 775175 has been allocated resources
 ```
 Then you can run your applications on the terminal directly.
 
-```{warning}
+```{admonition} Warning
+:class: error
+
 In a real scenario, the system might be exhausted with no available resources to you. You need to wait in this circumstance.
 ```
 
@@ -289,3 +295,14 @@ To cancel all jobs from your account. Run this on the HPC terminal.
 scancel -u <NetID>
 ```
 ````
+
+## HPC Resource Status
+
+You can check current HPC compute resource status using the below dashboards:
+
+- [Greene Cluster Load by Partition](https://graphs-out.hpc.nyu.edu/d/vA6e2Kgnk/greene-cluster-load-by-partitions-nyu-hpc-public?orgId=1&theme=light&refresh=30m&from=now-14h&to=now-5m&kiosk=tv)
+- [Greene Resource Allocation & Utilization, Queue Status](https://graphs-out.hpc.nyu.edu/d/CEVdMFR7z/greene-cluster-nyu-hpc-public?orgId=1&theme=light&refresh=5m&from=now-14h&to=now-5m&kiosk=tv)
+
+```{note}
+You need to be on NYU Network or connect to NYU VPN, refer {ref}`access`.
+```

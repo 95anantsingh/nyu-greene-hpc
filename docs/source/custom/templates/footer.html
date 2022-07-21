@@ -20,7 +20,7 @@
         {%- if hasdoc('copyright') %}
           {%- trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}{% endtrans %}
         {%- else %}
-          {%- trans copyright=copyright|e %}&#169; Copyright {{ copyright }} <a href="https://www.github.com/95anantsingh">Anant Singh</a> {% endtrans %}
+          {%- trans copyright=copyright|e %}&#169; Copyright {{ copyright }}, <a href="https://www.github.com/95anantsingh">Anant Singh</a> | New York University |{% endtrans %}
         {%- endif %}
       {%- endif %}
   

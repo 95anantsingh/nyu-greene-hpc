@@ -15,7 +15,7 @@ It may be a good alternative to terminal based editors (like vim, nano and Emacs
 
 **Benefits:**
 
-- Work with files on cluster, almost as if they would be on your own laptop
+- Work with files on cluster, almost as if they would be on your own laptop. Cut, copy, paste from Explorer tab cross platform to/from HPC cluster.
 - Great syntax highlighting, linting, etc. for many languages (using extensions)
 - Extensive tools for debuging
 - Extensions simplifying work with git
@@ -44,75 +44,41 @@ Only run programs using srun/sbatch
     ```bash
     ssh <NetID>@greene.hpc.nyu.edu
     ```
-1. In VS Code, select Remote-SSH: Connect to Host... from the Command Palette (`F1`, `Ctrl+Shift+P`) and use the same user@hostname as in previous step.
-  <img src="https://code.visualstudio.com/assets/docs/remote/ssh/ssh-user@box.png"></img>
+
+1. VS Code Lock files shall not be saved in `/home` and you need to apply changes to VS Code settings. <br>
+Go to **File > Preferences > Settings** , Search for `remote.SSH.useFlock` and *Enable* **Remote.SSH: Use Flock** setting.
+1. In VS Code, select Remote-SSH: Connect to Host... from the Command Palette (`F1`, `Ctrl+Shift+P`) and use the same `<NetID>@greene.hpc.nyu.edu` as in previous step to login.
+
+<center><img src="_images/ssh-host.png" style="max-width:65%;" alt></img></center>
+<br>
+
+5. Select **Linux** as the type of server if prompted.
+1. After a moment, VS Code will connect to the SSH server and set itself up. VS Code will keep you up-to-date using a progress notification and you can see a detailed log in the Remote - SSH output channel.
+
+1. You can then open any folder or workspace on the remote machine using **File > Open... or File > Open Folder...** just as you would locally!
 
 
+```{tip}
+You can {ref}`Save SSH Keys<saving-ssh-keys>` on HPC cluster so that you don't have to enter your password again.
+```
 
-- VS Code Lock files shall NOT be saved in /home. 
 
-In extensions tab of VS Code find extension "Remote - SSH"
-
-press settings icon -> Extension settings
-
-Do one of the following:
-
-Don’t use lock files (uncheck "Remote.SSH: Use Flock")
-
-Store lock file in /tmp (check Remote.SSH: Lockfiles In Tmp)
-
-Inside VS Code
-
-F1
-
-remote-ssh: Connect to Host
-
-New host (or - Configure SSH host)
-
-ssh <user>@greene.hpc.nyu.edu
-
-specify the path to the file, where the configuration of this connection will be saved
-
-More details here: https://code.visualstudio.com/docs/remote/ssh
-
-Login using ssh key
-
-You can also specify ssh key.
-
-Generate ssh key pair on terminal in Linux/Mac or cmd in Windows using keygen.
-
-Note the path to ssh key files
-
-Add content of public key (the one with .pub) to $HOME/.ssh/authorized_keys on cluster
-
-Add path to ssh key on your machine to VS Code config file (you chose path to this file above, when setting up remote connection)
-
-Host greene.hpc.nyu.edu
-  HostName greene.hpc.nyu.edu
-  User <netid>
-  ForwardAgent yes
-  IdentityFile <path to ssh key>
-More settings
-VS Code has many more settings and options. Explore!
-
-Additional notes
-High CPU load on login node from VS Code
-
+```{caution}
 You may notice (please check with 'top') that your VS Code connection causes 'node' process running from your user to use a lot of CPU resources. One of the reason leading to that - large number of files within your home directory. Try to remove conda and pip environments from the home directory and check if this will resolve the issue.
+```
 
-Python
-
-Recommended extensions: Python, Anaconda Extension Pack
-
-When those are installed you can switch python env or conda env by clicking on the left bottom line specifying python.
-
-Support for python scripts and Jupyter Notebooks
-
-Syntax highlighting: extension MagicPython
 
 ## Workspace Management
+
+A Visual Studio Code "Workspace" is the collection of one or more folders that are opened in a VS Code window (instance). You can manage your data and code at one place.
+
+This allows users to keep Data and Code seperate which help in maintaining Storage Quota in check. This also helps to keep different settings for different folders in the project.
+
+- You can add folders to your workspace from - **File > Add Folder to Workspace...**
+- This will generate a workspace file and you can open it instead of any folder to load all the folders by default.
 
 
 ## Recommended Extensions
 
- (recommended: Git Graphs)
+- [Git Graphs](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+- [MagicPython](https://marketplace.visualstudio.com/items?itemName=magicstack.MagicPython)

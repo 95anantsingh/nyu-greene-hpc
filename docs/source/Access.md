@@ -1,3 +1,4 @@
+(access)=
 # Access
 There are several ways to interact with the Greene HPC cluster. Similar to other Linux clusters, the most common method of connection is via a Command Line Interface (CLI).
 
@@ -30,9 +31,12 @@ ssh <NetID>@greene.hpc.nyu.edu
 
 Enter the same password which you use to login into your NYU account and you are good to go.
 
-```{Warning}
+```{admonition} Warning
+:class: error
+
 Whenever you login, you land up on one of the login nodes and you should not run compute heavy jobs on login nodes directly, to avoid HPC account termination.
 ```
+(saving-ssh-keys)=
 #### Saving SSH Keys
 
 Instead of typing password every time you need to log in, you can also save ssh keys on your HPC account.

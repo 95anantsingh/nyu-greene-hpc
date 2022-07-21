@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'NYU Greene HPC'
-copyright = '2022 | New York University | '
+copyright = '2022'
 author = 'Anant Singh'
 
 release = '0.1'
