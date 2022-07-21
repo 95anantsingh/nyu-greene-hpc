@@ -26,7 +26,7 @@ Anaconda
 Job_Management
 Jupyter_Notebooks
 Visual_Studio_Code
-Best_Practices
+FAQs
 ```
 
 ```{toctree}
@@ -44,7 +44,7 @@ Upcoming
 - [Job Management](Job_Management.md)
 - [Jupyter Notebooks](Jupyter_Notebooks.md)
 - [Visual Studio Code](Visual_Studio_Code.md)
-- [Best Practices](Best_Practices.md)
+- [FAQs](FAQs.md)
 - [Upcoming...](Upcoming.md)
 
 
