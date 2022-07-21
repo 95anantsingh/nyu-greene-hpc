@@ -11,11 +11,10 @@ A more comprehensive but confusing 😛 guide is available [here](https://sites.
 ## HPC Documentation
 
 
-<!-- 
-:numbered: 
--->
+
 ```{toctree} 
 :hidden:
+:numbered:
 
 self
 Greene_HPC
@@ -28,6 +27,11 @@ Job_Management
 Jupyter_Notebooks
 Visual_Studio_Code
 Best_Practices
+```
+
+```{toctree}
+:hidden:
+
 Upcoming
 ```
 

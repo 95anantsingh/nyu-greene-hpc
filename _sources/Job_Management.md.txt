@@ -7,6 +7,15 @@ On HPC, you don't run your program on the shell directly (on login nodes). Inste
 
 HPC provides flexibility in types of jobs as per the resource and computer requirements of its users. Down below are the most commonly used job types.
 
+
+```{admonition} SLURM Useful Links
+:class: hint
+
+- [https://slurm.schedmd.com/quickstart.html](https://slurm.schedmd.com/quickstart.html)
+- [https://slurm.schedmd.com/tutorials.html](https://slurm.schedmd.com/tutorials.html)
+- [https://www.youtube.com/watch?v=U42qlYkzP9k&feature=player_embedded](https://www.youtube.com/watch?v=U42qlYkzP9k&feature=player_embedded)
+```
+
 ## Batch Jobs
 
 Users should use batch jobs for the most part unless your requirements can't be met without a direct shell access.<br>
@@ -248,7 +257,7 @@ To leave an interactive batch session, type `exit` at the command prompt.
 
 ## Checking Job Status
 
-### Before and During Job Execution
+### Running or Pending Job
 
 This command shows all your current jobs.
 
@@ -269,7 +278,7 @@ For more verbose information, use scontrol show job.
 scontrol show job <jobid>
 ```
 
-### After Job Completion
+### Completed Job
 Once the job is finished, the job can’t be inspected by `squeue` or `scontrol show job`. At this point, you could inspect the job by `sacct`.
 ```bash
 sacct -j <jobid>
@@ -296,6 +305,7 @@ scancel -u <NetID>
 ```
 ````
 
+(resource-status)=
 ## HPC Resource Status
 
 You can check current HPC compute resource status using the below dashboards:
@@ -304,5 +314,5 @@ You can check current HPC compute resource status using the below dashboards:
 - [Greene Resource Allocation & Utilization, Queue Status](https://graphs-out.hpc.nyu.edu/d/CEVdMFR7z/greene-cluster-nyu-hpc-public?orgId=1&theme=light&refresh=5m&from=now-14h&to=now-5m&kiosk=tv)
 
 ```{note}
-You need to be on NYU Network or connect to NYU VPN, refer {ref}`access`.
+You need to be on NYU Network or connected to {ref}`nyu-vpn`.
 ```

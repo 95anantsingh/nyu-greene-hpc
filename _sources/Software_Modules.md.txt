@@ -2,6 +2,8 @@
 
 HPC systems differ from desktop/laptop computers in how software is installed. In a desktop/laptop you install software in a pre-defined centralized location where all users can access it. But in a large system hosting a multitude of users it is not practical to have a single version of “python” installed. Some users may need access to the latest version, while others have hard dependencies on an earlier version. So in an HPC system software is installed as independent modules which users must explicitly load into their shell environment.
 
+## Commands
+
 When you login your shell environment is empty of all software modules and environment is set on a per shell instance. So if you open a new terminal on a login node the environment you may have set in another terminal will not be propagated. You can control and monitor the contents of your software modules environment with the following commands:
 
 | Command                   | Description                                                               |

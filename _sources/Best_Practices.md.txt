@@ -30,7 +30,7 @@ Login nodes designed use: <br>
 ```
 
 
-## Resource Usage Statistics
+## Checking Resource Usage Statistics
 
 ### Completed Job
 A useful command that allows you to better understand how resources were utilized by completed jobs is `seff`:
@@ -39,7 +39,7 @@ A useful command that allows you to better understand how resources were utilize
 seff <job-ID>
 ```
 Example Output:
-```log
+```console
 Job ID: 8932105
 Cluster: greene
 User/Group: NetID/GROUPID
@@ -61,8 +61,7 @@ From login node, run:
 top -u <NetID>
 ```
 
-Take a look how fully you use CPUs and how much RAM your jobs are using.
-
+Take a look how fully you use CPUs and how much RAM your jobs are using.<br>
 To exit hit `Ctrl+C`
 <br>
 For a GPU job also run:
@@ -70,8 +69,7 @@ For a GPU job also run:
 nvidia-smi
 ```
 
-Take a look how much GPU processing power your job is using.
-
+Take a look how much GPU processing power your job is using.<br>
 To exit hit `Ctrl+C`
 
 
