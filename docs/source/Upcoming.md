@@ -10,4 +10,4 @@ More documentation will soon be added that include:
 
 ## Have suggestions ?
 
-I would love to have your feedback. Please drop me an email at <a href="mailto:anant.singh@nyu.edu?subject=HPC Docs!&body=Hello Anant,">anant.singh@nyu.edu</a>..
+I would love to have your feedback. Please drop me an email at <a href="mailto:anant.singh@nyu.edu?subject=HPC Docs!&body=Hello Anant,">anant.singh@nyu.edu</a>.

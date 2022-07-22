@@ -358,7 +358,8 @@ You can use the below dashboard to visualize the efficiency and utilization of y
 - [Job Statistics Dashboard](https://shiny.hpc.nyu.edu/user_feedback/)
 
 ```{note}
-You will have to login using your NYU email.
+You will have to login using your NYU email and you need to be on NYU Network or connected to {ref}`nyu-vpn`.
+```
 ```
 
 (resource-limitations)=
