@@ -320,7 +320,7 @@ A useful command that allows you to better understand how resources were utilize
 seff <job-ID>
 ```
 Example Output:
-```console
+```bash
 Job ID: 8932105
 Cluster: greene
 User/Group: NetID/GROUPID
@@ -385,7 +385,7 @@ These limitations are account specific and you need to run the command below to 
 sacctmgr list qos format=name,maxwall,maxtresperuser%40,flags%40 where name=interact,cpu48,cpu168,gpu48,gpu168,gpuamd,cds,cpuplus,gpuplus
 ```
 Example Output:
-```console
+```bash
 
       Name     MaxWall                                MaxTRESPU                                    Flags
 ---------- ----------- ---------------------------------------- ----------------------------------------

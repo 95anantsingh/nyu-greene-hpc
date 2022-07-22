@@ -110,7 +110,7 @@ Give Access to Parent Directories in the Path. When you would like to set ACL to
 setfacl -d "u:jh12524:rwx" abc
 ```
 
-####  Remove a specific permission entry
+####  Remove a permission entry
 ```bash
 setfacl -x "entry" <file/dir>
 ```
