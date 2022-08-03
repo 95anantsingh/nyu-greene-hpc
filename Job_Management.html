@@ -127,12 +127,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#id1">7.5.1. Completed Job</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-job">7.5.2. Running job</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#visualize-job-statistics">7.5.3. Visualize Job Statistics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#job-limitations">7.5.4. Job Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cpu-gpu-ram-limitations">7.5.5. CPU, GPU, RAM Limitations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cpu-with-gpu-limitations">7.5.6. CPU with GPU Limitations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#hpc-resource-status">7.6. HPC Resource Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resource-limitations">7.6. Resource Limitations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#job-limitations">7.6.1. Job Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpu-gpu-ram-limitations">7.6.2. CPU, GPU, RAM Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cpu-with-gpu-limitations">7.6.3. CPU with GPU Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hpc-resource-status">7.7. HPC Resource Status</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Jupyter_Notebooks.html">8. Jupyter Notebooks</a><ul>
@@ -562,19 +565,17 @@ To exit hit <code class="docutils literal notranslate"><span class="pre">Ctrl+C<
 <p class="admonition-title">Note</p>
 <p>You will have to login using your NYU email and you need to be on NYU Network or connected to <a class="reference internal" href="Access.html#nyu-vpn"><span class="std std-ref">NYU VPN</span></a>.</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-(resource-limitations)=
-## Resource Limitations
-
-Within SLURM there are multiple resource limits defined on different levels and applied to different objects. Some of the important limits are listed below: 
-
-```{note}
-Note, that these limits are frequently updated by the HPC team, based on the cluster usage patterns. Due to this, the numbers above are not exact and should only be used as general guidelines. 
-</pre></div>
-</div>
 </section>
+</section>
+<section id="resource-limitations">
+<span id="id2"></span><h2><span class="section-number">7.6. </span>Resource Limitations<a class="headerlink" href="#resource-limitations" title="Permalink to this heading"></a></h2>
+<p>Within SLURM there are multiple resource limits defined on different levels and applied to different objects. Some of the important limits are listed below:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note, that these limits are frequently updated by the HPC team, based on the cluster usage patterns. Due to this, the numbers above are not exact and should only be used as general guidelines.</p>
+</div>
 <section id="job-limitations">
-<h3><span class="section-number">7.5.4. </span>Job Limitations<a class="headerlink" href="#job-limitations" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">7.6.1. </span>Job Limitations<a class="headerlink" href="#job-limitations" title="Permalink to this heading"></a></h3>
 <table class="colwidths-auto docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Resource / Object per User</p></th>
@@ -592,7 +593,7 @@ Note, that these limits are frequently updated by the HPC team, based on the clu
 </table>
 </section>
 <section id="cpu-gpu-ram-limitations">
-<h3><span class="section-number">7.5.5. </span>CPU, GPU, RAM Limitations<a class="headerlink" href="#cpu-gpu-ram-limitations" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">7.6.2. </span>CPU, GPU, RAM Limitations<a class="headerlink" href="#cpu-gpu-ram-limitations" title="Permalink to this heading"></a></h3>
 <p>These limitations are account specific and you need to run the command below to check yours:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sacctmgr list qos <span class="nv">format</span><span class="o">=</span>name,maxwall,maxtresperuser%40,flags%40 where <span class="nv">name</span><span class="o">=</span>interact,cpu48,cpu168,gpu48,gpu168,gpuamd,cds,cpuplus,gpuplus
 </pre></div>
@@ -609,7 +610,7 @@ Note, that these limits are frequently updated by the HPC team, based on the clu
 <p>From this you can see that in the “short queue” (under 48 hours, or 2 days) each user is allowed to utilize up to 3000 cores. For jobs that are running in the “long queue” (under 168 hours, or 7 days) you can use up to 1000 cores. Basic idea behind this – users can run more short jobs, and fewer long jobs. The same logic applies to GPU resources.</p>
 </section>
 <section id="cpu-with-gpu-limitations">
-<h3><span class="section-number">7.5.6. </span>CPU with GPU Limitations<a class="headerlink" href="#cpu-with-gpu-limitations" title="Permalink to this heading"></a></h3>
+<h3><span class="section-number">7.6.3. </span>CPU with GPU Limitations<a class="headerlink" href="#cpu-with-gpu-limitations" title="Permalink to this heading"></a></h3>
 <p><strong>For Tesla V100:</strong></p>
 <table class="colwidths-auto docutils align-default">
 <thead>
@@ -668,7 +669,7 @@ Note, that these limits are frequently updated by the HPC team, based on the clu
 </section>
 </section>
 <section id="hpc-resource-status">
-<span id="resource-status"></span><h2><span class="section-number">7.6. </span>HPC Resource Status<a class="headerlink" href="#hpc-resource-status" title="Permalink to this heading"></a></h2>
+<span id="resource-status"></span><h2><span class="section-number">7.7. </span>HPC Resource Status<a class="headerlink" href="#hpc-resource-status" title="Permalink to this heading"></a></h2>
 <p>You can check current compute resource status of whole HPC using the below dashboards:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://graphs-out.hpc.nyu.edu/d/vA6e2Kgnk/greene-cluster-load-by-partitions-nyu-hpc-public?orgId=1&amp;theme=light&amp;refresh=30m&amp;from=now-14h&amp;to=now-5m&amp;kiosk=tv">Greene Cluster Load by Partition</a></p></li>
