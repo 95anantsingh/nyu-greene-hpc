@@ -1,0 +1,3 @@
+https://sphinx-rtd-theme--919.org.readthedocs.build/en/919/#
+https://github.com/readthedocs/sphinx_rtd_theme/pull/919
+https://github.com/readthedocs/sphinx_rtd_theme/issues/764

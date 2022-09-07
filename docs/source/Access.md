@@ -28,6 +28,9 @@ If you are connecting from a remote location that is not on the NYU network (you
 
 ## SSH
 
+SSH (Secure Shell) is a secure remote login and administrating protocol that enables users to login to the remote servers or systems securely to perform their tasks.
+It allows users to login and works securely on the remote servers over an unsecured network. 
+
 If you are connected to NYU network directly or through a VPN then you can simply `ssh` in your local terminal:
 
 ```bash

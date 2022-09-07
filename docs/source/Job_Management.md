@@ -351,7 +351,6 @@ nvidia-smi
 ```
 
 Take a look how much GPU processing power your job is using.<br>
-To exit hit `Ctrl+C`
 
 ### Visualize Job Statistics
 You can use the below dashboard to visualize the efficiency and utilization of your jobs:
@@ -388,12 +387,12 @@ sacctmgr list qos format=name,maxwall,maxtresperuser%40,flags%40 where name=inte
 Example Output:
 ```bash
 
-      Name     MaxWall                                MaxTRESPU                                    Flags
----------- ----------- ---------------------------------------- ----------------------------------------
-     cpu48  2-00:00:00                       cpu=3000,mem=6000G
-    cpu168  7-00:00:00                       cpu=1000,mem=2000G
-     gpu48  2-00:00:00                              gres/gpu=24
-    gpu168  7-00:00:00                               gres/gpu=4
+      Name     MaxWall                MaxTRESPU           Flags
+---------- ----------- ------------------------ ---------------
+     cpu48  2-00:00:00       cpu=3000,mem=6000G
+    cpu168  7-00:00:00       cpu=1000,mem=2000G
+     gpu48  2-00:00:00              gres/gpu=24
+    gpu168  7-00:00:00               gres/gpu=4
 ````
 
 From this you can see that in the "short queue" (under 48 hours, or 2 days) each user is allowed to utilize up to 3000 cores. For jobs that are running in the "long queue" (under 168 hours, or 7 days) you can use up to 1000 cores. Basic idea behind this -- users can run more short jobs, and fewer long jobs. The same logic applies to GPU resources. 
