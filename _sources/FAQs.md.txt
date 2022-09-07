@@ -2,6 +2,15 @@
 
 Scheduling jobs in an efficient and fair manner can be a challenging task in a multi-user environment. Here are some frequently asked questions and recommendations.
 
+
+## What are Login Nodes?
+Login nodes are servers dedicated for providing the access to users, they are not optimized for compute jobs. Whenever a user logs into HPC Greene they land on one of the login nodes.
+
+
+## What are Compute Nodes?
+Compute nodes are dedicated servers for compute heavy jobs and you need to request an interactive session or submit a job to access them.
+
+
 ## What resources to ask for (and how much)?
 
 When asking for compute resources in the batch script, never ask for more than you need. There are two important reasons listed below. Imagine you need only 2 CPUs but request 10.

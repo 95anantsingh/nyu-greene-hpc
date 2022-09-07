@@ -155,12 +155,14 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">10. FAQs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-resources-to-ask-for-and-how-much">10.1. What resources to ask for (and how much)?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#why-my-jobs-are-queued">10.2. Why my jobs are queued?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-find-more-information-on-my-jobs">10.3. How to find more information on my jobs?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-busy-is-the-cluster">10.4. How busy is the cluster?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#should-i-do-web-scraping-data-mining-from-websites-on-hpc">10.5. Should I do Web scraping, Data mining from websites on HPC?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-check-if-i-am-wasting-ram-and-cpu">10.6. How to check if I am wasting RAM and CPU?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-login-nodes">10.1. What are Login Nodes?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-are-compute-nodes">10.2. What are Compute Nodes?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-resources-to-ask-for-and-how-much">10.3. What resources to ask for (and how much)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-my-jobs-are-queued">10.4. Why my jobs are queued?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-find-more-information-on-my-jobs">10.5. How to find more information on my jobs?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-busy-is-the-cluster">10.6. How busy is the cluster?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#should-i-do-web-scraping-data-mining-from-websites-on-hpc">10.7. Should I do Web scraping, Data mining from websites on HPC?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-check-if-i-am-wasting-ram-and-cpu">10.8. How to check if I am wasting RAM and CPU?</a></li>
 </ul>
 </li>
 </ul>
@@ -197,8 +199,16 @@
   <section id="faqs">
 <h1><span class="section-number">10. </span>FAQs<a class="headerlink" href="#faqs" title="Permalink to this heading"></a></h1>
 <p>Scheduling jobs in an efficient and fair manner can be a challenging task in a multi-user environment. Here are some frequently asked questions and recommendations.</p>
+<section id="what-are-login-nodes">
+<h2><span class="section-number">10.1. </span>What are Login Nodes?<a class="headerlink" href="#what-are-login-nodes" title="Permalink to this heading"></a></h2>
+<p>Login nodes are servers dedicated for providing the access to users, they are not optimized for compute jobs. Whenever a user logs into HPC Greene they land on one of the login nodes.</p>
+</section>
+<section id="what-are-compute-nodes">
+<h2><span class="section-number">10.2. </span>What are Compute Nodes?<a class="headerlink" href="#what-are-compute-nodes" title="Permalink to this heading"></a></h2>
+<p>Compute nodes are dedicated servers for compute heavy jobs and you need to request an interactive session or submit a job to access them.</p>
+</section>
 <section id="what-resources-to-ask-for-and-how-much">
-<h2><span class="section-number">10.1. </span>What resources to ask for (and how much)?<a class="headerlink" href="#what-resources-to-ask-for-and-how-much" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.3. </span>What resources to ask for (and how much)?<a class="headerlink" href="#what-resources-to-ask-for-and-how-much" title="Permalink to this heading"></a></h2>
 <p>When asking for compute resources in the batch script, never ask for more than you need. There are two important reasons listed below. Imagine you need only 2 CPUs but request 10.</p>
 <ul class="simple">
 <li><p>You will wait longer for job to start: It is easier for scheduler to find 2 CPUs than 10</p></li>
@@ -224,7 +234,7 @@ Login nodes designed use: <br>
 </div>
 </section>
 <section id="why-my-jobs-are-queued">
-<h2><span class="section-number">10.2. </span>Why my jobs are queued?<a class="headerlink" href="#why-my-jobs-are-queued" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.4. </span>Why my jobs are queued?<a class="headerlink" href="#why-my-jobs-are-queued" title="Permalink to this heading"></a></h2>
 <p>To understand why your job is waiting in the queue you can run</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue  -j &lt;JobID&gt; -o <span class="s2">&quot;%.18i %.9P %.8j %.8u %.8T %.10M %.9l %.6D %R&quot;</span>
 </pre></div>
@@ -235,19 +245,19 @@ Login nodes designed use: <br>
 </div>
 </section>
 <section id="how-to-find-more-information-on-my-jobs">
-<h2><span class="section-number">10.3. </span>How to find more information on my jobs?<a class="headerlink" href="#how-to-find-more-information-on-my-jobs" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.5. </span>How to find more information on my jobs?<a class="headerlink" href="#how-to-find-more-information-on-my-jobs" title="Permalink to this heading"></a></h2>
 <p>There are several commands to know more about pending, running and completed jobs. You should refer to <a class="reference internal" href="Job_Management.html#job-status"><span class="std std-ref">Checking Job Status</span></a> and <a class="reference internal" href="Job_Management.html#job-resource-stat"><span class="std std-ref">Job Resource Usage Statistics</span></a>.</p>
 </section>
 <section id="how-busy-is-the-cluster">
-<h2><span class="section-number">10.4. </span>How busy is the cluster?<a class="headerlink" href="#how-busy-is-the-cluster" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.6. </span>How busy is the cluster?<a class="headerlink" href="#how-busy-is-the-cluster" title="Permalink to this heading"></a></h2>
 <p>Often your jobs are queued for a simple reason – cluster is very busy and there aren’t enough resources available. Please refer to the <a class="reference internal" href="Job_Management.html#resource-status"><span class="std std-ref">HPC Resource Status</span></a> to see the number of jobs in the queue and other metrics.</p>
 </section>
 <section id="should-i-do-web-scraping-data-mining-from-websites-on-hpc">
-<h2><span class="section-number">10.5. </span>Should I do Web scraping, Data mining from websites on HPC?<a class="headerlink" href="#should-i-do-web-scraping-data-mining-from-websites-on-hpc" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.7. </span>Should I do Web scraping, Data mining from websites on HPC?<a class="headerlink" href="#should-i-do-web-scraping-data-mining-from-websites-on-hpc" title="Permalink to this heading"></a></h2>
 <p>If you need to do web scraping, don’t do that on Greene. It is not allowed due to security concerns and waste of CPU resources (most of the time a job would spend on downloading files, instead of using CPU). Please contact HPC Team, and they will advise on a better workflow for your project.</p>
 </section>
 <section id="how-to-check-if-i-am-wasting-ram-and-cpu">
-<h2><span class="section-number">10.6. </span>How to check if I am wasting RAM and CPU?<a class="headerlink" href="#how-to-check-if-i-am-wasting-ram-and-cpu" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.8. </span>How to check if I am wasting RAM and CPU?<a class="headerlink" href="#how-to-check-if-i-am-wasting-ram-and-cpu" title="Permalink to this heading"></a></h2>
 <p>You can check the resource utilization and efficiency by refering to <a class="reference internal" href="Job_Management.html#job-resource-stat"><span class="std std-ref">Job Resource Usage Statistics</span></a> section.</p>
 <!-- SSH issues (potential)
 Some people may experience connection warnings while connection to Greene, and connections being terminated too soon. 

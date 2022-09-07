@@ -155,12 +155,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="FAQs.html">10. FAQs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="FAQs.html#what-resources-to-ask-for-and-how-much">10.1. What resources to ask for (and how much)?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FAQs.html#why-my-jobs-are-queued">10.2. Why my jobs are queued?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FAQs.html#how-to-find-more-information-on-my-jobs">10.3. How to find more information on my jobs?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FAQs.html#how-busy-is-the-cluster">10.4. How busy is the cluster?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FAQs.html#should-i-do-web-scraping-data-mining-from-websites-on-hpc">10.5. Should I do Web scraping, Data mining from websites on HPC?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="FAQs.html#how-to-check-if-i-am-wasting-ram-and-cpu">10.6. How to check if I am wasting RAM and CPU?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQs.html#what-are-login-nodes">10.1. What are Login Nodes?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQs.html#what-are-compute-nodes">10.2. What are Compute Nodes?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQs.html#what-resources-to-ask-for-and-how-much">10.3. What resources to ask for (and how much)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQs.html#why-my-jobs-are-queued">10.4. Why my jobs are queued?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQs.html#how-to-find-more-information-on-my-jobs">10.5. How to find more information on my jobs?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQs.html#how-busy-is-the-cluster">10.6. How busy is the cluster?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQs.html#should-i-do-web-scraping-data-mining-from-websites-on-hpc">10.7. Should I do Web scraping, Data mining from websites on HPC?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQs.html#how-to-check-if-i-am-wasting-ram-and-cpu">10.8. How to check if I am wasting RAM and CPU?</a></li>
 </ul>
 </li>
 </ul>
@@ -552,8 +554,7 @@ For a GPU job also run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nvidia-smi
 </pre></div>
 </div>
-<p>Take a look how much GPU processing power your job is using.<br>
-To exit hit <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code></p>
+<p>Take a look how much GPU processing power your job is using.<br></p>
 </section>
 <section id="visualize-job-statistics">
 <h3><span class="section-number">7.5.3. </span>Visualize Job Statistics<a class="headerlink" href="#visualize-job-statistics" title="Permalink to this heading"></a></h3>
@@ -599,12 +600,12 @@ To exit hit <code class="docutils literal notranslate"><span class="pre">Ctrl+C<
 </pre></div>
 </div>
 <p>Example Output:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>      Name     MaxWall                                MaxTRESPU                                    Flags
----------- ----------- ---------------------------------------- ----------------------------------------
-     cpu48  <span class="m">2</span>-00:00:00                       <span class="nv">cpu</span><span class="o">=</span><span class="m">3000</span>,mem<span class="o">=</span>6000G
-    cpu168  <span class="m">7</span>-00:00:00                       <span class="nv">cpu</span><span class="o">=</span><span class="m">1000</span>,mem<span class="o">=</span>2000G
-     gpu48  <span class="m">2</span>-00:00:00                              gres/gpu<span class="o">=</span><span class="m">24</span>
-    gpu168  <span class="m">7</span>-00:00:00                               gres/gpu<span class="o">=</span><span class="m">4</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>      Name     MaxWall                MaxTRESPU           Flags
+---------- ----------- ------------------------ ---------------
+     cpu48  <span class="m">2</span>-00:00:00       <span class="nv">cpu</span><span class="o">=</span><span class="m">3000</span>,mem<span class="o">=</span>6000G
+    cpu168  <span class="m">7</span>-00:00:00       <span class="nv">cpu</span><span class="o">=</span><span class="m">1000</span>,mem<span class="o">=</span>2000G
+     gpu48  <span class="m">2</span>-00:00:00              gres/gpu<span class="o">=</span><span class="m">24</span>
+    gpu168  <span class="m">7</span>-00:00:00               gres/gpu<span class="o">=</span><span class="m">4</span>
 </pre></div>
 </div>
 <p>From this you can see that in the “short queue” (under 48 hours, or 2 days) each user is allowed to utilize up to 3000 cores. For jobs that are running in the “long queue” (under 168 hours, or 7 days) you can use up to 1000 cores. Basic idea behind this – users can run more short jobs, and fewer long jobs. The same logic applies to GPU resources.</p>
