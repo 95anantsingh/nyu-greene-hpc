@@ -1,5 +1,6 @@
 # Anaconda
 
+(conda-setup)=
 ## One Time Setup
 
 Conda is already available on Greene. To access the default conda environment, just type the following.
