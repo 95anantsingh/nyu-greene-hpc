@@ -17,6 +17,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -241,13 +242,13 @@ It allows users to login and works securely on the remote servers over an unsecu
 </div>
 <ul>
 <li><p>Generate ssh keys on your local machine.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen -f my_ssh_key.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen
 </pre></div>
 </div>
 <p>Follow the prompt, just hit Enter to go with default settings.</p>
 </li>
 <li><p>Copy the key to HPC server.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id -i my_ssh_key.txt &lt;NetID&gt;@greene.hpc.nyu.edu
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-copy-id -i ~/.ssh/rsa_id.pub &lt;NetID&gt;@greene.hpc.nyu.edu
 </pre></div>
 </div>
 </li>

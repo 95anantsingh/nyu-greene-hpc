@@ -2,6 +2,10 @@
 
 Open OnDemand is a tool that allows users to launch Graphical User Interfaces (GUIs) based applications are accessible without modifying your HPC environment. OOD allows users to launch Jupyter Lab sessions from [https://ood.hpc.nyu.edu](https://ood.hpc.nyu.edu).
 
+```{important}
+Please setup `conda` before proceeding further. For more info {ref}`conda-setup`.
+```
+
 ## One time Setup
 
 1. Logon into HPC via a terminal.
@@ -142,20 +146,20 @@ You need to add one kernel per environment that you want to use with Jupyter Not
     ```bash
     sudo nano python
     ```
-    Add the following at the bottom of the file:
+    Update the `singularity` command at the bottom of the file so that it looks like:
 
     ```bash
     singularity exec $nv \
-    --overlay /scratch/<NetID>/singularity/partition.ext3:ro \
+    --overlay /scratch/$USER/singularity/partition.ext3:ro \
     /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif \
-    /bin/bash -c "source /ext3/env.sh; conda activate <env_name>"
+    /bin/bash -c "source /ext3/env.sh; conda activate <env_name> $cmd $args"
     ```
 
     Save the file by pressing `Ctrl+X`, then hit `Y` and hit `Enter` to confirm.
 
 
     ```{important}
-    Update the `<NetID>` to your own NetID and `<env_name>` to the environment you are doing the setup without the "<>" symbols.
+    Update `<env_name>` to the environment you are doing the setup without the "<>" symbols.
     ```
     
     ```{caution}

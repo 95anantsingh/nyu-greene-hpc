@@ -17,6 +17,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -199,6 +200,10 @@
   <section id="jupyter-notebooks">
 <h1><span class="section-number">8. </span>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this heading"></a></h1>
 <p>Open OnDemand is a tool that allows users to launch Graphical User Interfaces (GUIs) based applications are accessible without modifying your HPC environment. OOD allows users to launch Jupyter Lab sessions from <a class="reference external" href="https://ood.hpc.nyu.edu">https://ood.hpc.nyu.edu</a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Please setup <code class="docutils literal notranslate"><span class="pre">conda</span></code> before proceeding further. For more info <a class="reference internal" href="Anaconda.html#conda-setup"><span class="std std-ref">One Time Setup</span></a>.</p>
+</div>
 <section id="one-time-setup">
 <h2><span class="section-number">8.1. </span>One time Setup<a class="headerlink" href="#one-time-setup" title="Permalink to this heading"></a></h2>
 <ol class="arabic">
@@ -340,17 +345,17 @@ cp -R /share/apps/mypy/src/kernel_template ./&lt;env_name&gt;
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo nano python
 </pre></div>
 </div>
-<p>Add the following at the bottom of the file:</p>
+<p>Update the <code class="docutils literal notranslate"><span class="pre">singularity</span></code> command at the bottom of the file so that it looks like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity <span class="nb">exec</span> <span class="nv">$nv</span> <span class="se">\</span>
---overlay /scratch/&lt;NetID&gt;/singularity/partition.ext3:ro <span class="se">\</span>
+--overlay /scratch/<span class="nv">$USER</span>/singularity/partition.ext3:ro <span class="se">\</span>
 /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif <span class="se">\</span>
-/bin/bash -c <span class="s2">&quot;source /ext3/env.sh; conda activate &lt;env_name&gt;&quot;</span>
+/bin/bash -c <span class="s2">&quot;source /ext3/env.sh; conda activate &lt;env_name&gt; </span><span class="nv">$cmd</span><span class="s2"> </span><span class="nv">$args</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>Save the file by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+X</span></code>, then hit <code class="docutils literal notranslate"><span class="pre">Y</span></code> and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to confirm.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Update the <code class="docutils literal notranslate"><span class="pre">&lt;NetID&gt;</span></code> to your own NetID and <code class="docutils literal notranslate"><span class="pre">&lt;env_name&gt;</span></code> to the environment you are doing the setup without the “&lt;&gt;” symbols.</p>
+<p>Update <code class="docutils literal notranslate"><span class="pre">&lt;env_name&gt;</span></code> to the environment you are doing the setup without the “&lt;&gt;” symbols.</p>
 </div>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>

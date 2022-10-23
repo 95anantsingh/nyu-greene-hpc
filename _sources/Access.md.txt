@@ -57,14 +57,14 @@ Only save keys from the computer you trust.
 - Generate ssh keys on your local machine.
 
     ```bash
-    ssh-keygen -f my_ssh_key.txt
+    ssh-keygen
     ```
 
     Follow the prompt, just hit Enter to go with default settings.
 - Copy the key to HPC server.
   
     ```bash
-    ssh-copy-id -i my_ssh_key.txt <NetID>@greene.hpc.nyu.edu
+    ssh-copy-id -i ~/.ssh/rsa_id.pub <NetID>@greene.hpc.nyu.edu
     ```
 
 - Done, now you won't need to type your password again from your current machine.
