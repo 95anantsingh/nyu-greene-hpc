@@ -475,7 +475,7 @@ Request a GPU session with 32 GB RAM and 10 CPU cores for 1 hour:</p>
 <section id="running-or-pending-job">
 <h3><span class="section-number">7.3.1. </span>Running or Pending Job<a class="headerlink" href="#running-or-pending-job" title="Permalink to this heading"></a></h3>
 <p>This command shows all your current jobs.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue -u &lt;NetID&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>squeue -u <span class="nv">$USER</span>
 </pre></div>
 </div>
 <p>Example output:</p>
@@ -514,7 +514,7 @@ Request a GPU session with 32 GB RAM and 10 CPU cores for 1 hour:</p>
 <div class="caution admonition">
 <p class="admonition-title">Use with caution !</p>
 <p>To cancel all jobs from your account. Run this on the HPC terminal.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scancel -u &lt;NetID&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scancel -u <span class="nv">$USER</span>
 </pre></div>
 </div>
 </div>
@@ -545,7 +545,7 @@ Memory Efficiency: <span class="m">21</span>.80% of <span class="m">10</span>.00
 <section id="running-job">
 <h3><span class="section-number">7.5.2. </span>Running job<a class="headerlink" href="#running-job" title="Permalink to this heading"></a></h3>
 <p>From login node, run:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>top -u &lt;NetID&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>top -u <span class="nv">$USER</span>
 </pre></div>
 </div>
 <p>Take a look how fully you use CPUs and how much RAM your jobs are using.<br>

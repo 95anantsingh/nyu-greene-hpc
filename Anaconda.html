@@ -206,8 +206,8 @@
 </pre></div>
 </div>
 <p>There’s a caveat though, when you try to create a new virtual environment, it does that in the <code class="docutils literal notranslate"><span class="pre">/home</span></code> directory by default, and that takes up a lot of space out of your quota. As a workaround, direct conda to store packages data at <code class="docutils literal notranslate"><span class="pre">/scratch</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --append pkgs_dirs /scratch/&lt;netid&gt;/conda/pkgs_dirs
-conda config --append envs_dirs /scratch/&lt;netid&gt;/conda/envs_dirs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda config --append pkgs_dirs /scratch/<span class="nv">$USER</span>/conda/pkgs_dirs
+conda config --append envs_dirs /scratch/<span class="nv">$USER</span>/conda/envs_dirs
 </pre></div>
 </div>
 <div class="error admonition">

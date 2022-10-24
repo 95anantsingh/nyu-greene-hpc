@@ -52,7 +52,7 @@ You can access any file system using environment variable or its absolute path, 
 
 ```{code-block} bash
 cd $HOME
-cd /home/<NetID>
+cd /home/$USER
 ```
 ````
 

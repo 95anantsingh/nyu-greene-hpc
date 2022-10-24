@@ -262,7 +262,7 @@ To leave an interactive batch session, type `exit` at the command prompt.
 This command shows all your current jobs.
 
 ```bash
-squeue -u <NetID>
+squeue -u $USER
 ```
 Example output:
 
@@ -306,7 +306,7 @@ scancel <jobid>
 
 To cancel all jobs from your account. Run this on the HPC terminal.
 ```bash
-scancel -u <NetID>
+scancel -u $USER
 ```
 ````
 
@@ -339,7 +339,7 @@ This example shows statistics on a completed job, that was ran with a request of
 
 From login node, run:
 ```bash
-top -u <NetID>
+top -u $USER
 ```
 
 Take a look how fully you use CPUs and how much RAM your jobs are using.<br>

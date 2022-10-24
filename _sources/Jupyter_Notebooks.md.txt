@@ -12,15 +12,15 @@ Please setup `conda` before proceeding further. For more info {ref}`conda-setup`
 
 1. Create a directory for the environment
     ```bash
-    mkdir /scratch/<NetID>/singularity
-    cd /scratch/<NetID>/singularity
+    mkdir /scratch/$USER/singularity
+    cd /scratch/$USER/singularity
     ```
 
 1. Prepare Overlay, for 400K files andupto 10GB of storage space.
     ```bash
     cp -rp /scratch/work/public/overlay-fs-ext3/overlay-10GB-400K.ext3.gz .
     gunzip overlay-10GB-400K.ext3.gz
-    mv gunzip overlay-10GB-400K.ext3 partition.ext3
+    mv overlay-10GB-400K.ext3 partition.ext3
     ```
     ````{note}
     You can browse available overlay images to see available options:
@@ -31,7 +31,7 @@ Please setup `conda` before proceeding further. For more info {ref}`conda-setup`
 
 1. Launch Singularity environment for installation
     ```bash
-    singularity exec --overlay /scratch/<NetID>/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif /bin/bash
+    singularity exec --overlay /scratch/$USER/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif /bin/bash
     ```
     ````{note}
     You can browse available OS images to see available options:
@@ -98,11 +98,15 @@ Please setup `conda` before proceeding further. For more info {ref}`conda-setup`
 
 You need to add one kernel per environment that you want to use with Jupyter Notebook.
 
-1. Create a conda environment outside of Singularity (Skip this step if you have already an environment other than base)
+1. Load anaconda module
     ```bash
     module purge
     module load anaconda3/2020.07
     eval "$(conda shell.bash hook)"
+    ```
+
+1. Create a conda environment outside of Singularity (Skip this step if you have already an environment other than base)
+    ```bash
     conda create -n <env_name> python=3.8
     ```
 
@@ -117,7 +121,7 @@ You need to add one kernel per environment that you want to use with Jupyter Not
     mkdir -p ~/.local/share/jupyter/kernels
     cd ~/.local/share/jupyter/kernels
     cp -R /share/apps/mypy/src/kernel_template ./<env_name>
-    cd ./my_env
+    cd ./<env_name>
     ```
 
 1. Edit `kernel.json`

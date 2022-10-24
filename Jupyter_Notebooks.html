@@ -209,15 +209,15 @@
 <ol class="arabic">
 <li><p>Logon into HPC via a terminal.</p></li>
 <li><p>Create a directory for the environment</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /scratch/&lt;NetID&gt;/singularity
-<span class="nb">cd</span> /scratch/&lt;NetID&gt;/singularity
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /scratch/<span class="nv">$USER</span>/singularity
+<span class="nb">cd</span> /scratch/<span class="nv">$USER</span>/singularity
 </pre></div>
 </div>
 </li>
 <li><p>Prepare Overlay, for 400K files andupto 10GB of storage space.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -rp /scratch/work/public/overlay-fs-ext3/overlay-10GB-400K.ext3.gz .
 gunzip overlay-10GB-400K.ext3.gz
-mv gunzip overlay-10GB-400K.ext3 partition.ext3
+mv overlay-10GB-400K.ext3 partition.ext3
 </pre></div>
 </div>
 <div class="admonition note">
@@ -229,7 +229,7 @@ mv gunzip overlay-10GB-400K.ext3 partition.ext3
 </div>
 </li>
 <li><p>Launch Singularity environment for installation</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity <span class="nb">exec</span> --overlay /scratch/&lt;NetID&gt;/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif /bin/bash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity <span class="nb">exec</span> --overlay /scratch/<span class="nv">$USER</span>/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif /bin/bash
 </pre></div>
 </div>
 <div class="admonition note">
@@ -300,11 +300,15 @@ conda install ipykernel -y
 <h2><span class="section-number">8.2. </span>Add Jupyter Kernel<a class="headerlink" href="#add-jupyter-kernel" title="Permalink to this heading"></a></h2>
 <p>You need to add one kernel per environment that you want to use with Jupyter Notebook.</p>
 <ol class="arabic">
-<li><p>Create a conda environment outside of Singularity (Skip this step if you have already an environment other than base)</p>
+<li><p>Load anaconda module</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module purge
 module load anaconda3/2020.07
 <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>conda shell.bash hook<span class="k">)</span><span class="s2">&quot;</span>
-conda create -n &lt;env_name&gt; <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
+</pre></div>
+</div>
+</li>
+<li><p>Create a conda environment outside of Singularity (Skip this step if you have already an environment other than base)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n &lt;env_name&gt; <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
 </pre></div>
 </div>
 </li>
@@ -318,7 +322,7 @@ conda install ipykernel ipywidgets -y
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/.local/share/jupyter/kernels
 <span class="nb">cd</span> ~/.local/share/jupyter/kernels
 cp -R /share/apps/mypy/src/kernel_template ./&lt;env_name&gt;
-<span class="nb">cd</span> ./my_env
+<span class="nb">cd</span> ./&lt;env_name&gt;
 </pre></div>
 </div>
 </li>

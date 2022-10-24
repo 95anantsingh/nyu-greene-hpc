@@ -12,8 +12,8 @@ module load anaconda3/2020.07
 There's a caveat though, when you try to create a new virtual environment, it does that in the `/home` directory by default, and that takes up a lot of space out of your quota. As a workaround, direct conda to store packages data at `/scratch`.
 
 ```bash
-conda config --append pkgs_dirs /scratch/<netid>/conda/pkgs_dirs
-conda config --append envs_dirs /scratch/<netid>/conda/envs_dirs
+conda config --append pkgs_dirs /scratch/$USER/conda/pkgs_dirs
+conda config --append envs_dirs /scratch/$USER/conda/envs_dirs
 ```
 
 ````{admonition} Common Error
