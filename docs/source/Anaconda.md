@@ -98,9 +98,9 @@ To install larger packages, like Tensorflow, PyTorch you must first start an int
     ```
 1. Now you can install packages (refer {ref}`conda-cheat`).
 
-```{important}
-`ipykernel` is required to run Open OnDemand Jupyter Notebooks, please install this package to your environment if haven't already.
-```
+    ```{important}
+    `ipykernel` is required to run Open OnDemand Jupyter Notebooks, please install this package to your environment if haven't already.
+    ```
 
 (conda-cheat)=
 ## Cheatsheet
