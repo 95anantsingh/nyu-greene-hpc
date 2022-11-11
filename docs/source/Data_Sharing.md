@@ -104,19 +104,25 @@ setfacl -Rm "u:jh12524:rwx" /scratch/ab1234/abc/def
 Give Access to Parent Directories in the Path. When you would like to set ACL to say /a/b/c/example.out,  you also need to set appropriate ACLs to all the parent directories in the path. If you want to give read/write/execute permissions for the file /a/b/c/example.out, you would also need to give at least r-x permissions to the directories: /a,  /a/b, and /a/b/c.
 ```
 
-#### Share all new files in a directory
+#### Share all new files in a directory by default
 ```bash
-# setfacl -d "u:NetID:permissions" <dir>
-setfacl -d "u:jh12524:rwx" abc
-```
+getfacl --access <dir> | setfacl -d -M- <dir>
+``` 
 
-####  Remove a permission entry
+####  Remove permissions for a user
 ```bash
-setfacl -x "entry" <file/dir>
+#setfacl -x "entry" <file/dir>
+setfacl -x "u:abc123" <file/dir>
 ```
 
 #### Remove all permissions
 ```bash
 # setfacl -b <file/dir>
 setfacl -b abc.txt
+```
+
+```{admonition} Useful Link
+:class: hint
+
+- [https://www.computerhope.com/unix/usetfacl.htm](https://www.computerhope.com/unix/usetfacl.htm)
 ```
