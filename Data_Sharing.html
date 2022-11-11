@@ -42,7 +42,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started with HPC !</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Greene_HPC.html">1. Greene HPC</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#overview">1.1. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#software">1.2. Software</a></li>
@@ -79,8 +79,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#examples">4.2.1. Examples</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#share-a-file">4.2.1.1. Share a file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#share-a-directory-and-all-its-files">4.2.1.2. Share a directory and all its files</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#share-all-new-files-in-a-directory">4.2.1.3. Share all new files in a directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#remove-a-permission-entry">4.2.1.4. Remove a permission entry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#share-all-new-files-in-a-directory-by-default">4.2.1.3. Share all new files in a directory by default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#remove-permissions-for-a-user">4.2.1.4. Remove permissions for a user</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#remove-all-permissions">4.2.1.5. Remove all permissions</a></li>
 </ul>
 </li>
@@ -95,12 +95,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Anaconda.html">6. Anaconda</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">6.1. One Time Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">6.2. Activate conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">6.3. Cheatsheet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#quick-start">6.3.1. Quick Start</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#package-management">6.3.2. Package Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#environment-management">6.3.3. Environment Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#maintenance">6.3.4. Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#create-environment">6.2. Create environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">6.3. Activate conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#installing-packages">6.4. Installing Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">6.5. Cheatsheet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#quick-start">6.5.1. Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#package-management">6.5.2. Package Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#environment-management">6.5.3. Environment Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#maintenance">6.5.4. Maintenance</a></li>
 </ul>
 </li>
 </ul>
@@ -187,8 +189,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">4. </span>Data Sharing</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>Data Sharing</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -298,16 +300,16 @@ setfacl -Rm <span class="s2">&quot;u:jh12524:rwx&quot;</span> /scratch/ab1234/ab
 <p>Give Access to Parent Directories in the Path. When you would like to set ACL to say /a/b/c/example.out,  you also need to set appropriate ACLs to all the parent directories in the path. If you want to give read/write/execute permissions for the file /a/b/c/example.out, you would also need to give at least r-x permissions to the directories: /a,  /a/b, and /a/b/c.</p>
 </div>
 </section>
-<section id="share-all-new-files-in-a-directory">
-<h4><span class="section-number">4.2.1.3. </span>Share all new files in a directory<a class="headerlink" href="#share-all-new-files-in-a-directory" title="Permalink to this heading"></a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># setfacl -d &quot;u:NetID:permissions&quot; &lt;dir&gt;</span>
-setfacl -d <span class="s2">&quot;u:jh12524:rwx&quot;</span> abc
+<section id="share-all-new-files-in-a-directory-by-default">
+<h4><span class="section-number">4.2.1.3. </span>Share all new files in a directory by default<a class="headerlink" href="#share-all-new-files-in-a-directory-by-default" title="Permalink to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getfacl --access &lt;dir&gt; <span class="p">|</span> setfacl -d -M- &lt;dir&gt;
 </pre></div>
 </div>
 </section>
-<section id="remove-a-permission-entry">
-<h4><span class="section-number">4.2.1.4. </span>Remove a permission entry<a class="headerlink" href="#remove-a-permission-entry" title="Permalink to this heading"></a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setfacl -x <span class="s2">&quot;entry&quot;</span> &lt;file/dir&gt;
+<section id="remove-permissions-for-a-user">
+<h4><span class="section-number">4.2.1.4. </span>Remove permissions for a user<a class="headerlink" href="#remove-permissions-for-a-user" title="Permalink to this heading"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#setfacl -x &quot;entry&quot; &lt;file/dir&gt;</span>
+setfacl -x <span class="s2">&quot;u:abc123&quot;</span> &lt;file/dir&gt;
 </pre></div>
 </div>
 </section>
@@ -316,6 +318,12 @@ setfacl -d <span class="s2">&quot;u:jh12524:rwx&quot;</span> abc
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># setfacl -b &lt;file/dir&gt;</span>
 setfacl -b abc.txt
 </pre></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Useful Link</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.computerhope.com/unix/usetfacl.htm">https://www.computerhope.com/unix/usetfacl.htm</a></p></li>
+</ul>
 </div>
 </section>
 </section>
@@ -333,7 +341,7 @@ setfacl -b abc.txt
     <hr/>
   
     <div role="contentinfo">
-      <p>&#169; Copyright 2022, <a href="https://www.github.com/95anantsingh">Anant Singh</a> | New York University |</p>
+      <p>Developed by <b>Anant Singh</b> (<a href="https://bit.ly/3vbNbbg">GitHub</a>, <a href="https://bit.ly/3cGo2iI">LinkedIn</a>) | New York University | Built from HPC Official Documentaion.</p>
     </div> 
   
   </footer>

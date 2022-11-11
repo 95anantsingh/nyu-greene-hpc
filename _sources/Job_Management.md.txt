@@ -99,7 +99,7 @@ Available options:
 
 | Option                        | Description                                                                                                   |
 |-------------------------------|---------------------------------------------------------------------------------------------------------------|
-| `-J`, `--job-name=<str>`      | Give the job a name. The default is the filename of the job script. Within the job, $SBATCH_JOB_NAME <br> expands to the job name                                                                                                                         |
+| `-J`, `--job-name=<str>`      | Give the job a name. The default is the filename of the job script.<br>Within the job, $SBATCH_JOB_NAME <br> expands to the job name                                                                                                                         |
 | `-o`, `--output <path>`       | Send stdout to path/for/stdout. The default filename is slurm-${SLURM_JOB_ID}.out, e.g. slurm-12345.out, <br> in the  directory from which the job was mitted                                                                                                 |
 | `-e <path>`                   | Send stderr to specified path                                                                                 |
 | `--mail-user=<email>`         | Send email to specified email id when certain events occur                                                    |
@@ -247,7 +247,8 @@ In a real scenario, the system might be exhausted with no available resources to
 ```
 
 With interactive session you can have the same arguments passed to `srun` as you pass into the job script with `sbatch`.<br>
-Request a GPU session with 32 GB RAM and 10 CPU cores for 1 hour:
+
+To request a GPU session with 32 GB RAM and 10 CPU cores for 1 hour:
 ```bash
 srun -c 10 --mem=32GB --gres=gpu:1 -t 1:00:00 --pty /bin/bash
 ```

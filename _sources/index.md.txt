@@ -1,15 +1,17 @@
-# Getting Started !
+# Getting Started with HPC !
 
 
-This guide tries to give you a basic understanding of working with Greene HPC cluster. I documented this guide while taking High Performance Machine Learning and Deep Learing Course.
+This **Unofficial** guide tries to give you a basic understanding of working with Greene HPC cluster. I documented this guide while taking High Performance Machine Learning and Deep Learing Course.
 
 ```{note} 
 A more comprehensive but confusing 😛 guide is available [here](https://sites.google.com/nyu.edu/nyu-hpc).
 ```
 
+```{caution}
+This is not Official documentation, please do not Call or Email HPC team if you face some issue following this guide. Follow this guide at your discretion.
+```
 
 ## HPC Documentation
-
 
 
 ```{toctree} 

@@ -42,7 +42,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started with HPC !</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Greene_HPC.html">1. Greene HPC</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#overview">1.1. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Greene_HPC.html#software">1.2. Software</a></li>
@@ -79,8 +79,8 @@
 <li class="toctree-l3"><a class="reference internal" href="Data_Sharing.html#examples">4.2.1. Examples</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#share-a-file">4.2.1.1. Share a file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#share-a-directory-and-all-its-files">4.2.1.2. Share a directory and all its files</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#share-all-new-files-in-a-directory">4.2.1.3. Share all new files in a directory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#remove-a-permission-entry">4.2.1.4. Remove a permission entry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#share-all-new-files-in-a-directory-by-default">4.2.1.3. Share all new files in a directory by default</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#remove-permissions-for-a-user">4.2.1.4. Remove permissions for a user</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Data_Sharing.html#remove-all-permissions">4.2.1.5. Remove all permissions</a></li>
 </ul>
 </li>
@@ -95,12 +95,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Anaconda.html">6. Anaconda</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Anaconda.html#one-time-setup">6.1. One Time Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">6.2. Activate conda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">6.3. Cheatsheet</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#quick-start">6.3.1. Quick Start</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#package-management">6.3.2. Package Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#environment-management">6.3.3. Environment Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#maintenance">6.3.4. Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#create-environment">6.2. Create environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#activate-conda">6.3. Activate conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#installing-packages">6.4. Installing Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Anaconda.html#cheatsheet">6.5. Cheatsheet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#quick-start">6.5.1. Quick Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#package-management">6.5.2. Package Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#environment-management">6.5.3. Environment Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Anaconda.html#maintenance">6.5.4. Maintenance</a></li>
 </ul>
 </li>
 </ul>
@@ -187,8 +189,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">8. </span>Jupyter Notebooks</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">8. </span>Jupyter Notebooks</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -229,7 +231,7 @@ mv overlay-10GB-400K.ext3 partition.ext3
 </div>
 </li>
 <li><p>Launch Singularity environment for installation</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity <span class="nb">exec</span> --overlay /scratch/<span class="nv">$USER</span>/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif /bin/bash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity <span class="nb">exec</span> --overlay /scratch/<span class="nv">$USER</span>/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-devel-ubuntu20.04.4.sif /bin/bash
 </pre></div>
 </div>
 <div class="admonition note">
@@ -238,6 +240,10 @@ mv overlay-10GB-400K.ext3 partition.ext3
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls /scratch/work/public/singularity/
 </pre></div>
 </div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Be sure that you have the Singularity prompt (Singularity&gt;) before the next step.</p>
 </div>
 </li>
 <li><p>Install Miniconda to overlay file</p>
@@ -288,6 +294,10 @@ conda install pip -y
 conda install ipykernel -y
 </pre></div>
 </div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> is required to run Open OnDemand Jupyter Notebooks, please install this package to your environment if haven’t already.</p>
+</div>
 </li>
 <li><p>Exit Singularity image</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">exit</span>
@@ -327,7 +337,7 @@ cp -R /share/apps/mypy/src/kernel_template ./&lt;env_name&gt;
 </div>
 </li>
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">kernel.json</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo nano kernel.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano kernel.json
 </pre></div>
 </div>
 <p>Edit the file so that it should look like:</p>
@@ -338,7 +348,24 @@ cp -R /share/apps/mypy/src/kernel_template ./&lt;env_name&gt;
 <span class="w">            </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">            </span><span class="s2">&quot;{connection_file}&quot;</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;env_name&gt;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;kernel_name&gt;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Update <code class="docutils literal notranslate"><span class="pre">&lt;Your</span> <span class="pre">NetID&gt;</span></code> to your own NetID, <code class="docutils literal notranslate"><span class="pre">&lt;env_name&gt;</span></code> to the name of your conda environment and <code class="docutils literal notranslate"><span class="pre">&lt;kernel_name&gt;</span></code> to a name for this kernel.</p>
+</div>
+<p>For Example:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;argv&quot;</span><span class="p">:[</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;/home/abc123/.local/share/jupyter/kernels/nlp/python&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="s2">&quot;{connection_file}&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NLP Env&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">    </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
@@ -346,21 +373,38 @@ cp -R /share/apps/mypy/src/kernel_template ./&lt;env_name&gt;
 <p>Save the file by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+X</span></code>, then hit <code class="docutils literal notranslate"><span class="pre">Y</span></code> and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to confirm.</p>
 </li>
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">python</span></code> file</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo nano python
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano python
 </pre></div>
 </div>
-<p>Update the <code class="docutils literal notranslate"><span class="pre">singularity</span></code> command at the bottom of the file so that it looks like:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity <span class="nb">exec</span> <span class="nv">$nv</span> <span class="se">\</span>
---overlay /scratch/<span class="nv">$USER</span>/singularity/partition.ext3:ro <span class="se">\</span>
-/scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif <span class="se">\</span>
-/bin/bash -c <span class="s2">&quot;source /ext3/env.sh; conda activate &lt;env_name&gt; </span><span class="nv">$cmd</span><span class="s2"> </span><span class="nv">$args</span><span class="s2">&quot;</span>
+<p>Edit the file so that it should look like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nv">args</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="k">for</span> i <span class="k">in</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span> 
+<span class="nv">i</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">i</span><span class="p">//</span><span class="se">\\</span><span class="p">/</span><span class="se">\\\\</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nv">args</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$args</span><span class="s2"> \&quot;</span><span class="si">${</span><span class="nv">i</span><span class="p">//</span><span class="se">\&quot;</span><span class="p">/</span><span class="se">\\\&quot;</span><span class="si">}</span><span class="s2">\&quot;&quot;</span>
+<span class="k">done</span>
+
+<span class="nb">unset</span> XDG_RUNTIME_DIR
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$SLURM_JOBTMP</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="nb">export</span> <span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span><span class="nv">$SLURM_JOBTMP</span>
+<span class="k">fi</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="k">$(</span>hostname -s<span class="k">)</span><span class="s2">&quot;</span> <span class="o">=</span>~ ^g<span class="o">[</span>r,v<span class="o">]</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nv">nv</span><span class="o">=</span><span class="s2">&quot;--nv&quot;</span><span class="p">;</span> <span class="k">fi</span>
+
+<span class="nv">cmd</span><span class="o">=</span><span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span>
+
+
+singularity <span class="nb">exec</span> <span class="nv">$nv</span> --overlay /scratch/<span class="nv">$USER</span>/singularity/partition.ext3:ro <span class="se">\</span>
+            /scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-devel-ubuntu20.04.4.sif <span class="se">\</span>
+            /bin/bash -c <span class="s2">&quot;source /ext3/env.sh;conda activate &lt;env_name&gt;; </span><span class="nv">$cmd</span><span class="s2"> </span><span class="nv">$args</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-<p>Save the file by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+X</span></code>, then hit <code class="docutils literal notranslate"><span class="pre">Y</span></code> and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to confirm.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Update <code class="docutils literal notranslate"><span class="pre">&lt;env_name&gt;</span></code> to the environment you are doing the setup without the “&lt;&gt;” symbols.</p>
 </div>
+<p>Save the file by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+X</span></code>, then hit <code class="docutils literal notranslate"><span class="pre">Y</span></code> and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to confirm.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>If you used a different overlay or sif file, change those lines in the command above to the files you used.</p>
@@ -390,7 +434,7 @@ cp -R /share/apps/mypy/src/kernel_template ./&lt;env_name&gt;
 <br>
 Once configured and launched, kernels can be selected in the “New” dropdown or within the notebook under the kernel menu. Please note that your notebook view may look slightly different depending on available directories and environments, as well as if you choose the lab or traditional notebook view.</p></li>
 </ol>
-<a class="reference internal image-reference" href="_images/ood-kernel.png"><img alt="OOD Jupyter Kernel" class="align-center" src="_images/ood-kernel.png" style="width: 90%;" /></a>
+<a class="reference internal image-reference" href="_images/ood-kernel2.png"><img alt="OOD Jupyter Kernel" class="align-center" src="_images/ood-kernel2.png" style="width: 90%;" /></a>
 <br>
 <br></section>
 </section>
@@ -406,7 +450,7 @@ Once configured and launched, kernels can be selected in the “New” dropdown 
     <hr/>
   
     <div role="contentinfo">
-      <p>&#169; Copyright 2022, <a href="https://www.github.com/95anantsingh">Anant Singh</a> | New York University |</p>
+      <p>Developed by <b>Anant Singh</b> (<a href="https://bit.ly/3vbNbbg">GitHub</a>, <a href="https://bit.ly/3cGo2iI">LinkedIn</a>) | New York University | Built from HPC Official Documentaion.</p>
     </div> 
   
   </footer>

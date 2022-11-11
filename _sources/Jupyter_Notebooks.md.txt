@@ -31,14 +31,18 @@ Please setup `conda` before proceeding further. For more info {ref}`conda-setup`
 
 1. Launch Singularity environment for installation
     ```bash
-    singularity exec --overlay /scratch/$USER/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif /bin/bash
+    singularity exec --overlay /scratch/$USER/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-devel-ubuntu20.04.4.sif /bin/bash
     ```
     ````{note}
     You can browse available OS images to see available options:
     ```bash
     ls /scratch/work/public/singularity/
-    ```
+    ``` 
     ````
+    ```{important}
+    Be sure that you have the Singularity prompt (Singularity>) before the next step.
+    ```
+
 
 1. Install Miniconda to overlay file
     ```bash
@@ -89,6 +93,10 @@ Please setup `conda` before proceeding further. For more info {ref}`conda-setup`
     conda install ipykernel -y
     ```
 
+    ```{important}
+    `ipykernel` is required to run Open OnDemand Jupyter Notebooks, please install this package to your environment if haven't already.
+    ```
+
 1. Exit Singularity image
     ```bash
     exit
@@ -127,7 +135,7 @@ You need to add one kernel per environment that you want to use with Jupyter Not
 1. Edit `kernel.json`
 
     ```bash
-    sudo nano kernel.json
+    nano kernel.json
     ```
 
     Edit the file so that it should look like:
@@ -139,7 +147,25 @@ You need to add one kernel per environment that you want to use with Jupyter Not
                 "ipykernel_launcher",
                 "-f",
                 "{connection_file}"],
-        "display_name": "<env_name>",
+        "display_name": "<kernel_name>",
+        "language": "python"
+    }
+    ```
+    ```{important}
+    Update `<Your NetID>` to your own NetID, `<env_name>` to the name of your conda environment and `<kernel_name>` to a name for this kernel.
+
+    ```
+    
+    For Example:
+    ```json
+    {
+        "argv":[
+                "/home/abc123/.local/share/jupyter/kernels/nlp/python",
+                "-m",
+                "ipykernel_launcher",
+                "-f",
+                "{connection_file}"],
+        "display_name": "NLP Env",
         "language": "python"
     }
     ```
@@ -148,24 +174,40 @@ You need to add one kernel per environment that you want to use with Jupyter Not
 
 1. Edit `python` file
     ```bash
-    sudo nano python
+    nano python
     ```
-    Update the `singularity` command at the bottom of the file so that it looks like:
 
+    Edit the file so that it should look like:
     ```bash
-    singularity exec $nv \
-    --overlay /scratch/$USER/singularity/partition.ext3:ro \
-    /scratch/work/public/singularity/cuda11.2.2-cudnn8-devel-ubuntu20.04.sif \
-    /bin/bash -c "source /ext3/env.sh; conda activate <env_name> $cmd $args"
+    #!/bin/bash
+
+    args=''
+    for i in "$@"; do 
+    i="${i//\\/\\\\}"
+    args="$args \"${i//\"/\\\"}\""
+    done
+
+    unset XDG_RUNTIME_DIR
+    if [ "$SLURM_JOBTMP" != "" ]; then
+    export XDG_RUNTIME_DIR=$SLURM_JOBTMP
+    fi
+
+    if [[ "$(hostname -s)" =~ ^g[r,v] ]]; then nv="--nv"; fi
+
+    cmd=$(basename $0)
+
+
+    singularity exec $nv --overlay /scratch/$USER/singularity/partition.ext3:ro \
+                /scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-devel-ubuntu20.04.4.sif \
+                /bin/bash -c "source /ext3/env.sh;conda activate <env_name>; $cmd $args"
+
     ```
-
-    Save the file by pressing `Ctrl+X`, then hit `Y` and hit `Enter` to confirm.
-
-
     ```{important}
     Update `<env_name>` to the environment you are doing the setup without the "<>" symbols.
     ```
     
+    Save the file by pressing `Ctrl+X`, then hit `Y` and hit `Enter` to confirm.
+
     ```{caution}
     If you used a different overlay or sif file, change those lines in the command above to the files you used.
     ```
@@ -203,7 +245,7 @@ You need to add one kernel per environment that you want to use with Jupyter Not
     <br>
     Once configured and launched, kernels can be selected in the "New" dropdown or within the notebook under the kernel menu. Please note that your notebook view may look slightly different depending on available directories and environments, as well as if you choose the lab or traditional notebook view.
 
-```{image} assets/ood-kernel.png
+```{image} assets/ood-kernel2.png
 :alt: OOD Jupyter Kernel
 :width: 90%
 :align: center
