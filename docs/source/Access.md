@@ -64,7 +64,7 @@ Only save keys from the computer you trust.
 - Copy the key to HPC server.
   
     ```bash
-    ssh-copy-id -i ~/.ssh/rsa_id.pub <NetID>@greene.hpc.nyu.edu
+    ssh-copy-id -i ~/.ssh/id_rsa.pub <NetID>@greene.hpc.nyu.edu
     ```
 
 - Done, now you won't need to type your password again from your current machine.
