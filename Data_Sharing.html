@@ -221,7 +221,7 @@
 <section id="view-permissions">
 <h2><span class="section-number">4.1. </span>View Permissions<a class="headerlink" href="#view-permissions" title="Permalink to this heading"></a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">getfacl</span></code> to retrieve access permissions for a file.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getfacl myfile.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getfacl<span class="w"> </span>myfile.txt
 
 <span class="c1"># file: myfile.txt</span>
 <span class="c1"># owner: ab123</span>
@@ -238,15 +238,15 @@ other::---
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can see with ‘ls -l’ if a file has extended permissions set with setfacl: the ‘+’ in the last column of the permissions field indicates that this file has detailed access permissions via ACLs:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -la
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-la
 </pre></div>
 </div>
 <p>Example Output:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>total <span class="m">304</span>
-drwxr-x---+   <span class="m">18</span> ab123 users  <span class="m">4096</span> Apr  <span class="m">3</span> <span class="m">14</span>:32 .
-drwxr-xr-x  <span class="m">1361</span> root  root      <span class="m">0</span> Apr  <span class="m">3</span> <span class="m">09</span>:35 ..
--rw-------     <span class="m">1</span> ab123 users  <span class="m">4502</span> Mar <span class="m">28</span> <span class="m">22</span>:27 my_private_file
--rw-r-xr--+    <span class="m">1</span> ab123 users    <span class="m">29</span> Feb <span class="m">11</span> <span class="m">23</span>:18 dummy.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>total<span class="w"> </span><span class="m">304</span>
+drwxr-x---+<span class="w">   </span><span class="m">18</span><span class="w"> </span>ab123<span class="w"> </span>users<span class="w">  </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">14</span>:32<span class="w"> </span>.
+drwxr-xr-x<span class="w">  </span><span class="m">1361</span><span class="w"> </span>root<span class="w">  </span>root<span class="w">      </span><span class="m">0</span><span class="w"> </span>Apr<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">09</span>:35<span class="w"> </span>..
+-rw-------<span class="w">     </span><span class="m">1</span><span class="w"> </span>ab123<span class="w"> </span>users<span class="w">  </span><span class="m">4502</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">22</span>:27<span class="w"> </span>my_private_file
+-rw-r-xr--+<span class="w">    </span><span class="m">1</span><span class="w"> </span>ab123<span class="w"> </span>users<span class="w">    </span><span class="m">29</span><span class="w"> </span>Feb<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">23</span>:18<span class="w"> </span>dummy.txt
 </pre></div>
 </div>
 </div>
@@ -255,7 +255,7 @@ drwxr-xr-x  <span class="m">1361</span> root  root      <span class="m">0</span>
 <h2><span class="section-number">4.2. </span>Modify Permissions<a class="headerlink" href="#modify-permissions" title="Permalink to this heading"></a></h2>
 <p>Permisions can be modified by <code class="docutils literal notranslate"><span class="pre">setfacl</span></code> commmand.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># General syntax:</span>
-setfacl -<span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>action/specification<span class="o">]</span> &lt;file/dir&gt;
+setfacl<span class="w"> </span>-<span class="o">[</span>options<span class="o">]</span><span class="w"> </span><span class="o">[</span>action/specification<span class="o">]</span><span class="w"> </span>&lt;file/dir&gt;
 </pre></div>
 </div>
 <p>Options:</p>
@@ -282,7 +282,7 @@ setfacl -<span class="o">[</span>options<span class="o">]</span> <span class="o"
 <section id="share-a-file">
 <h4><span class="section-number">4.2.1.1. </span>Share a file<a class="headerlink" href="#share-a-file" title="Permalink to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># setfacl -m &quot;u:NetID:permissions&quot; &lt;file&gt;</span>
-setfacl -m <span class="s2">&quot;u:jh12524:rwx&quot;</span> abc.txt
+setfacl<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;u:jh12524:rwx&quot;</span><span class="w"> </span>abc.txt
 </pre></div>
 </div>
 </section>
@@ -290,9 +290,9 @@ setfacl -m <span class="s2">&quot;u:jh12524:rwx&quot;</span> abc.txt
 <h4><span class="section-number">4.2.1.2. </span>Share a directory and all its files<a class="headerlink" href="#share-a-directory-and-all-its-files" title="Permalink to this heading"></a></h4>
 <p>For example folder is at <code class="docutils literal notranslate"><span class="pre">/scratch/ab1234/abc/def</span></code> then:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># setfacl -m &quot;u:NetID:permissions&quot; &lt;dir&gt;</span>
-setfacl -m <span class="s2">&quot;u:jh12524:r-x&quot;</span> /scratch/ab1234
-setfacl -m <span class="s2">&quot;u:jh12524:r-x&quot;</span> /scratch/ab1234/abc
-setfacl -Rm <span class="s2">&quot;u:jh12524:rwx&quot;</span> /scratch/ab1234/abc/def
+setfacl<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;u:jh12524:r-x&quot;</span><span class="w"> </span>/scratch/ab1234
+setfacl<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;u:jh12524:r-x&quot;</span><span class="w"> </span>/scratch/ab1234/abc
+setfacl<span class="w"> </span>-Rm<span class="w"> </span><span class="s2">&quot;u:jh12524:rwx&quot;</span><span class="w"> </span>/scratch/ab1234/abc/def
 </pre></div>
 </div>
 <div class="admonition important">
@@ -302,21 +302,21 @@ setfacl -Rm <span class="s2">&quot;u:jh12524:rwx&quot;</span> /scratch/ab1234/ab
 </section>
 <section id="share-all-new-files-in-a-directory-by-default">
 <h4><span class="section-number">4.2.1.3. </span>Share all new files in a directory by default<a class="headerlink" href="#share-all-new-files-in-a-directory-by-default" title="Permalink to this heading"></a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getfacl --access &lt;dir&gt; <span class="p">|</span> setfacl -d -M- &lt;dir&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>getfacl<span class="w"> </span>--access<span class="w"> </span>&lt;dir&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>setfacl<span class="w"> </span>-d<span class="w"> </span>-M-<span class="w"> </span>&lt;dir&gt;
 </pre></div>
 </div>
 </section>
 <section id="remove-permissions-for-a-user">
 <h4><span class="section-number">4.2.1.4. </span>Remove permissions for a user<a class="headerlink" href="#remove-permissions-for-a-user" title="Permalink to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#setfacl -x &quot;entry&quot; &lt;file/dir&gt;</span>
-setfacl -x <span class="s2">&quot;u:abc123&quot;</span> &lt;file/dir&gt;
+setfacl<span class="w"> </span>-x<span class="w"> </span><span class="s2">&quot;u:abc123&quot;</span><span class="w"> </span>&lt;file/dir&gt;
 </pre></div>
 </div>
 </section>
 <section id="remove-all-permissions">
 <h4><span class="section-number">4.2.1.5. </span>Remove all permissions<a class="headerlink" href="#remove-all-permissions" title="Permalink to this heading"></a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># setfacl -b &lt;file/dir&gt;</span>
-setfacl -b abc.txt
+setfacl<span class="w"> </span>-b<span class="w"> </span>abc.txt
 </pre></div>
 </div>
 <div class="hint admonition">

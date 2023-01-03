@@ -211,33 +211,33 @@
 <ol class="arabic">
 <li><p>Logon into HPC via a terminal.</p></li>
 <li><p>Create a directory for the environment</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /scratch/<span class="nv">$USER</span>/singularity
-<span class="nb">cd</span> /scratch/<span class="nv">$USER</span>/singularity
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>/scratch/<span class="nv">$USER</span>/singularity
+<span class="nb">cd</span><span class="w"> </span>/scratch/<span class="nv">$USER</span>/singularity
 </pre></div>
 </div>
 </li>
 <li><p>Prepare Overlay, for 400K files andupto 10GB of storage space.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -rp /scratch/work/public/overlay-fs-ext3/overlay-10GB-400K.ext3.gz .
-gunzip overlay-10GB-400K.ext3.gz
-mv overlay-10GB-400K.ext3 partition.ext3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-rp<span class="w"> </span>/scratch/work/public/overlay-fs-ext3/overlay-10GB-400K.ext3.gz<span class="w"> </span>.
+gunzip<span class="w"> </span>overlay-10GB-400K.ext3.gz
+mv<span class="w"> </span>overlay-10GB-400K.ext3<span class="w"> </span>partition.ext3
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can browse available overlay images to see available options:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls /scratch/work/public/overlay-fs-ext3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>/scratch/work/public/overlay-fs-ext3
 </pre></div>
 </div>
 </div>
 </li>
 <li><p>Launch Singularity environment for installation</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity <span class="nb">exec</span> --overlay /scratch/<span class="nv">$USER</span>/singularity/partition.ext3:rw /scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-devel-ubuntu20.04.4.sif /bin/bash
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>--overlay<span class="w"> </span>/scratch/<span class="nv">$USER</span>/singularity/partition.ext3:rw<span class="w"> </span>/scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-devel-ubuntu20.04.4.sif<span class="w"> </span>/bin/bash
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can browse available OS images to see available options:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls /scratch/work/public/singularity/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>/scratch/work/public/singularity/
 </pre></div>
 </div>
 </div>
@@ -247,31 +247,31 @@ mv overlay-10GB-400K.ext3 partition.ext3
 </div>
 </li>
 <li><p>Install Miniconda to overlay file</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-sh Miniconda3-latest-Linux-x86_64.sh -b -p /ext3/miniconda3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+sh<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>/ext3/miniconda3
 </pre></div>
 </div>
 <p>Remove downloded package</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm Miniconda3-latest-Linux-x86_64.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh
 </pre></div>
 </div>
 </li>
 <li><p>Create an invoking wrapper script</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch /ext3/env.sh
-<span class="nb">echo</span> <span class="s1">&#39;#!/bin/bash&#39;</span> &gt;&gt; /ext3/env.sh
-<span class="nb">echo</span> <span class="s1">&#39;source /ext3/miniconda3/etc/profile.d/conda.sh&#39;</span> &gt;&gt; /ext3/env.sh
-<span class="nb">echo</span> <span class="s1">&#39;export PATH=/ext3/miniconda3/bin:$PATH&#39;</span>         &gt;&gt; /ext3/env.sh
-<span class="nb">echo</span> <span class="s1">&#39;export PYTHONPATH=/ext3/miniconda3/bin:$PATH&#39;</span>   &gt;&gt; /ext3/env.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>/ext3/env.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;#!/bin/bash&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/ext3/env.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;source /ext3/miniconda3/etc/profile.d/conda.sh&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/ext3/env.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PATH=/ext3/miniconda3/bin:$PATH&#39;</span><span class="w">         </span>&gt;&gt;<span class="w"> </span>/ext3/env.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export PYTHONPATH=/ext3/miniconda3/bin:$PATH&#39;</span><span class="w">   </span>&gt;&gt;<span class="w"> </span>/ext3/env.sh
 </pre></div>
 </div>
 <p>Source Anaconda</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> /ext3/env.sh
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>/ext3/env.sh
 </pre></div>
 </div>
 </li>
 <li><p>Confirm Installation<br>
 Check conda location</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which conda
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>conda
 </pre></div>
 </div>
 <p>Expected Output:</p>
@@ -279,7 +279,7 @@ Check conda location</p>
 </pre></div>
 </div>
 <p>Check python location</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which python
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>python
 </pre></div>
 </div>
 <p>Expected Output:</p>
@@ -288,10 +288,10 @@ Check conda location</p>
 </div>
 </li>
 <li><p>Update, clean base conda environment and install necessary packages</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda update -n base conda -y
-conda clean --all -y
-conda install pip -y
-conda install ipykernel -y
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>conda<span class="w"> </span>-y
+conda<span class="w"> </span>clean<span class="w"> </span>--all<span class="w"> </span>-y
+conda<span class="w"> </span>install<span class="w"> </span>pip<span class="w"> </span>-y
+conda<span class="w"> </span>install<span class="w"> </span>ipykernel<span class="w"> </span>-y
 </pre></div>
 </div>
 <div class="admonition important">
@@ -311,46 +311,46 @@ conda install ipykernel -y
 <p>You need to add one kernel per environment that you want to use with Jupyter Notebook.</p>
 <ol class="arabic">
 <li><p>Load anaconda module</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module purge
-module load anaconda3/2020.07
-<span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>conda shell.bash hook<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>purge
+module<span class="w"> </span>load<span class="w"> </span>anaconda3/2020.07
+<span class="nb">eval</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>conda<span class="w"> </span>shell.bash<span class="w"> </span>hook<span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Create a conda environment outside of Singularity (Skip this step if you have already an environment other than base)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -n &lt;env_name&gt; <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>&lt;env_name&gt;<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8
 </pre></div>
 </div>
 </li>
 <li><p>Install required packages to your environment</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate &lt;env_name&gt;
-conda install ipykernel ipywidgets -y
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>&lt;env_name&gt;
+conda<span class="w"> </span>install<span class="w"> </span>ipykernel<span class="w"> </span>ipywidgets<span class="w"> </span>-y
 </pre></div>
 </div>
 </li>
 <li><p>Configure iPython kernels</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p ~/.local/share/jupyter/kernels
-<span class="nb">cd</span> ~/.local/share/jupyter/kernels
-cp -R /share/apps/mypy/src/kernel_template ./&lt;env_name&gt;
-<span class="nb">cd</span> ./&lt;env_name&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.local/share/jupyter/kernels
+<span class="nb">cd</span><span class="w"> </span>~/.local/share/jupyter/kernels
+cp<span class="w"> </span>-R<span class="w"> </span>/share/apps/mypy/src/kernel_template<span class="w"> </span>./&lt;env_name&gt;
+<span class="nb">cd</span><span class="w"> </span>./&lt;env_name&gt;
 </pre></div>
 </div>
 </li>
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">kernel.json</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano kernel.json
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>kernel.json
 </pre></div>
 </div>
 <p>Edit the file so that it should look like:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;argv&quot;</span><span class="p">:[</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;/home/&lt;Your NetID&gt;/.local/share/jupyter/kernels/&lt;env_name&gt;/python&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;{connection_file}&quot;</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;kernel_name&gt;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;argv&quot;</span><span class="p">:[</span>
+<span class="w">            </span><span class="s2">&quot;/home/&lt;Your NetID&gt;/.local/share/jupyter/kernels/&lt;env_name&gt;/python&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;{connection_file}&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;kernel_name&gt;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -358,46 +358,46 @@ cp -R /share/apps/mypy/src/kernel_template ./&lt;env_name&gt;
 <p>Update <code class="docutils literal notranslate"><span class="pre">&lt;Your</span> <span class="pre">NetID&gt;</span></code> to your own NetID, <code class="docutils literal notranslate"><span class="pre">&lt;env_name&gt;</span></code> to the name of your conda environment and <code class="docutils literal notranslate"><span class="pre">&lt;kernel_name&gt;</span></code> to a name for this kernel.</p>
 </div>
 <p>For Example:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;argv&quot;</span><span class="p">:[</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;/home/abc123/.local/share/jupyter/kernels/nlp/python&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="s2">&quot;{connection_file}&quot;</span><span class="p">],</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NLP Env&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;argv&quot;</span><span class="p">:[</span>
+<span class="w">            </span><span class="s2">&quot;/home/abc123/.local/share/jupyter/kernels/nlp/python&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;ipykernel_launcher&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;{connection_file}&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;display_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NLP Env&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Save the file by pressing <code class="docutils literal notranslate"><span class="pre">Ctrl+X</span></code>, then hit <code class="docutils literal notranslate"><span class="pre">Y</span></code> and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to confirm.</p>
 </li>
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">python</span></code> file</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano python
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>python
 </pre></div>
 </div>
 <p>Edit the file so that it should look like:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
 <span class="nv">args</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-<span class="k">for</span> i <span class="k">in</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">do</span> 
+<span class="k">for</span><span class="w"> </span>i<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>
 <span class="nv">i</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">i</span><span class="p">//</span><span class="se">\\</span><span class="p">/</span><span class="se">\\\\</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nv">args</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$args</span><span class="s2"> \&quot;</span><span class="si">${</span><span class="nv">i</span><span class="p">//</span><span class="se">\&quot;</span><span class="p">/</span><span class="se">\\\&quot;</span><span class="si">}</span><span class="s2">\&quot;&quot;</span>
 <span class="k">done</span>
 
-<span class="nb">unset</span> XDG_RUNTIME_DIR
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$SLURM_JOBTMP</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-<span class="nb">export</span> <span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span><span class="nv">$SLURM_JOBTMP</span>
+<span class="nb">unset</span><span class="w"> </span>XDG_RUNTIME_DIR
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$SLURM_JOBTMP</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">XDG_RUNTIME_DIR</span><span class="o">=</span><span class="nv">$SLURM_JOBTMP</span>
 <span class="k">fi</span>
 
-<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="k">$(</span>hostname -s<span class="k">)</span><span class="s2">&quot;</span> <span class="o">=</span>~ ^g<span class="o">[</span>r,v<span class="o">]</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span> <span class="nv">nv</span><span class="o">=</span><span class="s2">&quot;--nv&quot;</span><span class="p">;</span> <span class="k">fi</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>hostname<span class="w"> </span>-s<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">=</span>~<span class="w"> </span>^g<span class="o">[</span>r,v<span class="o">]</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nv">nv</span><span class="o">=</span><span class="s2">&quot;--nv&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">fi</span>
 
-<span class="nv">cmd</span><span class="o">=</span><span class="k">$(</span>basename <span class="nv">$0</span><span class="k">)</span>
+<span class="nv">cmd</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="nv">$0</span><span class="k">)</span>
 
 
-singularity <span class="nb">exec</span> <span class="nv">$nv</span> --overlay /scratch/<span class="nv">$USER</span>/singularity/partition.ext3:ro <span class="se">\</span>
-            /scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-devel-ubuntu20.04.4.sif <span class="se">\</span>
-            /bin/bash -c <span class="s2">&quot;source /ext3/env.sh;conda activate &lt;env_name&gt;; </span><span class="nv">$cmd</span><span class="s2"> </span><span class="nv">$args</span><span class="s2">&quot;</span>
+singularity<span class="w"> </span><span class="nb">exec</span><span class="w"> </span><span class="nv">$nv</span><span class="w"> </span>--overlay<span class="w"> </span>/scratch/<span class="nv">$USER</span>/singularity/partition.ext3:ro<span class="w"> </span><span class="se">\</span>
+<span class="w">            </span>/scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-devel-ubuntu20.04.4.sif<span class="w"> </span><span class="se">\</span>
+<span class="w">            </span>/bin/bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;source /ext3/env.sh;conda activate &lt;env_name&gt;; </span><span class="nv">$cmd</span><span class="s2"> </span><span class="nv">$args</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <div class="admonition important">
